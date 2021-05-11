@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: Test Event
+  m_EditorClassIdentifier: 
+  dialog:
+  - character: {fileID: 0}
+    line:
+    - Hello I am a test Villager
+    - Please Cure Me  :0
+  yes:
+    herbs: -1
+    people: 2
+    spirit: 0
+    answer: Cool thx
+  no:
+    herbs: -1
+    people: -1
+    spirit: -2
+    answer: What the F dude ? Not cool...
+  first:
+    good: 1
+    answer: Cure them
+  second:
+    good: 0
+    answer: Nope.
+  minigame: Test Minigame
