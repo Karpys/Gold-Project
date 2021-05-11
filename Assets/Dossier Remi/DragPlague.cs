@@ -8,6 +8,7 @@ public class DragPlague : MonoBehaviour
     public GameObject Drag;
     public bool Draging;
     public PlagueManager Manage;
+    public Vector2 Position;
     void Start()
     {
         
@@ -17,12 +18,11 @@ public class DragPlague : MonoBehaviour
     void Update()
     {
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-        
-        /*foreach (Touch touch in Input.touches)
+
+        foreach (Touch touch in Input.touches)
         {
-            worldPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            if (touch.phase == TouchPhase.Began)
+            Position = Camera.main.ScreenToWorldPoint(touch.position);
+            if (touch.phase == TouchPhase.Moved)
             {
                 if (Drag)
                     Attach(Drag);
@@ -31,11 +31,15 @@ public class DragPlague : MonoBehaviour
             if (touch.phase == TouchPhase.Ended)
             {
                 if (Drag)
+                {
                     Release(Drag);
+                    Drag = null;
+                }
+                
             }
-        }*/
-        transform.position = worldPosition;
-        if (Input.GetMouseButtonDown(0))
+        }
+        transform.position = Position;
+       /* if (Input.GetMouseButtonDown(0))
         {
             if(Drag)
             Attach(Drag);
@@ -44,7 +48,7 @@ public class DragPlague : MonoBehaviour
         {
             if (Drag)
             Release(Drag);
-        }
+        }*/
         if(Draging)
         {
             Drag.transform.position = new Vector3(transform.position.x, transform.position.y, Drag.transform.position.z);
