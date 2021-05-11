@@ -18,8 +18,24 @@ public class DragPlague : MonoBehaviour
     {
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+        
+        /*foreach (Touch touch in Input.touches)
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (Drag)
+                    Attach(Drag);
+            }
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if (Drag)
+                    Release(Drag);
+            }
+        }*/
         transform.position = worldPosition;
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if(Drag)
             Attach(Drag);
