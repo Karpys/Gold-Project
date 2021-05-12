@@ -7,20 +7,21 @@ public class AcuController : MonoBehaviour
     // Start is called before the first frame update
     public List<GameObject> ListPoint;
     public List<int> ListId;
+    public List<int> IdRecreate;
     public int Max;
+    public int counter;
     void Start()
     {
-        
+        StartCoroutine(AffichePoint(2));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(AffichePoint());
-        }
+       
+      
     }
+
 
     /*public void AffichePoint()
     {
@@ -30,8 +31,9 @@ public class AcuController : MonoBehaviour
     }*/
 
 
-    IEnumerator AffichePoint()
+    IEnumerator AffichePoint(float pause)
     {
+        yield return new WaitForSeconds(pause);
         for(int i = 0;i<ListId.Count;i++)
         {
             yield return new WaitForSeconds(0.5f);
@@ -58,6 +60,55 @@ public class AcuController : MonoBehaviour
         }
     }
 
+    IEnumerator DisplayPointSelect(int id)
+    {
+        yield return new WaitForSeconds(0);
+        Color col = ListPoint[0].GetComponent<SpriteRenderer>().color;
+        col.a = 1;
+        ListPoint[id].GetComponent<SpriteRenderer>().color = col;
+        yield return new WaitForSeconds(0.5f);
+        col.a = 0;
+        ListPoint[id].GetComponent<SpriteRenderer>().color = col;
+    }
+
+    public void ActivePoint(int id)
+    {
+        if(counter<ListId.Count)
+        {
+            counter += 1;
+            IdRecreate.Add(id);
+            StartCoroutine(DisplayPointSelect(id));
+        }
+        
+        if(counter==ListId.Count)
+        {
+            
+            if(Check(ListId,IdRecreate))
+            {
+                if(counter==Max)
+                {
+                    Debug.Log("YOUPI");
+                }
+                Debug.Log("cc");
+                IdRecreate.Clear();
+                counter = 0;
+                StartCoroutine(AffichePoint(1));
+            }
+        }
+    }
+
+    public bool Check(List<int> a,List<int> b)
+    {
+        bool check = true;
+        for (int i = 0;i<a.Count;i++)
+        {
+            if(a[i]!=b[i])
+            {
+                check = false;
+            }
+        }
+        return check;
+    }
     public enum SimonState
     {
         IDLE,
@@ -66,3 +117,5 @@ public class AcuController : MonoBehaviour
     }
 
 }
+
+
