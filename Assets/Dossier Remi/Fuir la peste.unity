@@ -540,6 +540,7 @@ MonoBehaviour:
   Drag: {fileID: 0}
   Draging: 0
   Manage: {fileID: 1451065284}
+  Position: {x: 0, y: 0}
 --- !u!4 &1254112022
 Transform:
   m_ObjectHideFlags: 0
