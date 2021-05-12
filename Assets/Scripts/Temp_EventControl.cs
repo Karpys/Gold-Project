@@ -11,7 +11,7 @@ public class Temp_EventControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        EventSystem.Manager.NextEvent(testEvent);
     }
 
     // Update is called once per frame
@@ -22,13 +22,13 @@ public class Temp_EventControl : MonoBehaviour
             EventSystem.Manager.NextEvent(testEvent);
             for (int i = 0; i < testEvent.dialog[0].line.Length; i++)
             {
-                Debug.Log(testEvent.dialog[0].line[i]);
+                //Debug.Log(testEvent.dialog[0].line[i]);
             }
 
-            Debug.Log("(Y) " + testEvent.first.answer);
-            Debug.Log("(N) " + testEvent.second.answer);
+            //Debug.Log("(Y) " + testEvent.first.answer);
+            //Debug.Log("(N) " + testEvent.second.answer);
 
-            waitingInput = true;
+            //waitingInput = true;
         }
 
         if(waitingInput)

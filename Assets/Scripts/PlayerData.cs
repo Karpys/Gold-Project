@@ -7,7 +7,7 @@ public class PlayerData : MonoBehaviour
 	private static PlayerData inst;
 	public static PlayerData Stat { get => inst; }
 
-	public string playerName = "Chaman";
+	public string playerName = "Shaman";
 
 	public int Herbs;
 	public int People;

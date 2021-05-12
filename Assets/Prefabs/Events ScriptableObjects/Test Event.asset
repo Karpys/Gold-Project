@@ -34,3 +34,4 @@ MonoBehaviour:
     good: 0
     answer: Nope.
   minigame: Test Minigame
+  endedDialog: 0

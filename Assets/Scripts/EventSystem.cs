@@ -7,7 +7,7 @@ public class EventSystem : MonoBehaviour
 	private static EventSystem inst;
 	public static EventSystem Manager { get => inst; }
 
-	private Event current; // current Event being played
+	[HideInInspector] public Event current; // current Event being played
 
 	public Event[] eventPool;
 
@@ -19,8 +19,10 @@ public class EventSystem : MonoBehaviour
 
     public void NextEvent(Event next)
 	{
-		current = next;
-		// Appeler changement Text
+		current = Instantiate(next);
+
+		Dialog.Manager.Open(); ///////////
+		NextDialogLine();
 	}
 
 	// call on Button w/ 0 ou 1
@@ -29,15 +31,20 @@ public class EventSystem : MonoBehaviour
 		// clicked 'first' or 'second' answer
 		Event.PlayerText playerText = (choice == 0) ? current.first : current.second;
 
-		Debug.Log(playerText.answer); //////////////////////////////////
+		Dialog.Manager.Prompt(false);
 
 		/// Check if Mini-Jeu !!!
 
 		// answer was 'good' or not
 		Event.Impact impact = (playerText.good) ? current.yes : current.no;
 
-		Debug.Log(impact.answer); //////////////////////////////////
+		Dialog.Manager.NextDialog(impact.answer);
 
 		PlayerData.Stat.ImpactResources(impact.herbs, impact.people, impact.spirit);
+
+		current.endedDialog = true;
 	}
+
+	// call on Dialog Box Button
+	public void NextDialogLine() { current.NextLine(); }
 }
