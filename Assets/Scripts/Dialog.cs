@@ -8,6 +8,7 @@ public class Dialog : MonoBehaviour
     private static Dialog inst;
     public static Dialog Manager { get => inst; }
 
+    [HideInInspector] public GameObject Box;
     public GameObject characterName;
     private Text name_txt;
     public GameObject dialogBox;
@@ -23,6 +24,7 @@ public class Dialog : MonoBehaviour
             inst = this;
 
         name_txt = characterName.GetComponent<Text>();
+        Box = dialogBox.transform.parent.gameObject;
         dialogBox_txt = dialogBox.GetComponentInChildren<Text>();
         playerAnswer1_txt = playerAnswer1.GetComponentInChildren<Text>();
         playerAnswer2_txt = playerAnswer2.GetComponentInChildren<Text>();
@@ -34,6 +36,7 @@ public class Dialog : MonoBehaviour
     {
         dialogBox.SetActive(true);
         characterName.SetActive(true);
+        Prompt(false);
     }
 
     public void Close()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventSystem : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class EventSystem : MonoBehaviour
 
 	public Event[] eventPool;
 
+	private string loadedGameScene;
+
     private void Awake()
     {
 		if (inst == null)
 			inst = this;
+
+		DontDestroyOnLoad(this);
     }
 
     public void NextEvent(Event next)
@@ -25,6 +30,11 @@ public class EventSystem : MonoBehaviour
 		NextDialogLine();
 	}
 
+/// Buttons
+/// 
+	// call on Dialog Box Button
+	public void NextDialogLine() { current.NextLine(); }
+
 	// call on Button w/ 0 ou 1
 	public void Answer(int choice)
 	{
@@ -33,11 +43,28 @@ public class EventSystem : MonoBehaviour
 
 		Dialog.Manager.Prompt(false);
 
-		/// Check if Mini-Jeu !!!
-
 		// answer was 'good' or not
-		Event.Impact impact = (playerText.good) ? current.yes : current.no;
+		Event.Impact impact;
+		if (playerText.good)
+		{
+			if (current.minigame != "") // Check if Mini-Jeu !!!
+			{
+				LoadGame(current.minigame);
+				return;
+			}
+			else
+			{
+				impact = current.yes;
+			}
+		}
+		else
+			impact = current.no;
 
+		ApplyImpact(impact);
+	}
+
+	public void ApplyImpact(Event.Impact impact)
+	{
 		Dialog.Manager.NextDialog(impact.answer);
 
 		PlayerData.Stat.ImpactResources(impact.herbs, impact.people, impact.spirit);
@@ -45,6 +72,28 @@ public class EventSystem : MonoBehaviour
 		current.endedDialog = true;
 	}
 
-	// call on Dialog Box Button
-	public void NextDialogLine() { current.NextLine(); }
+
+/// Scene Manager
+/// 
+	public void LoadGame(string sceneName)
+    {
+		Dialog.Manager.Box.SetActive(false);
+
+		if (Application.CanStreamedLevelBeLoaded(sceneName))
+		{
+			loadedGameScene = sceneName;
+			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+		}
+		else Debug.LogError(" No scene \"" + sceneName + "\" could be found.");
+    }
+
+	public void EndGame(bool win)
+	{
+		Dialog.Manager.Box.SetActive(true);
+
+		SceneManager.UnloadSceneAsync(loadedGameScene);
+
+		Event.Impact impact = (win) ? current.yes : current.no;
+		ApplyImpact(impact);
+    }
 }

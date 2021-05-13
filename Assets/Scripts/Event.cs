@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Villager", menuName = "Events/Base Villager Event")]
+[CreateAssetMenu(fileName = "Base Character", menuName = "Events/Base Villager Event")]
 [System.Serializable]
 public class Event : ScriptableObject
 {
@@ -17,7 +17,8 @@ public class Event : ScriptableObject
 
 	[System.Serializable] public struct CharacterText
 	{
-		public Character character; // Character ou GameObject si besoin de prefab
+		public GameObject prefabCharacter; // prefab Containing CharacterController script
+		[HideInInspector] public GameObject character; // variable called by other scripts
 		public string[] line;
 	}
 
@@ -44,17 +45,28 @@ public class Event : ScriptableObject
 	private int dialogLine = 0;
 	[HideInInspector] public bool endedDialog = false;
 
-	public void NextLine()
+
+    private void Awake()
+    {
+		if (dialog != null)
+		{
+			for (int i = 0; i < dialog.Length; i++)
+			{
+				if(dialog[i].prefabCharacter != null) dialog[i].character = Instantiate(dialog[i].prefabCharacter);
+			}
+		}
+    }
+
+    public void NextLine()
 	{
 		if(endedDialog) { Dialog.Manager.Close(); }
 
 		if (talkingCharacter < dialog.Length) // si tous les personnages ne sont pas passés
 		{
-			Debug.Log(" still characters left ");
 			if (dialogLine < dialog[talkingCharacter].line.Length) // si le personnage a encore des lignes de dialogue
 			{
 				if (dialogLine == 0)
-					Dialog.Manager.NextDialog(dialog[talkingCharacter].line[dialogLine], "Name 1");//dialog[talkingCharacter].character.name);
+					Dialog.Manager.NextDialog(dialog[talkingCharacter].line[dialogLine], GetCharacter(talkingCharacter).characterName);
 				else
 					Dialog.Manager.NextDialog(dialog[talkingCharacter].line[dialogLine]);
 			}
@@ -71,4 +83,9 @@ public class Event : ScriptableObject
 			}
 		}
 	}
+
+	private CharacterController GetCharacter(int index)
+    {
+		return dialog[talkingCharacter].character.GetComponent<CharacterController>();
+    }
 }

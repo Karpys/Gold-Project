@@ -7,13 +7,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: Test Event
   m_EditorClassIdentifier: 
   dialog:
-  - character: {fileID: 0}
+  - prefabCharacter: {fileID: 5155462815790674537, guid: 44a4b45dfc4a7b043accae8d924bda6a, type: 3}
+    character: {fileID: 5155462815790674537, guid: 44a4b45dfc4a7b043accae8d924bda6a, type: 3}
     line:
     - Hello I am a test Villager
     - Please Cure Me  :0
@@ -33,5 +34,5 @@ MonoBehaviour:
   second:
     good: 0
     answer: Nope.
-  minigame: Test Minigame
+  minigame: TestGame
   endedDialog: 0

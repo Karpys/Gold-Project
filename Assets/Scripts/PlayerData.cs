@@ -19,7 +19,9 @@ public class PlayerData : MonoBehaviour
     {
 		if (inst == null)
 			inst = this;
-    }
+
+		DontDestroyOnLoad(this);
+	}
 
     public void ImpactResources(int hrb, int ppl, int spi)
 	{
