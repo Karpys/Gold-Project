@@ -10,8 +10,10 @@ public class AcuController : MonoBehaviour
     public List<int> IdRecreate;
     public int Max;
     public int counter;
+    public SimonState State;
     void Start()
     {
+        State = SimonState.IDLE;
         StartCoroutine(AffichePoint(2));
     }
 
@@ -33,6 +35,7 @@ public class AcuController : MonoBehaviour
 
     IEnumerator AffichePoint(float pause)
     {
+        State = SimonState.PLAYING;
         yield return new WaitForSeconds(pause);
         for(int i = 0;i<ListId.Count;i++)
         {
@@ -58,6 +61,7 @@ public class AcuController : MonoBehaviour
             ListPoint[id].GetComponent<SpriteRenderer>().color = col;
             ListId.Add(id);
         }
+        State = SimonState.COPY;
     }
 
     IEnumerator DisplayPointSelect(int id)
@@ -73,26 +77,32 @@ public class AcuController : MonoBehaviour
 
     public void ActivePoint(int id)
     {
-        if(counter<ListId.Count)
-        {
-            counter += 1;
-            IdRecreate.Add(id);
-            StartCoroutine(DisplayPointSelect(id));
-        }
-        
-        if(counter==ListId.Count)
-        {
-            
-            if(Check(ListId,IdRecreate))
+        if(State == SimonState.COPY)
+        { 
+            if(counter<ListId.Count)
             {
-                if(counter==Max)
+                counter += 1;
+                IdRecreate.Add(id);
+                StartCoroutine(DisplayPointSelect(id));
+            }
+        
+            if(counter==ListId.Count)
+            {
+            
+                if(Check(ListId,IdRecreate))
                 {
-                    Debug.Log("YOUPI");
+                    if(counter==Max)
+                    {
+                        Debug.Log("YOUPI");
+                    }
+                    State = SimonState.PLAYING;
+                    IdRecreate.Clear();
+                    counter = 0;
+                    StartCoroutine(AffichePoint(1));
+                }else
+                {
+                    Debug.Log("Loose");
                 }
-                Debug.Log("cc");
-                IdRecreate.Clear();
-                counter = 0;
-                StartCoroutine(AffichePoint(1));
             }
         }
     }
