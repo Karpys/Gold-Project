@@ -276,6 +276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc96b1439b39d49408e1b33de62cfe5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newImpact:
+    herbs: 0
+    people: 0
+    spirit: 0
+    answer: 
 --- !u!114 &613447528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +535,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1227823279}
         m_TargetAssemblyTypeName: ButtonLink, Assembly-CSharp
-        m_MethodName: EndGame
+        m_MethodName: EndGameImpact
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -590,6 +595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc96b1439b39d49408e1b33de62cfe5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newImpact:
+    herbs: -10
+    people: 0
+    spirit: 0
+    answer: 
 --- !u!1 &1532214289
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,15 @@ public class Event : ScriptableObject
 		public int spirit;
 
 		public string answer;
+
+		public Impact Add(Impact right) // add impacts
+        {
+			right.herbs += herbs;
+			right.people += people;
+			right.spirit += spirit;
+
+			return right;
+        }
 	}
 
 	[System.Serializable] public struct CharacterText
@@ -48,7 +57,7 @@ public class Event : ScriptableObject
 
     private void Awake()
     {
-		if (dialog != null)
+		if (dialog != null && Application.isPlaying)
 		{
 			for (int i = 0; i < dialog.Length; i++)
 			{

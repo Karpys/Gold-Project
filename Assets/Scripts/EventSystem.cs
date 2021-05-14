@@ -73,7 +73,7 @@ public class EventSystem : MonoBehaviour
 	}
 
 
-/// Scene Manager
+/// Scene Manager - Minigames
 /// 
 	public void LoadGame(string sceneName)
     {
@@ -96,4 +96,18 @@ public class EventSystem : MonoBehaviour
 		Event.Impact impact = (win) ? current.yes : current.no;
 		ApplyImpact(impact);
     }
+
+	public void EndGame(bool win, Event.Impact newImpact) // use when additional resources impact in minigame
+	{
+		Dialog.Manager.Box.SetActive(true);
+
+		SceneManager.UnloadSceneAsync(loadedGameScene);
+
+		if (win)
+			newImpact = newImpact.Add(current.yes);
+		else
+			newImpact = newImpact.Add(current.no);
+
+		ApplyImpact(newImpact);
+	}
 }

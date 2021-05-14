@@ -5,5 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonLink : MonoBehaviour
 {
+    public Event.Impact newImpact;
+
     public void EndGame(bool win) { EventSystem.Manager.EndGame(win); }
+    public void EndGameImpact(bool win) {
+        EventSystem.Manager.EndGame(win, newImpact);
+    }
 }
