@@ -12,9 +12,11 @@ public class PlagueManager : MonoBehaviour
     public int RatioSick;
     private int RatioSickSet;
     public List<GameObject> Village;
+    public GameObject Parent;
     public float Timer=15.0f;
     public Text text;
     public int Dead;
+    public int Herbe;
 
     void Start()
     {
@@ -74,13 +76,16 @@ public class PlagueManager : MonoBehaviour
         {
             Debug.Log("Moooort");
         }
-        Debug.Log("Perte: " + Dead);
+        Event.Impact imp = new Event.Impact();
+        imp.herbs = -Herbe;
+        imp.people = -Dead;
+        EventSystem.Manager.EndGame(true, imp);
     }
 
     IEnumerator Spawn(bool safe,float time)
     {
         yield return new WaitForSeconds(time);
-        GameObject Char = Instantiate(Prefab, transform.position, transform.rotation);
+        GameObject Char = Instantiate(Prefab, transform.position, transform.rotation,Parent.transform);
         if (RatioSick <= 0)
         {
             Char.GetComponent<Sort_Plague>().sick = true;

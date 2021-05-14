@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestGame.unity
     guid: 6da24c46c5c9ee54a8755bfbd5610447
+  - enabled: 1
+    path: Assets/Dossier Remi/Fuir la peste.unity
+    guid: b1e13e921f3b9e34e8883027a74f8dea
   m_configObjects: {}
