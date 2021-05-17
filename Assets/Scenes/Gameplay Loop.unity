@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: {fileID: 0}
   eventPool:
-  - {fileID: 11400000, guid: 11966e57b2a38db40babc81a0936affd, type: 2}
+  - {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
   - {fileID: 11400000, guid: 1389c951e2e1c9d47b234df4e10269db, type: 2}
 --- !u!4 &133307467
 Transform:
@@ -1479,7 +1479,7 @@ GameObject:
   - component: {fileID: 1327464388}
   - component: {fileID: 1327464387}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: CanvasEnventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

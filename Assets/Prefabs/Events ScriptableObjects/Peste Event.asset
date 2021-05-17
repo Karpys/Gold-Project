@@ -12,22 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: Peste Event
   m_EditorClassIdentifier: 
-  dialog: []
+  dialog:
+  - prefabCharacter: {fileID: 5155462815790674537, guid: 0854373b1d7a15e45a51511c33b9ae7e, type: 3}
+    character: {fileID: 0}
+    line:
+    - Ohayo
+    - '*se leche la pate :3*'
   yes:
-    herbs: 0
-    people: 0
-    spirit: 0
-    answer: 
+    herbs: 1
+    people: 1
+    spirit: 1
+    answer: Bonne chance bg
   no:
-    herbs: 0
-    people: 0
-    spirit: 0
-    answer: 
+    herbs: 2
+    people: -2
+    spirit: 2
+    answer: Pas cool
   first:
-    good: 0
-    answer: 
+    good: 1
+    answer: Soigne
   second:
     good: 0
-    answer: 
-  minigame: 
+    answer: Pas soigne
+  minigame: Fuir la peste
   endedDialog: 0
