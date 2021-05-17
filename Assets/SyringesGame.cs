@@ -8,6 +8,8 @@ public class SyringesGame : MonoBehaviour
     public GameObject win;
     public GameObject lose;
     public GameObject syringe;
+    public GameObject tige;
+    public GameObject targetTige;
     public GameObject firstMedoc;
     public GameObject secondMedoc;
 
@@ -15,9 +17,9 @@ public class SyringesGame : MonoBehaviour
     public Text textSecondMedoc;
     public Text textTotal;
 
-
     public float speed;
     public float speedRemplissage;
+    public float speedRemplissageSeringue;
 
     private int firstMedocInt;
     private int secondMedocInt;
@@ -79,6 +81,7 @@ public class SyringesGame : MonoBehaviour
         if(start)
         {
             totalInt += Time.deltaTime * speedRemplissage;
+            tige.transform.position = new Vector3(tige.transform.position.x, tige.transform.position.y + ((speedRemplissageSeringue * Time.deltaTime)/25), tige.transform.position.z);
             total = (int) totalInt;
             textTotal.text = total.ToString();           
         }
@@ -163,10 +166,16 @@ public class SyringesGame : MonoBehaviour
     {
         if(end)
         {
-            if (firstResult == firstMedocInt && secondResult == secondMedocInt)
+            if(tige.transform.position.x>targetTige.transform.position.x)
+            {
+                Vector3 dir = (tige.transform.position - targetTige.transform.position).normalized;
+                tige.transform.position = tige.transform.position - ((dir * Time.deltaTime * speedRemplissageSeringue) /12.5f);
+            }
+            else if (firstResult == firstMedocInt && secondResult == secondMedocInt)
                 win.SetActive(true);
             else
                 lose.SetActive(true);
+
         }
     }
 }
