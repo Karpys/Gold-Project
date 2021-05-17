@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "Base Character", menuName = "Events/Base Villager Event")]
 [System.Serializable]
@@ -14,6 +15,14 @@ public class Event : ScriptableObject
 
 		public string answer;
 
+		public Impact(int Herbs, int People, int Spirit, string Answer)
+		{
+			herbs = Herbs;
+			people = People;
+			spirit = Spirit;
+			answer = Answer;
+		}
+
 		public Impact Add(Impact right) // add impacts
         {
 			right.herbs += herbs;
@@ -22,6 +31,8 @@ public class Event : ScriptableObject
 
 			return right;
         }
+
+		public static Impact operator + (Impact a, Impact b) { return new Impact(a.herbs + b.herbs, a.people + b.people, a.spirit + b.spirit, b.answer); }
 	}
 
 	[System.Serializable] public struct CharacterText

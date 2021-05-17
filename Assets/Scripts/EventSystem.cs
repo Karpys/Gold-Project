@@ -103,11 +103,7 @@ public class EventSystem : MonoBehaviour
 
 		SceneManager.UnloadSceneAsync(loadedGameScene);
 
-		if (win)
-			newImpact = newImpact.Add(current.yes);
-		else
-			newImpact = newImpact.Add(current.no);
-
+		newImpact += (win) ? current.yes : current.no;
 		ApplyImpact(newImpact);
 	}
 }
