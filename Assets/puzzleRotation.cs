@@ -17,7 +17,6 @@ public class puzzleRotation : MonoBehaviour
         for(int i = 0;i<piece.Length;i++)
         {
             int ramdon = Random.Range(0, 4);
-            Debug.Log(ramdon);
             switch(ramdon)
             {
                 case 0:
