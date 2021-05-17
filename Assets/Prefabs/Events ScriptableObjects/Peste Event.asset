@@ -22,7 +22,7 @@ MonoBehaviour:
     herbs: 1
     people: 1
     spirit: 1
-    answer: Bonne chance bg
+    answer: Ty OwO
   no:
     herbs: 2
     people: -2
@@ -36,3 +36,4 @@ MonoBehaviour:
     answer: Pas soigne
   minigame: Fuir la peste
   endedDialog: 0
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}

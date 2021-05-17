@@ -36,3 +36,4 @@ MonoBehaviour:
     answer: Nope.
   minigame: TestGame
   endedDialog: 0
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}

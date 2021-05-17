@@ -66,6 +66,9 @@ public class Event : ScriptableObject
 	[HideInInspector] public bool endedDialog = false;
 
 
+	[Header("   Character Spawn Scene")]
+	public GameObject CharacterSpawn;
+
     private void Awake()
     {
 		if (dialog != null && Application.isPlaying)

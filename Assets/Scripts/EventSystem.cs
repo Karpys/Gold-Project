@@ -70,6 +70,8 @@ public class EventSystem : MonoBehaviour
 		PlayerData.Stat.ImpactResources(impact.herbs, impact.people, impact.spirit);
 
 		current.endedDialog = true;
+
+		
 	}
 
 
