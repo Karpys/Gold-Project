@@ -10,7 +10,7 @@ public class EventSystem : MonoBehaviour
 
 	[HideInInspector] public Event current; // current Event being played
 
-	public Event[] eventPool;
+	public List<Event> eventPool;
 
 	private string loadedGameScene;
 

@@ -82,7 +82,11 @@ public class Event : ScriptableObject
 
     public void NextLine()
 	{
-		if(endedDialog) { Dialog.Manager.Close(); }
+		if(endedDialog) { 
+			Dialog.Manager.Close();
+			Debug.Log("cc");
+			GameplayLoop.Loop.StartCoroutine(GameplayLoop.Loop.EndEvent());
+		}
 
 		if (talkingCharacter < dialog.Length) // si tous les personnages ne sont pas passés
 		{

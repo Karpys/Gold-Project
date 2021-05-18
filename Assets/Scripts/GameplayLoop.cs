@@ -35,6 +35,10 @@ public class GameplayLoop : MonoBehaviour
 
     public void LaunchEvent()
     {
+        if(IdPool>EventSystem.Manager.eventPool.Count-1)
+        {
+            ResetPool();
+        }
         GameObject obj = Instantiate(EventSystem.Manager.eventPool[IdPool].CharacterSpawn, CharacterSpawn);
         CharacterSpawned = obj;
         State = GameState.CHARACTERWALKING;
@@ -51,8 +55,6 @@ public class GameplayLoop : MonoBehaviour
 
     public IEnumerator EndEvent()
     {
-
-        //StartCoroutine(GameplayLoop.Loop.EndEvent());//
         CharacterSpawned.GetComponent<CharacterEvent>().Anim.SetBool("Destroy", true);
         yield return new WaitForSeconds(1.0f);
         IdPool += 1;
@@ -64,6 +66,7 @@ public class GameplayLoop : MonoBehaviour
     public void ResetPool()
     {
         IdPool = 0;
+        EventPoolDraw.Pool.DrawEvent();
     }
 
     public enum GameState
