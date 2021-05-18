@@ -68,7 +68,13 @@ public class DragPlague : MonoBehaviour
         Draging = false;
         if(Drag.GetComponent<Sort_Plague>().Camp==PlagueZone.PlagueCamp.RIVER)
         {
-            Manage.Dead += 1;
+            if(Drag.GetComponent<Sort_Plague>().sick)
+            {
+                Manage.Herbe += 1;
+            }else
+            {
+                Manage.Dead += 1;
+            }
             Destroy(Drag);
             Manage.Village.Remove(Drag);
         }

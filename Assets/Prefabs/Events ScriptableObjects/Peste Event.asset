@@ -7,33 +7,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
-  m_Name: Test Event
+  m_Name: Peste Event
   m_EditorClassIdentifier: 
   dialog:
-  - prefabCharacter: {fileID: 5155462815790674537, guid: 44a4b45dfc4a7b043accae8d924bda6a, type: 3}
-    character: {fileID: 5155462815790674537, guid: 44a4b45dfc4a7b043accae8d924bda6a, type: 3}
+  - prefabCharacter: {fileID: 5155462815790674537, guid: 0854373b1d7a15e45a51511c33b9ae7e, type: 3}
+    character: {fileID: 0}
     line:
-    - Hello I am a test Villager
-    - Please Cure Me  :0
+    - Ohayo
+    - '*se leche la pate :3*'
   yes:
-    herbs: -1
-    people: 2
-    spirit: 0
-    answer: Cool thx
+    herbs: 1
+    people: 1
+    spirit: 1
+    answer: Ty OwO
   no:
-    herbs: -1
-    people: -1
-    spirit: -2
-    answer: What the F dude ? Not cool...
+    herbs: 2
+    people: -2
+    spirit: 2
+    answer: Pas cool
   first:
     good: 1
-    answer: Cure them
+    answer: Soigne
   second:
     good: 0
-    answer: Nope.
-  minigame: TestGame
+    answer: Pas soigne
+  minigame: Fuir la peste
   endedDialog: 0
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}

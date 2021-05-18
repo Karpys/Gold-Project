@@ -10,7 +10,7 @@ public class EventSystem : MonoBehaviour
 
 	[HideInInspector] public Event current; // current Event being played
 
-	public Event[] eventPool;
+	public List<Event> eventPool;
 
 	private string loadedGameScene;
 
@@ -70,6 +70,8 @@ public class EventSystem : MonoBehaviour
 		PlayerData.Stat.ImpactResources(impact.herbs, impact.people, impact.spirit);
 
 		current.endedDialog = true;
+
+		
 	}
 
 
