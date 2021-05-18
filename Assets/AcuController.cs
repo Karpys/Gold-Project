@@ -93,7 +93,7 @@ public class AcuController : MonoBehaviour
                 {
                     if(counter==Max)
                     {
-                        Debug.Log("YOUPI");
+                        EventSystem.Manager.EndGame(true);
                     }
                     State = SimonState.PLAYING;
                     IdRecreate.Clear();
@@ -101,7 +101,7 @@ public class AcuController : MonoBehaviour
                     StartCoroutine(AffichePoint(1));
                 }else
                 {
-                    Debug.Log("Loose");
+                    EventSystem.Manager.EndGame(false);
                 }
             }
         }
