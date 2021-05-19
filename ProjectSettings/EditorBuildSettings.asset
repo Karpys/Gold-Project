@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Dossier Remi/Fuir la peste.unity
     guid: b1e13e921f3b9e34e8883027a74f8dea
+  - enabled: 1
+    path: Assets/Dossier Remi/Chaudron.unity
+    guid: 7b08000a32abae44f8f438bcd1e29ec0
+  - enabled: 1
+    path: Assets/Dossier Remi/Acupon.unity
+    guid: 0335e312a97369a439c8dd49e7759b1f
   m_configObjects: {}

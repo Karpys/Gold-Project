@@ -28,9 +28,12 @@ public class CauldronManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        foreach (Touch touch in Input.touches)
         {
-            Tempvaria += TempUp;
+            if (touch.phase == TouchPhase.Began)
+            {
+                Tempvaria += TempUp;
+            }
         }
 
         if (Tempvaria > -0.6f)

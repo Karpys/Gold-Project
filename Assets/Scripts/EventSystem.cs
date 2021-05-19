@@ -86,6 +86,7 @@ public class EventSystem : MonoBehaviour
 		{
 			loadedGameScene = sceneName;
 			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+			RessourceUI.UIRessource.gameObject.SetActive(false);
 		}
 		else Debug.LogError(" No scene \"" + sceneName + "\" could be found.");
     }
@@ -93,7 +94,7 @@ public class EventSystem : MonoBehaviour
 	public void EndGame(bool win)
 	{
 		Dialog.Manager.Box.SetActive(true);
-
+		RessourceUI.UIRessource.gameObject.SetActive(true);
 		SceneManager.UnloadSceneAsync(loadedGameScene);
 
 		Event.Impact impact = (win) ? current.yes : current.no;
@@ -103,7 +104,7 @@ public class EventSystem : MonoBehaviour
 	public void EndGame(bool win, Event.Impact newImpact) // use when additional resources impact in minigame
 	{
 		Dialog.Manager.Box.SetActive(true);
-
+		RessourceUI.UIRessource.gameObject.SetActive(true);
 		SceneManager.UnloadSceneAsync(loadedGameScene);
 
 		newImpact += (win) ? current.yes : current.no;

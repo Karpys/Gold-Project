@@ -22,11 +22,14 @@ public class GameplayLoop : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        foreach (Touch touch in Input.touches)
         {
-            if(State==GameState.IDLE)
+            if (touch.phase == TouchPhase.Began)
             {
-            LaunchEvent();
+                if (State==GameState.IDLE)
+                {
+                    LaunchEvent();
+                }
             }
         }
     }
