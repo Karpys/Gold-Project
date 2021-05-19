@@ -61,12 +61,19 @@ public class GameplayLoop : MonoBehaviour
         Destroy(CharacterSpawned);
         CharacterSpawned = null;
         State = GameState.IDLE;
+        //Call Mouvement Sun//
+        if (IdPool > EventSystem.Manager.eventPool.Count - 1)
+        {
+            FadeController.Fade.Anim.Play("FadeScreenAnim");
+            PlayerData.Stat.Score += 1;
+        }
     }
 
     public void ResetPool()
     {
         IdPool = 0;
         EventPoolDraw.Pool.DrawEvent();
+        
     }
 
     public enum GameState
