@@ -71,6 +71,7 @@ public class EventSystem : MonoBehaviour
 
 		current.endedDialog = true;
 
+		RessourceUI.UIRessource.UpdateUIRessource();
 		
 	}
 
