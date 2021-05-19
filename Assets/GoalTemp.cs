@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoalTemp : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Cauldron Caul;
+    public CauldronManager Caul;
     public GameObject MinPos;
     public Vector2 MinMax;
     public Vector3 Position;
