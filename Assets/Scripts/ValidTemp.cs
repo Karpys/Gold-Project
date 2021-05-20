@@ -23,7 +23,7 @@ public class ValidTemp : MonoBehaviour
         transform.localScale = LocalScale;
         if(TimeValid>=TimeGoal)
         {
-            Debug.Log("End");
+            EventSystem.Manager.EndGame(true);
         }
     }
 }

@@ -12,6 +12,7 @@ public class PlayerData : MonoBehaviour
 	public int Herbs;
 	public int People;
 	public int Spirit;
+	public int Score;
 
     //	??? public int Karma ???
 

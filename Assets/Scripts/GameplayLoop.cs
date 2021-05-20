@@ -22,11 +22,14 @@ public class GameplayLoop : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        foreach (Touch touch in Input.touches)
         {
-            if(State==GameState.IDLE)
+            if (touch.phase == TouchPhase.Began)
             {
-            LaunchEvent();
+                if (State==GameState.IDLE)
+                {
+                    LaunchEvent();
+                }
             }
         }
     }
@@ -61,12 +64,20 @@ public class GameplayLoop : MonoBehaviour
         Destroy(CharacterSpawned);
         CharacterSpawned = null;
         State = GameState.IDLE;
+        //Call Mouvement Sun//
+        if (IdPool > EventSystem.Manager.eventPool.Count - 1)
+        {
+            FadeController.Fade.Anim.Play("FadeScreenAnim");
+            //Reset Sun//
+            PlayerData.Stat.Score += 1;
+        }
     }
 
     public void ResetPool()
     {
         IdPool = 0;
         EventPoolDraw.Pool.DrawEvent();
+        
     }
 
     public enum GameState

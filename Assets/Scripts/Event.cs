@@ -84,7 +84,6 @@ public class Event : ScriptableObject
 	{
 		if(endedDialog) { 
 			Dialog.Manager.Close();
-			Debug.Log("cc");
 			GameplayLoop.Loop.StartCoroutine(GameplayLoop.Loop.EndEvent());
 		}
 
