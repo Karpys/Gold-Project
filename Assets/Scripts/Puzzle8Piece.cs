@@ -7,7 +7,6 @@ public class Puzzle8Piece : MonoBehaviour
 
     public piece[] puzzle;
     public GameObject[] target;
-    public GameObject winText;
 
     public bool[] targetFree = new bool[9];
     private bool isOkay;
@@ -144,8 +143,8 @@ public class Puzzle8Piece : MonoBehaviour
         }
 
         if (win)
-            winText.SetActive(true);
-        
+            EventSystem.Manager.EndGame(true);
+
     }
 
     public void StartMove2piece(int piece1, int piece2)

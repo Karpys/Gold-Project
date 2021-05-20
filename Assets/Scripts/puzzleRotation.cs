@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class puzzleRotation : MonoBehaviour
 {
     public puzzle[] piece;
-    public GameObject win;
-    public GameObject lose;
+
     public Text timerText;
     public float time;
-    
+
+    private bool win;
+    private bool lose;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,7 @@ public class puzzleRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!lose.activeSelf)
+        if(!lose)
         {
             foreach (Touch touch in Input.touches)
             {
@@ -56,7 +57,7 @@ public class puzzleRotation : MonoBehaviour
                 }
             }
             
-            if(!win.activeSelf)
+            if(!win)
                 Timer();
         }
     }
@@ -113,7 +114,11 @@ public class puzzleRotation : MonoBehaviour
         }
 
         if (isOkay)
-            win.SetActive(true);
+        {
+            win = true;
+            EventSystem.Manager.EndGame(true);
+        }
+            
 
     }
 
@@ -126,7 +131,8 @@ public class puzzleRotation : MonoBehaviour
         if(time<0)
         {
             time = 0;
-            lose.SetActive(true);
+            lose = true;
+            EventSystem.Manager.EndGame(false);
         }
     }
 

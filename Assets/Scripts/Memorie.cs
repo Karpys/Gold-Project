@@ -7,8 +7,6 @@ public class Memorie : MonoBehaviour
 {
     public Card[] card;
     public GameObject[] Target;
-    public GameObject winText;
-    public GameObject LoseText;
     public float speed;
     public int life;
 
@@ -72,23 +70,21 @@ public class Memorie : MonoBehaviour
 
     public void Win()
     {
-        if(life == 0)
-            LoseText.SetActive(true);
-        
-        for(int i = 0;i<card.Length;i++)
+
+        for (int i = 0; i < card.Length; i++)
         {
             if (win)
                 win = !card[i].phaseCacher.activeSelf;
         }
 
         if (win)
-            winText.SetActive(true);
+            EventSystem.Manager.EndGame(false);
     }
 
     public void Lose()
     {
         if (life < 0)
-            LoseText.SetActive(true);
+            EventSystem.Manager.EndGame(false);
     }
 
      public void RamdomCardStart()

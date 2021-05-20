@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class healManager : MonoBehaviour
 {
     public Item[] item = new Item[3];
-    public GameObject win;
-    public GameObject lose;
     public Text commandeText;
 
     private string[] commande = new string[3];
@@ -63,9 +61,9 @@ public class healManager : MonoBehaviour
         if(itemUsedCompt == 3)
         {
             if (itemUsed[0] == commande[0] && itemUsed[1] == commande[1] && itemUsed[2] == commande[2])
-                win.SetActive(true);
+                EventSystem.Manager.EndGame(true);
             else
-                lose.SetActive(true);
+                EventSystem.Manager.EndGame(false); 
         }
     }
 

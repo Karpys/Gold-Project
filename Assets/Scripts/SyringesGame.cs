@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class SyringesGame : MonoBehaviour
 {
-    public GameObject win;
-    public GameObject lose;
     public GameObject syringe;
     public GameObject tige;
     public GameObject targetTige;
@@ -172,9 +170,9 @@ public class SyringesGame : MonoBehaviour
                 tige.transform.position = tige.transform.position - ((dir * Time.deltaTime * speedRemplissageSeringue) /12.5f);
             }
             else if (firstResult == firstMedocInt && secondResult == secondMedocInt)
-                win.SetActive(true);
+                EventSystem.Manager.EndGame(true);
             else
-                lose.SetActive(true);
+                EventSystem.Manager.EndGame(false);
 
         }
     }

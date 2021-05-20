@@ -8,8 +8,6 @@ public class LabirinteManager : MonoBehaviour
     public Spirit spirit;
     public GameObject[] labirintes;
     public GameObject winZone;
-    public GameObject winText;
-    public GameObject loseText;
     public GameObject start;
     public Text timer;
     public float min;
@@ -65,7 +63,7 @@ public class LabirinteManager : MonoBehaviour
     {
         if (winZone.transform.position.x < spirit.pepole.transform.position.x)
         {
-            winText.SetActive(true);
+            EventSystem.Manager.EndGame(true);
             win = true;
         }
         else if (lose)
@@ -76,7 +74,7 @@ public class LabirinteManager : MonoBehaviour
         }
             
         else if (timerP1 < 0)
-            loseText.SetActive(true);
+            EventSystem.Manager.EndGame(false);
         else
             timerP1 -= Time.deltaTime;
     }
