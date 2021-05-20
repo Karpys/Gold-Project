@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Lucas_Scene.unity
+    guid: cea75af5ffc48d24db66501492d9c5f5
+  - enabled: 1
+    path: Assets/Scenes/TestGame.unity
+    guid: 6da24c46c5c9ee54a8755bfbd5610447
+  - enabled: 1
+    path: Assets/Dossier Remi/Fuir la peste.unity
+    guid: b1e13e921f3b9e34e8883027a74f8dea
   m_configObjects: {}
