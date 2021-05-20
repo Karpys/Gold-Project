@@ -23,7 +23,7 @@ public class Dialog : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        name_txt = characterName.GetComponent<Text>();
+        name_txt = characterName.GetComponentInChildren<Text>();
         Box = dialogBox.transform.parent.gameObject;
         dialogBox_txt = dialogBox.GetComponentInChildren<Text>();
         playerAnswer1_txt = playerAnswer1.GetComponentInChildren<Text>();
