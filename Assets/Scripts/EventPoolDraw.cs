@@ -23,8 +23,9 @@ public class EventPoolDraw : MonoBehaviour
 
     public void DrawEvent()
     {
-        EventSystem.Manager.eventPool[0] = EventMatin[Random.Range(0, EventMatin.Count)];
-        EventSystem.Manager.eventPool[1] = EventMidi[Random.Range(0, EventMidi.Count)];
-        EventSystem.Manager.eventPool[2] = EventSoir[Random.Range(0, EventSoir.Count)];
+        EventSystem.Manager.eventPool.Clear();
+        EventSystem.Manager.eventPool.Add(EventMatin[Random.Range(0, EventMatin.Count)]);
+        EventSystem.Manager.eventPool.Add(EventMidi[Random.Range(0, EventMidi.Count)]);
+        EventSystem.Manager.eventPool.Add(EventSoir[Random.Range(0, EventSoir.Count)]);
     }
 }

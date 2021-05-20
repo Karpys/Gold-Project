@@ -412,10 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 0}
-  eventPool:
-  - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
-  - {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
-  - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+  eventPool: []
 --- !u!4 &133307467
 Transform:
   m_ObjectHideFlags: 0
@@ -2456,11 +2453,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventMatin:
-  - {fileID: 11400000, guid: 1389c951e2e1c9d47b234df4e10269db, type: 2}
+  - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
   EventMidi:
-  - {fileID: 11400000, guid: 11966e57b2a38db40babc81a0936affd, type: 2}
+  - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
   EventSoir:
-  - {fileID: 11400000, guid: 1389c951e2e1c9d47b234df4e10269db, type: 2}
+  - {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
   EventSpeciaux: []
 --- !u!1 &1800120743
 GameObject:
@@ -3497,7 +3494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10.999481}
+  m_AnchoredPosition: {x: 0, y: -10.99939}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054180558
