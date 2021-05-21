@@ -22,6 +22,12 @@ MonoBehaviour:
     - m_Name: Head_01
       m_Hash: 1272912740
       m_Sprite: {fileID: 7742932673909286383, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Head_02
+      m_Hash: -757708066
+      m_Sprite: {fileID: 7392498463713308503, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Head_03
+      m_Hash: -1512998328
+      m_Sprite: {fileID: 5188872874133063617, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Body
     m_Hash: 2073732236
     m_CategoryList:
@@ -31,6 +37,12 @@ MonoBehaviour:
     - m_Name: Body_01
       m_Hash: 614950782
       m_Sprite: {fileID: -5327257212310529628, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Body_02
+      m_Hash: -1112656188
+      m_Sprite: {fileID: 3457021808930706603, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Body_03
+      m_Hash: -894892462
+      m_Sprite: {fileID: -5026520900345437144, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Arm_R
     m_Hash: -1697724477
     m_CategoryList:
@@ -40,6 +52,12 @@ MonoBehaviour:
     - m_Name: Arm_R_01
       m_Hash: 2109145323
       m_Sprite: {fileID: 7116237596937438139, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Arm_R_02
+      m_Hash: -457289391
+      m_Sprite: {fileID: 2394288472158146873, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Arm_R_03
+      m_Hash: -1816567353
+      m_Sprite: {fileID: -8020052900585712190, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Arm_L
     m_Hash: 1623325344
     m_CategoryList:
@@ -49,6 +67,12 @@ MonoBehaviour:
     - m_Name: Arm_L_01
       m_Hash: -848224185
       m_Sprite: {fileID: -4563269045616366499, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Arm_L_02
+      m_Hash: 1417179645
+      m_Sprite: {fileID: 3166965327441304844, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Arm_L_03
+      m_Hash: 595542379
+      m_Sprite: {fileID: -5849077991498200994, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Hand_R
     m_Hash: -621091376
     m_CategoryList:
@@ -58,6 +82,12 @@ MonoBehaviour:
     - m_Name: Hand_R_01
       m_Hash: -439242985
       m_Sprite: {fileID: -6977861497496146685, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Hand_R_02
+      m_Hash: 2094595757
+      m_Sprite: {fileID: -3227106657018434457, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Hand_R_03
+      m_Hash: 199216699
+      m_Sprite: {fileID: 5824393724114785684, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Hand_L
     m_Hash: 552982707
     m_CategoryList:
@@ -67,6 +97,12 @@ MonoBehaviour:
     - m_Name: Hand_L_01
       m_Hash: 1427607483
       m_Sprite: {fileID: -7314813866576909028, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Hand_L_02
+      m_Hash: -870392319
+      m_Sprite: {fileID: -1142012390911088254, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Hand_L_03
+      m_Hash: -1155928425
+      m_Sprite: {fileID: -7367296381046794704, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Leg_R
     m_Hash: -1576539774
     m_CategoryList:
@@ -94,12 +130,24 @@ MonoBehaviour:
     - m_Name: Foot_R_01
       m_Hash: -1657245800
       m_Sprite: {fileID: 3957610530220565952, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Foot_R_02
+      m_Hash: 70336034
+      m_Sprite: {fileID: 5224089181365269253, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Foot_R_03
+      m_Hash: 1932922548
+      m_Sprite: {fileID: 4767773469918358491, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
   - m_Name: Foot_L
     m_Hash: 22397879
     m_CategoryList:
     - m_Name: Foot_L_00
       m_Hash: 1526300578
       m_Sprite: {fileID: 3684522259882233199, guid: 7632e46f2f0b21f45a85523687f8c797, type: 3}
-    - m_Name: 
-      m_Hash: 0
+    - m_Name: Foot_L_01
+      m_Hash: 771641140
       m_Sprite: {fileID: 3684522259882233199, guid: 8c2335e69b8efd74497c24614d9d6439, type: 3}
+    - m_Name: Foot_L_02
+      m_Hash: -1258873202
+      m_Sprite: {fileID: 4064270719950285905, guid: 55767c6ee052ee8428966b1f4ee52003, type: 3}
+    - m_Name: Foot_L_03
+      m_Hash: -1007669736
+      m_Sprite: {fileID: 8560924116452800302, guid: 66350f42e276f9b43a5543c40e5c06d8, type: 3}
