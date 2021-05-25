@@ -11,7 +11,6 @@ public class AcuController : MonoBehaviour
     public int Max;
     public int counter;
     public SimonState State;
-    public GameObject Aiguille;
     void Start()
     {
         State = SimonState.IDLE;
@@ -69,8 +68,6 @@ public class AcuController : MonoBehaviour
     {
         yield return new WaitForSeconds(0);
         Color col = ListPoint[0].GetComponent<SpriteRenderer>().color;
-        GameObject Aig = Instantiate(Aiguille, new Vector3(ListPoint[id].transform.position.x, ListPoint[id].transform.position.y + 1.5f, ListPoint[id].transform.position.z), Aiguille.transform.rotation);
-        Aig.GetComponent<AiguilleAccupon>().PosTogo = ListPoint[id].transform.position;
         col.a = 1;
         ListPoint[id].GetComponent<SpriteRenderer>().color = col;
         yield return new WaitForSeconds(0.5f);
