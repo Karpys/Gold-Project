@@ -8,6 +8,7 @@ public class SyringesGame : MonoBehaviour
     public GameObject syringe;
     public GameObject tige;
     public GameObject targetTige;
+    public GameObject targetTigeEnd;
     public GameObject firstMedoc;
     public GameObject secondMedoc;
 
@@ -76,7 +77,7 @@ public class SyringesGame : MonoBehaviour
     }
     public void Remplissage()
     {
-        if(start)
+        if(start && tige.transform.position.y < targetTigeEnd.transform.position.y)
         {
             totalInt += Time.deltaTime * speedRemplissage;
             tige.transform.position = new Vector3(tige.transform.position.x, tige.transform.position.y + ((speedRemplissageSeringue * Time.deltaTime)/25), tige.transform.position.z);
@@ -102,7 +103,7 @@ public class SyringesGame : MonoBehaviour
                 {
                     firstMedoc.transform.position = new Vector2(firstMedoc.transform.position.x - (speed * Time.deltaTime), firstMedoc.transform.position.y);
                 }
-                else if (syringe.transform.position.y > 0.5f)
+                else if (syringe.transform.position.y > -0.5f)
                 {
                     syringe.transform.position = new Vector3(syringe.transform.position.x, syringe.transform.position.y - (speed * Time.deltaTime),1);
                 }
@@ -113,11 +114,11 @@ public class SyringesGame : MonoBehaviour
             }
             else if (stepTwo)
             {
-                if (syringe.transform.position.y < 2 && syringeBack)
+                if (syringe.transform.position.y < 1 && syringeBack)
                 {
                     syringe.transform.position = new Vector3(syringe.transform.position.x, syringe.transform.position.y + (speed * Time.deltaTime),1);
                 }
-                else if (firstMedoc.transform.position.y > -7)
+                else if (firstMedoc.transform.position.y > -9)
                 {
                     syringeBack = false;
                     firstMedoc.transform.position = new Vector2(firstMedoc.transform.position.x, firstMedoc.transform.position.y - (speed * Time.deltaTime));
@@ -126,7 +127,7 @@ public class SyringesGame : MonoBehaviour
                 {
                     secondMedoc.transform.position = new Vector2(secondMedoc.transform.position.x - (speed * Time.deltaTime), secondMedoc.transform.position.y);
                 }
-                else if (syringe.transform.position.y > 0.5f)
+                else if (syringe.transform.position.y > -0.5f)
                 {
                     syringe.transform.position = new Vector3(syringe.transform.position.x, syringe.transform.position.y - (speed * Time.deltaTime),1);
                 }
@@ -137,20 +138,21 @@ public class SyringesGame : MonoBehaviour
             }
             else
             {
-                if (syringe.transform.position.y < 2 && syringeBackV2)
+                if (syringe.transform.position.y < 1 && syringeBackV2)
                 {
                     syringe.transform.position = new Vector3(syringe.transform.position.x, syringe.transform.position.y + (speed * Time.deltaTime), 1);
+                    //Debug.Log(syringe.transform.rotation.eulerAngles.z);
                 }
-                else if (secondMedoc.transform.position.y > -7)
+                else if (secondMedoc.transform.position.y > -9)
                 {
                     syringeBackV2 = false;
                     secondMedoc.transform.position = new Vector2(secondMedoc.transform.position.x, secondMedoc.transform.position.y - (speed * Time.deltaTime));
                 }
-                else if (syringe.transform.rotation.eulerAngles.z > 45)
+                else if (syringe.transform.rotation.eulerAngles.z > 315 || syringe.transform.rotation.eulerAngles.z == 0)
                 {
-                    syringe.transform.rotation = Quaternion.Slerp(syringe.transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, 45)), Time.deltaTime * speed);
+                    syringe.transform.eulerAngles = new Vector3(syringe.transform.eulerAngles.x, syringe.transform.eulerAngles.y, syringe.transform.eulerAngles.z-(speed * Time.deltaTime*50));
                 }
-                else if (syringe.transform.position.x > -6.5)
+                else if (syringe.transform.position.x > -5.5)
                 {
                     syringe.transform.position = new Vector3(syringe.transform.position.x - (speed * Time.deltaTime), syringe.transform.position.y - ((speed / 2 * Time.deltaTime)));
                 }
