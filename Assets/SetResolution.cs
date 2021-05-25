@@ -5,11 +5,18 @@ using UnityEngine;
 public class SetResolution : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float targetRatio = 16f / 9f; //The aspect ratio of your game
+    public float BaseRatio = 16f / 9f;
+    public float RatioApply;
+    public float Width;
+    public float Height;
+    
     void Start()
     {
         Camera cam = GetComponent<Camera>();
-        cam.aspect = targetRatio;
+        Width = Screen.width;
+        Height = Screen.height;
+        RatioApply = Width / Height;
+        cam.orthographicSize = cam.orthographicSize * BaseRatio / RatioApply;
     }
 
  
