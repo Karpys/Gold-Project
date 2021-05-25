@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//
 using System;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "Base Character", menuName = "Events/Base Villager Event")]
 [System.Serializable]
@@ -48,7 +50,13 @@ public class Event : ScriptableObject
 		public string answer;
 	}
 
+	[Header("   Character Spawn Scene")]
+	public GameObject CharacterSpawn;
+
+	[Header("   Interaction")]
 	public CharacterText[] dialog;
+
+	public bool isButtonEvent = true;
 
 	[Header("	Resource Impact")]
 	public Impact yes;
@@ -65,9 +73,6 @@ public class Event : ScriptableObject
 	private int dialogLine = 0;
 	[HideInInspector] public bool endedDialog = false;
 
-
-	[Header("   Character Spawn Scene")]
-	public GameObject CharacterSpawn;
 
     private void Awake()
     {
@@ -105,7 +110,12 @@ public class Event : ScriptableObject
 				++talkingCharacter;
 
 				if (talkingCharacter >= dialog.Length)
-					Dialog.Manager.Prompt(true);
+                {
+					if (isButtonEvent)
+						Dialog.Manager.Prompt(true);
+					else
+						endedDialog = true;
+                }
 			}
 		}
 	}
