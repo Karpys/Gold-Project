@@ -10,6 +10,7 @@ public class Sort_Plague : MonoBehaviour
     public int Speed;
     public Vector3 PointToGo;
     public float TimeIdle;
+    public float TimeIdleSet;
     public PlagueState State;
     public PlagueZone.PlagueCamp Camp;
     public Transform UpPoint;
@@ -39,7 +40,7 @@ public class Sort_Plague : MonoBehaviour
                 if(State==PlagueState.WALK)
                 {
                     State = PlagueState.IDLE;
-                    TimeIdle = 1.0f;
+                    TimeIdle = TimeIdleSet;
                 }
                 TimeIdle -= Time.deltaTime;
                 if(TimeIdle<=0)
