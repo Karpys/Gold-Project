@@ -519,9 +519,9 @@ MonoBehaviour:
   LocalScale: {x: 0, y: 0, z: 0}
   JaugeTemp: {fileID: 1328090776}
   DivideJauge: 0
-  Tempvaria: 0
+  Tempvaria: -0.6
   TempLose: 0.6
-  TempUp: 0.2
+  TempUp: 25
   TempGoal: 0
   TempRange: 5
   Jauge: {fileID: 657485810}
