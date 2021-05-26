@@ -8,7 +8,7 @@ public class EventSystem : MonoBehaviour
 	private static EventSystem inst;
 	public static EventSystem Manager { get => inst; }
 
-	[HideInInspector] public Event current; // current Event being played
+	 public Event current; // current Event being played
 
 	public List<Event> eventPool;
 

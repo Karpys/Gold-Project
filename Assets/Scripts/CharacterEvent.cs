@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CharacterEvent : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string characterName;
+
     public bool Dialog;
     public Animator Anim;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

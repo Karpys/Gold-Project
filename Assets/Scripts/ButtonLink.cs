@@ -12,9 +12,7 @@ public class ButtonLink : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(" 3   ");
         button = GetComponent<Button>();
-
         button.onClick.AddListener(() => GameManager.Get.PlayGame());
     }
 }

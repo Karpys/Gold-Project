@@ -12,9 +12,10 @@ public class PlayerData : MonoBehaviour
 	public int Herbs;
 	public int People;
 	public int Spirit;
+
 	public int Score;
 
-    //	??? public int Karma ???
+	public Season season = Season.Spring;
 
     private void Awake()
     {
@@ -30,4 +31,6 @@ public class PlayerData : MonoBehaviour
 		People += ppl;
 		Spirit += spi;
 	}
+
+	public bool NoPeopleLeft() { return People <= 0; }
 }

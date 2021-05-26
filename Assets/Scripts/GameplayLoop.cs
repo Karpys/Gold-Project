@@ -6,7 +6,8 @@ public class GameplayLoop : MonoBehaviour
 {
     private static GameplayLoop inst;
     public static GameplayLoop Loop { get => inst; }
-    // Start is called before the first frame update
+    
+
     public GameState State;
     public Transform CharacterSpawn;
     public GameObject CharacterSpawned;
@@ -22,6 +23,7 @@ public class GameplayLoop : MonoBehaviour
 
         DontDestroyOnLoad(this);
     }
+
     void Update()
     {
         foreach (Touch touch in Input.touches)
@@ -64,7 +66,7 @@ public class GameplayLoop : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         //condition Defeat
-
+        
 
         IdPool += 1;
         Destroy(CharacterSpawned);
@@ -93,13 +95,4 @@ public class GameplayLoop : MonoBehaviour
         CHARACTERWALKING,
         CHARACTERDIALOG,
     }
-}
-
-
-public enum Season
-{
-    Spring,
-    Summer,
-    Fall,
-    Winter
 }

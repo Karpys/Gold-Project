@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class EventPoolDraw : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    //public List<Event> EventMatin;
-    //public List<Event> EventMidi;
-    //public List<Event> EventSoir;
-    //public List<Event> EventSpeciaux;
-
     public List<Pool> seasonsPool;
     public Event tri;
 
     public List<SeasonTemplate> templatePool;
     private SeasonTemplate currentTemplate;
 
-    private Season currentSeason = Season.Spring;
-
-
+// Singleton
     private static EventPoolDraw inst;
     public static EventPoolDraw Pool { get => inst; }
 
@@ -65,8 +56,6 @@ public class EventPoolDraw : MonoBehaviour
         // Pull Event from respective Pool
         for (int i = 0; i < currentTemplate.templateList.Count; i++)
         {
-            Debug.Log("boucle for");
-
             SubPool subPool = (currentTemplate.templateList[i].minigame) ? tempPool.Minigame : tempPool.Text;
             Event toAdd = null;
             int n;
@@ -74,14 +63,12 @@ public class EventPoolDraw : MonoBehaviour
             switch (currentTemplate.templateList[i].state)
             {
                 case DayNight.Day:
-                    //pick from Pool:Day//
                     n = Random.Range(0, subPool.Day.Count);
                     toAdd = subPool.Day[n];
                     subPool.Day.RemoveAt(n);
                     break;
 
                 case DayNight.Night:
-                    Debug.Log("Night");
                     if (!spiritFound)
                     {
                         if (Random.Range(0, nightCount) == 0)
@@ -113,11 +100,15 @@ public class EventPoolDraw : MonoBehaviour
 
             EventSystem.Manager.eventPool.Add(toAdd);
         }
-
-        /*EventSystem.Manager.eventPool.Add(EventMatin[Random.Range(0, EventMatin.Count)]);
-        EventSystem.Manager.eventPool.Add(EventMidi[Random.Range(0, EventMidi.Count)]);
-        EventSystem.Manager.eventPool.Add(EventSoir[Random.Range(0, EventSoir.Count)]);*/
     }
 
-    private Pool GetSeasonPool() { return seasonsPool[(int)currentSeason]; }
+    private Pool GetSeasonPool() { return seasonsPool[(int)PlayerData.Stat.season]; }
+}
+
+public enum Season
+{
+    Spring,
+    Summer,
+    Fall,
+    Winter
 }
