@@ -17,6 +17,8 @@ public class PlagueManager : MonoBehaviour
     public Text text;
     public int Dead;
     public int Herbe;
+    public float DelaySpawn;
+    public bool MiniGameGo;
 
     void Start()
     {
@@ -28,7 +30,7 @@ public class PlagueManager : MonoBehaviour
     void Update()
     {
         
-        if(Timer>=0)
+        if(Timer>=0 && MiniGameGo)
         {
             
             Timer -= Time.deltaTime;
@@ -47,7 +49,7 @@ public class PlagueManager : MonoBehaviour
         float time = 0f;
         for (int i = 0; i < NbrSick; i++)
         {
-            time += 0.2f;
+            time += DelaySpawn;
             safe = !safe;
             StartCoroutine(Spawn(safe,time));
         }

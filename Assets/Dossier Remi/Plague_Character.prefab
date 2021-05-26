@@ -102,6 +102,7 @@ MonoBehaviour:
   Speed: 5
   PointToGo: {x: 0, y: 0, z: 0}
   TimeIdle: 0
+  TimeIdleSet: 0
   State: 0
   Camp: 0
   UpPoint: {fileID: 0}

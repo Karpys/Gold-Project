@@ -751,6 +751,8 @@ MonoBehaviour:
   text: {fileID: 2130951058}
   Dead: 0
   Herbe: 0
+  DelaySpawn: 0
+  MiniGameGo: 0
 --- !u!4 &1451065285
 Transform:
   m_ObjectHideFlags: 0
