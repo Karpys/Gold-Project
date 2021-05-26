@@ -6,14 +6,18 @@ public class Puzzle8Piece : MonoBehaviour
 {
 
     public piece[] puzzle;
+    public GameObject lastPiece;
     public GameObject[] target;
+    public int nCoupMin;
+    public int nCoupMax;
 
-    public bool[] targetFree = new bool[9];
+    private bool[] targetFree = new bool[9];
     private bool isOkay;
     private int ramdom;
     private int pieceInHand;
     private int pieceDrop;
     private int zoneFree = 8;
+    private float timeEnd = 0;
 
     private void Awake()
     {
@@ -30,7 +34,7 @@ public class Puzzle8Piece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ramdom = Random.Range(10, 21);
+        ramdom = Random.Range(nCoupMin, nCoupMax+1);
 
         for (int y = 0; y < ramdom;y++)
         {
@@ -107,8 +111,9 @@ public class Puzzle8Piece : MonoBehaviour
         
         if (pieceInHand != -1)
         {
-            puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
-            pieceDrop = pieceInHand;
+            Check(touch);
+            /*puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
+            pieceDrop = pieceInHand;*/
         }
         else
         {
@@ -123,6 +128,7 @@ public class Puzzle8Piece : MonoBehaviour
                             puzzle[pieceDrop].part.transform.position = target[i].transform.position;
                             targetFree[i] = false;
                             targetFree[puzzle[pieceDrop].zone] = true;
+                            zoneFree = puzzle[pieceDrop].zone;
                             puzzle[pieceDrop].zone = i;
                         }
                     }
@@ -131,6 +137,150 @@ public class Puzzle8Piece : MonoBehaviour
                 }
             }  
         }     
+    }
+
+    public void Check(Touch touch)
+    {
+        switch(puzzle[pieceInHand].zone)
+        {
+            case 0:
+                if(zoneFree == 1)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if(zoneFree == 3)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+
+            case 1:
+                if (zoneFree == 0 || zoneFree == 2)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z); 
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 4)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 2:
+                if (zoneFree == 1)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 5)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 3:
+                if (zoneFree == 4 )
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 0 || zoneFree == 6)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 4:
+                if (zoneFree == 3 || zoneFree == 5)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 1 || zoneFree == 7)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 5:
+                if (zoneFree == 4)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 2 || zoneFree == 8)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 6:
+                if (zoneFree == 7)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 3)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 7:
+                if (zoneFree == 6 || zoneFree == 8)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z); 
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 4)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+            case 8:
+                if (zoneFree == 7)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, puzzle[pieceInHand].part.transform.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(puzzle[pieceInHand].part.transform.position.x, target[puzzle[pieceInHand].zone].transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                if (zoneFree == 5)
+                {
+                    puzzle[pieceInHand].part.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(puzzle[pieceInHand].part.transform.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    puzzle[pieceInHand].part.transform.position = new Vector3(target[puzzle[pieceInHand].zone].transform.position.x, puzzle[pieceInHand].part.transform.position.y, puzzle[pieceInHand].part.transform.position.z);
+                    pieceDrop = pieceInHand;
+                }
+                break;
+
+        }
     }
 
     public void Win()
@@ -143,8 +293,14 @@ public class Puzzle8Piece : MonoBehaviour
         }
 
         if (win)
-            EventSystem.Manager.EndGame(true);
-
+        {
+            
+            timeEnd += Time.deltaTime;
+            if(timeEnd > 1)
+                lastPiece.SetActive(true);
+            if (timeEnd > 2)
+                EventSystem.Manager.EndGame(true);
+        }
     }
 
     public void StartMove2piece(int piece1, int piece2)
