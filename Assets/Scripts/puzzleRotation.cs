@@ -132,7 +132,7 @@ public class puzzleRotation : MonoBehaviour
                         break;
 
                     case 3:
-                        if (piece[pieceTurn[i]].piece.transform.eulerAngles.z > 1)
+                        if (piece[pieceTurn[i]].piece.transform.eulerAngles.z > 3)
                         {
                             piece[pieceTurn[i]].piece.transform.eulerAngles = new Vector3(0, 0, piece[pieceTurn[i]].piece.transform.eulerAngles.z + (speedRotation * Time.deltaTime));
                         }

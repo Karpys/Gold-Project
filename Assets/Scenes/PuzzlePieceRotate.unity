@@ -2996,7 +2996,7 @@ MonoBehaviour:
   timerText: {fileID: 720177213}
   time: 30
   speed: 1
-  speedRotation: 50
+  speedRotation: 100
 --- !u!4 &2034261996
 Transform:
   m_ObjectHideFlags: 0

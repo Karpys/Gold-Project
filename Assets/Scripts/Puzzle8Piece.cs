@@ -294,9 +294,11 @@ public class Puzzle8Piece : MonoBehaviour
 
         if (win)
         {
-            lastPiece.SetActive(true);
+            
             timeEnd += Time.deltaTime;
-            if(timeEnd>1)
+            if(timeEnd > 1)
+                lastPiece.SetActive(true);
+            if (timeEnd > 2)
                 EventSystem.Manager.EndGame(true);
         }
     }
