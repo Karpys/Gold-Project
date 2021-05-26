@@ -7,6 +7,7 @@ public class Memorie : MonoBehaviour
 {
     public Card[] card;
     public GameObject[] Target;
+    public GameObject[] lifeCard;
     public float speed;
     public float speedRotation;
     public int life;
@@ -94,7 +95,7 @@ public class Memorie : MonoBehaviour
 
     public void Lose()
     {
-        if (life < 0)
+        if (life == 0)
             EventSystem.Manager.EndGame(false);
     }
 
@@ -194,7 +195,7 @@ public class Memorie : MonoBehaviour
                     card[saveCardN2].phaseItem.SetActive(false);
                     card[saveCardN1].phaseItem.SetActive(false);
                     life--;
-
+                    lifeCard[life].SetActive(false);
                     endCheck = true;
                     Lose();
                 }
