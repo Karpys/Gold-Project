@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class ButtonLink : MonoBehaviour
 {
-    public Event.Impact newImpact;
+    private Button button;
 
-    public void EndGame(bool win) { EventSystem.Manager.EndGame(win); }
-    public void EndGameImpact(bool win) {
-        EventSystem.Manager.EndGame(win, newImpact);
+    private void Start()
+    {
+        Debug.Log(" 3   ");
+        button = GetComponent<Button>();
+
+        button.onClick.AddListener(() => GameManager.Get.PlayGame());
     }
 }
