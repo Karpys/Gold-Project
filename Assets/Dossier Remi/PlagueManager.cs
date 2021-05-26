@@ -19,9 +19,14 @@ public class PlagueManager : MonoBehaviour
     public int Herbe;
     public float DelaySpawn;
     public bool MiniGameGo;
+    public bool DependOnVillage;
 
     void Start()
     {
+        if(DependOnVillage)
+        {
+        NbrSick = Mathf.Clamp(PlayerData.Stat.People, 10,99);
+        }
         RatioSickSet = RatioSick;
         InstPlague();
     }

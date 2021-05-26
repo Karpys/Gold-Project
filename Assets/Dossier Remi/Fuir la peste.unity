@@ -753,6 +753,7 @@ MonoBehaviour:
   Herbe: 0
   DelaySpawn: 0
   MiniGameGo: 0
+  DependOnVillage: 1
 --- !u!4 &1451065285
 Transform:
   m_ObjectHideFlags: 0
