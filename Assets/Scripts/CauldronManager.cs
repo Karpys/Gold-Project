@@ -32,7 +32,7 @@ public class CauldronManager : MonoBehaviour
         {
             if (touch.phase == TouchPhase.Began)
             {
-                Tempvaria += TempUp;
+                Tempvaria += TempUp * Time.deltaTime;
             }
         }
 
@@ -46,7 +46,7 @@ public class CauldronManager : MonoBehaviour
             Jauge.TimeValid += Time.deltaTime;
         }
 
-        Temperature += Tempvaria;
+        Temperature += Mathf.Clamp(Tempvaria,-0.6f,1.8f);
         Temperature = Mathf.Clamp(Temperature, 0, TempMax);
         LocalScale.y = Temperature / DivideJauge;
         JaugeTemp.transform.localScale = LocalScale;

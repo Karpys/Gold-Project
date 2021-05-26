@@ -21,6 +21,7 @@ public class DragPlague : MonoBehaviour
 
         foreach (Touch touch in Input.touches)
         {
+            Manage.MiniGameGo = true;
             Position = Camera.main.ScreenToWorldPoint(touch.position);
             if (touch.phase == TouchPhase.Moved)
             {
