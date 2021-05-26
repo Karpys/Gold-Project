@@ -412,11 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 0}
-  eventPool:
-  - {fileID: 11400000, guid: d41d6a31fdfbed841a0f503492d491e4, type: 2}
-  - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
-  - {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
-  - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+  eventPool: []
 --- !u!4 &133307467
 Transform:
   m_ObjectHideFlags: 0
@@ -2500,13 +2496,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d8d08eccda6f94c807f48137a9a2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventMatin:
-  - {fileID: 11400000, guid: 1389c951e2e1c9d47b234df4e10269db, type: 2}
-  EventMidi:
-  - {fileID: 11400000, guid: 11966e57b2a38db40babc81a0936affd, type: 2}
-  EventSoir:
-  - {fileID: 11400000, guid: 1389c951e2e1c9d47b234df4e10269db, type: 2}
-  EventSpeciaux: []
+  seasonsPool:
+  - {fileID: 11400000, guid: d5574a6ae015e474991bfdb3c9c80050, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tri: {fileID: 0}
+  templatePool:
+  - templateList:
+    - state: 0
+      minigame: 0
+    - state: 1
+      minigame: 0
+    - state: 0
+      minigame: 1
+    - state: 0
+      minigame: 0
+    - state: 1
+      minigame: 1
+    - state: 0
+      minigame: 0
+  - templateList:
+    - state: 0
+      minigame: 0
+    - state: 1
+      minigame: 0
+    - state: 0
+      minigame: 0
+    - state: 1
+      minigame: 1
+    - state: 0
+      minigame: 0
+    - state: 1
+      minigame: 0
 --- !u!1 &1800120743
 GameObject:
   m_ObjectHideFlags: 0
