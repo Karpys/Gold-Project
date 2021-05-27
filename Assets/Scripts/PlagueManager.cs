@@ -25,7 +25,7 @@ public class PlagueManager : MonoBehaviour
     {
         if(DependOnVillage)
         {
-        NbrSick = Mathf.Clamp(PlayerData.Stat.People, 10,99);
+            NbrSick = Mathf.Clamp(PlayerData.Stat.People / 2, 10,50);
         }
         RatioSickSet = RatioSick;
         InstPlague();

@@ -744,7 +744,7 @@ MonoBehaviour:
   Prefab: {fileID: 5502922909899894570, guid: b2d2b31fb3632dd43bf8d761a6837dab, type: 3}
   CampSafe: {fileID: 1118638880}
   CampSick: {fileID: 2004564954}
-  RatioSick: 3
+  RatioSick: 5
   Village: []
   Parent: {fileID: 610027565}
   Timer: 15

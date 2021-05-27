@@ -9,9 +9,9 @@ public class PlayerData : MonoBehaviour
 
 	public string playerName = "Shaman";
 
-	public int Herbs;
-	public int People;
-	public int Spirit;
+	public int Herbs = 10;
+	public int People = 20;
+	public int Spirit = 10;
 
 	public int Score;
 
