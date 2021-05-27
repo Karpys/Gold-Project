@@ -100,6 +100,8 @@ public class EventPoolDraw : MonoBehaviour
 
             EventSystem.Manager.eventPool.Add(toAdd);
         }
+
+        EventSystem.Manager.eventPool.Add(tri);
     }
 
     private Pool GetSeasonPool() { return seasonsPool[(int)PlayerData.Stat.season]; }

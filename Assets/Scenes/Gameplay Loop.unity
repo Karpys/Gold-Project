@@ -1306,6 +1306,7 @@ MonoBehaviour:
   People: 0
   Spirit: 0
   Score: 0
+  season: 0
 --- !u!4 &856268218
 Transform:
   m_ObjectHideFlags: 0
@@ -2085,7 +2086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpriteLibraryAsset: {fileID: 11400000, guid: 7039e1ce2db5cf544ba93a476eb49720, type: 2}
+  m_SpriteLibraryAsset: {fileID: 0}
 --- !u!95 &1608542286
 Animator:
   serializedVersion: 3
@@ -2501,7 +2502,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  tri: {fileID: 0}
+  tri: {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
   templatePool:
   - templateList:
     - state: 0

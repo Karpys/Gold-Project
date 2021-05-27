@@ -24,6 +24,13 @@ public class Event : ScriptableObject
 			spirit = Spirit;
 			answer = Answer;
 		}
+		public Impact(int Herbs, int People, int Spirit)
+		{
+			herbs = Herbs;
+			people = People;
+			spirit = Spirit;
+			answer = "";
+		}
 
 		public Impact Add(Impact right) // add impacts
         {
