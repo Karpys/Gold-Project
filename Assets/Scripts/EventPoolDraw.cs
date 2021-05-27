@@ -6,7 +6,7 @@ public class EventPoolDraw : MonoBehaviour
 {
     public List<Pool> seasonsPool;
     public Event tri;
-
+    [Header("   Season Template, Day/Night Events")]
     public List<SeasonTemplate> templatePool;
     private SeasonTemplate currentTemplate;
 
@@ -100,6 +100,8 @@ public class EventPoolDraw : MonoBehaviour
 
             EventSystem.Manager.eventPool.Add(toAdd);
         }
+
+        EventSystem.Manager.eventPool.Add(tri);
     }
 
     private Pool GetSeasonPool() { return seasonsPool[(int)PlayerData.Stat.season]; }

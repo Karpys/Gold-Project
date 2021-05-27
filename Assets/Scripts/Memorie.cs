@@ -90,13 +90,13 @@ public class Memorie : MonoBehaviour
         }
 
         if (win)
-            EventSystem.Manager.EndGame(false);
+            StartCoroutine(EventSystem.Manager.EndGame(false));
     }
 
     public void Lose()
     {
         if (life == 0)
-            EventSystem.Manager.EndGame(false);
+            StartCoroutine(EventSystem.Manager.EndGame(false));
     }
 
      public void RamdomCardStart()

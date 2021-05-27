@@ -63,7 +63,7 @@ public class LabirinteManager : MonoBehaviour
     {
         if (winZone.transform.position.x < spirit.pepole.transform.position.x)
         {
-            EventSystem.Manager.EndGame(true);
+            StartCoroutine(EventSystem.Manager.EndGame(true));
             win = true;
         }
         else if (lose)
@@ -74,7 +74,7 @@ public class LabirinteManager : MonoBehaviour
         }
             
         else if (timerP1 < 0)
-            EventSystem.Manager.EndGame(false);
+            StartCoroutine(EventSystem.Manager.EndGame(false));
         else
             timerP1 -= Time.deltaTime;
     }

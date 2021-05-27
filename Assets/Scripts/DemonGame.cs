@@ -29,7 +29,7 @@ public class DemonGame : MonoBehaviour
             if (!lose)
                 timeP1 -= Time.deltaTime;
             else
-                EventSystem.Manager.EndGame(false);
+                StartCoroutine(EventSystem.Manager.EndGame(false));
 
             foreach (Touch touch in Input.touches)
             {
@@ -40,7 +40,7 @@ public class DemonGame : MonoBehaviour
             }
         }
         else
-            EventSystem.Manager.EndGame(true);
+            StartCoroutine(EventSystem.Manager.EndGame(true));
 
         timeP2 = (int)(timeP1 * 10 - ((int)timeP1) * 10);
         timer.text = ((int)timeP1).ToString() + "," + timeP2.ToString();

@@ -25,7 +25,7 @@ public class PlagueManager : MonoBehaviour
     {
         if(DependOnVillage)
         {
-        NbrSick = Mathf.Clamp(PlayerData.Stat.People, 10,99);
+            NbrSick = Mathf.Clamp(PlayerData.Stat.People / 2, 10,50);
         }
         RatioSickSet = RatioSick;
         InstPlague();
@@ -86,7 +86,7 @@ public class PlagueManager : MonoBehaviour
         Event.Impact imp = new Event.Impact();
         imp.herbs = -Herbe;
         imp.people = -Dead;
-        EventSystem.Manager.EndGame(true, imp);
+        StartCoroutine(EventSystem.Manager.EndGame(true, imp));
     }
 
     IEnumerator Spawn(bool safe,float time)
