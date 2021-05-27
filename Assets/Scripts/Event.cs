@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//
 using System;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "Base Character", menuName = "Events/Base Villager Event")]
 [System.Serializable]
@@ -37,8 +39,6 @@ public class Event : ScriptableObject
 
 	[System.Serializable] public struct CharacterText
 	{
-		public GameObject prefabCharacter; // prefab Containing CharacterController script
-		[HideInInspector] public GameObject character; // variable called by other scripts
 		public string[] line;
 	}
 
@@ -48,7 +48,13 @@ public class Event : ScriptableObject
 		public string answer;
 	}
 
+	[Header("   Character Spawn Scene")]
+	public GameObject CharacterSpawn;
+
+	[Header("   Interaction")]
 	public CharacterText[] dialog;
+
+	public bool isButtonEvent = true;
 
 	[Header("	Resource Impact")]
 	public Impact yes;
@@ -66,19 +72,6 @@ public class Event : ScriptableObject
 	[HideInInspector] public bool endedDialog = false;
 
 
-	[Header("   Character Spawn Scene")]
-	public GameObject CharacterSpawn;
-
-    private void Awake()
-    {
-		if (dialog != null && Application.isPlaying)
-		{
-			for (int i = 0; i < dialog.Length; i++)
-			{
-				if(dialog[i].prefabCharacter != null) dialog[i].character = Instantiate(dialog[i].prefabCharacter);
-			}
-		}
-    }
 
     public void NextLine()
 	{
@@ -92,7 +85,7 @@ public class Event : ScriptableObject
 			if (dialogLine < dialog[talkingCharacter].line.Length) // si le personnage a encore des lignes de dialogue
 			{
 				if (dialogLine == 0)
-					Dialog.Manager.NextDialog(dialog[talkingCharacter].line[dialogLine], GetCharacter(talkingCharacter).characterName);
+					Dialog.Manager.NextDialog(dialog[talkingCharacter].line[dialogLine], CharacterSpawn.GetComponent<CharacterEvent>().characterName);
 				else
 					Dialog.Manager.NextDialog(dialog[talkingCharacter].line[dialogLine]);
 			}
@@ -105,13 +98,13 @@ public class Event : ScriptableObject
 				++talkingCharacter;
 
 				if (talkingCharacter >= dialog.Length)
-					Dialog.Manager.Prompt(true);
+                {
+					if (isButtonEvent)
+						Dialog.Manager.Prompt(true);
+					else
+						endedDialog = true;
+                }
 			}
 		}
 	}
-
-	private CharacterController GetCharacter(int index)
-    {
-		return dialog[talkingCharacter].character.GetComponent<CharacterController>();
-    }
 }

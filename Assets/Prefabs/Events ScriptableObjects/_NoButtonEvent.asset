@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: _NoButtonEvent
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - prefabCharacter: {fileID: 5155462815790674537, guid: cee911f48769d0e45a822b6517a20ab1, type: 3}
+    character: {fileID: 0}
+    line:
+    - Yoo
+    - ...
+    - Hey eeeuuh...
+    - "Tu vas en chier cette an\xE9e"
+    - Good Luck !  :3
+  isButtonEvent: 0
+  yes:
+    herbs: 0
+    people: 0
+    spirit: 0
+    answer: 
+  no:
+    herbs: 0
+    people: 0
+    spirit: 0
+    answer: 
+  first:
+    good: 0
+    answer: 
+  second:
+    good: 0
+    answer: 
+  minigame: 
+  endedDialog: 0

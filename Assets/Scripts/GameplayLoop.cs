@@ -6,11 +6,14 @@ public class GameplayLoop : MonoBehaviour
 {
     private static GameplayLoop inst;
     public static GameplayLoop Loop { get => inst; }
-    // Start is called before the first frame update
+    
+
     public GameState State;
     public Transform CharacterSpawn;
     public GameObject CharacterSpawned;
     public int IdPool;
+
+
     // Update is called once per frame
 
     private void Awake()
@@ -20,6 +23,7 @@ public class GameplayLoop : MonoBehaviour
 
         DontDestroyOnLoad(this);
     }
+
     void Update()
     {
         foreach (Touch touch in Input.touches)
@@ -60,6 +64,10 @@ public class GameplayLoop : MonoBehaviour
     {
         CharacterSpawned.GetComponent<CharacterEvent>().Anim.SetBool("Destroy", true);
         yield return new WaitForSeconds(1.0f);
+
+        //condition Defeat
+        
+
         IdPool += 1;
         Destroy(CharacterSpawned);
         CharacterSpawned = null;

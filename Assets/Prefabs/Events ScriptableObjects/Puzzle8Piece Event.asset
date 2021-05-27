@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: Puzzle8Piece Event
   m_EditorClassIdentifier: 
-  dialog: []
+  CharacterSpawn: {fileID: 0}
+  dialog:
+  - line:
+    - j'ai la tete en bordel
+  isButtonEvent: 1
   yes:
     herbs: 0
     people: 0
@@ -24,11 +28,10 @@ MonoBehaviour:
     spirit: 0
     answer: 
   first:
-    good: 0
-    answer: 
+    good: 1
+    answer: je vais la remettre dans l'odre
   second:
     good: 0
-    answer: 
-  minigame: 
+    answer: okay zommer
+  minigame: Puzzle8Piece
   endedDialog: 0
-  CharacterSpawn: {fileID: 0}

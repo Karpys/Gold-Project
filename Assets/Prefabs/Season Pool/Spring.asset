@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cbd25d1d5eb5845b25dc04ebdf5a59, type: 3}
+  m_Name: Spring
+  m_EditorClassIdentifier: 
+  Minigame:
+    Day:
+    - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+    - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+    - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+    - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+    Night:
+    - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
+    - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
+    - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
+    - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
+    Spirit:
+    - {fileID: 11400000, guid: 9707086cadd666a40999e224d0645c31, type: 2}
+    - {fileID: 11400000, guid: 9707086cadd666a40999e224d0645c31, type: 2}
+    - {fileID: 11400000, guid: 9707086cadd666a40999e224d0645c31, type: 2}
+    - {fileID: 11400000, guid: 9707086cadd666a40999e224d0645c31, type: 2}
+  Text:
+    Day:
+    - {fileID: 11400000, guid: 304a7415a8ca74d47b319aa3ad26545d, type: 2}
+    - {fileID: 11400000, guid: 304a7415a8ca74d47b319aa3ad26545d, type: 2}
+    - {fileID: 11400000, guid: 304a7415a8ca74d47b319aa3ad26545d, type: 2}
+    - {fileID: 11400000, guid: 304a7415a8ca74d47b319aa3ad26545d, type: 2}
+    Night:
+    - {fileID: 11400000, guid: c68b60b0266a45f48a5afd3779d757bd, type: 2}
+    - {fileID: 11400000, guid: c68b60b0266a45f48a5afd3779d757bd, type: 2}
+    - {fileID: 11400000, guid: c68b60b0266a45f48a5afd3779d757bd, type: 2}
+    - {fileID: 11400000, guid: c68b60b0266a45f48a5afd3779d757bd, type: 2}
+    Spirit:
+    - {fileID: 11400000, guid: 71433de6f96efde40811d078906ab765, type: 2}
+    - {fileID: 11400000, guid: 71433de6f96efde40811d078906ab765, type: 2}
+    - {fileID: 11400000, guid: 71433de6f96efde40811d078906ab765, type: 2}
+    - {fileID: 11400000, guid: 71433de6f96efde40811d078906ab765, type: 2}

@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: Puzzule9Piece
   m_EditorClassIdentifier: 
-  dialog: []
+  CharacterSpawn: {fileID: 0}
+  dialog:
+  - line:
+    - je vois le monde a l'envers
+  isButtonEvent: 1
   yes:
     herbs: 0
     people: 0
@@ -24,11 +28,10 @@ MonoBehaviour:
     spirit: 0
     answer: 
   first:
-    good: 0
-    answer: 
+    good: 1
+    answer: tkt je gere
   second:
     good: 0
-    answer: 
-  minigame: 
+    answer: et il est beau comme ca ?
+  minigame: PuzzlePieceRotate
   endedDialog: 0
-  CharacterSpawn: {fileID: 0}

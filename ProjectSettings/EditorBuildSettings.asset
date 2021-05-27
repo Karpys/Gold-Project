@@ -15,19 +15,19 @@ EditorBuildSettings:
     path: Assets/Scenes/TestGame.unity
     guid: 6da24c46c5c9ee54a8755bfbd5610447
   - enabled: 1
-    path: Assets/Dossier Remi/Fuir la peste.unity
+    path: Assets/Scenes/Fuir la peste.unity
     guid: b1e13e921f3b9e34e8883027a74f8dea
   - enabled: 1
-    path: Assets/Dossier Remi/Chaudron.unity
+    path: Assets/Scenes/Chaudron.unity
     guid: 7b08000a32abae44f8f438bcd1e29ec0
   - enabled: 1
-    path: Assets/Dossier Remi/Acupon.unity
+    path: Assets/Scenes/Acupon.unity
     guid: 0335e312a97369a439c8dd49e7759b1f
   - enabled: 1
     path: Assets/Scenes/HealPepole.unity
     guid: 736a121e225076c499e8a820febf1307
   - enabled: 1
-    path: Assets/Scenes/LabirinteSipirit.unity
+    path: Assets/Scenes/LabirinteSpirit.unity
     guid: 16756b05bf8997a4d87c970c89ff2628
   - enabled: 1
     path: Assets/Scenes/Memorie.unity
@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SleepingDemon.unity
     guid: 8debb4c4a1438104e8f7388ce58ef12c
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3bd2cf4a8b706ea4ab056564aeaca2fe
   m_configObjects: {}
