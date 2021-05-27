@@ -15,6 +15,8 @@ public struct SubPool
 [CreateAssetMenu(fileName = "New Pool", menuName = "Pool")]
 public class Pool : ScriptableObject
 {
+	[Header("	Minigame Events")]
 	public SubPool Minigame;
+	[Header("	Events without minigame")]
 	public SubPool Text;
 }

@@ -2709,9 +2709,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seasonsPool:
   - {fileID: 11400000, guid: d5574a6ae015e474991bfdb3c9c80050, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: de4f83c92730ecf42b981c70983a6f5b, type: 2}
+  - {fileID: 11400000, guid: 3953ed9e8cd6dc44ab2c0bd2bacf6eab, type: 2}
+  - {fileID: 11400000, guid: 6ef8417f326b59b438dcb5fe3aca0b70, type: 2}
   tri: {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
   templatePool:
   - templateList:
