@@ -171,8 +171,8 @@ public class puzzleRotation : MonoBehaviour
                 for (int i = 0; i < piece.Length; i++)
                     piece[i].piece.transform.position = Vector2.Lerp(piece[i].piece.transform.position, targetEnd[i].transform.position, lerp);
             }
-            else  
-                EventSystem.Manager.EndGame(true);
+            else
+                StartCoroutine(EventSystem.Manager.EndGame(true));
         }
             
 
@@ -203,7 +203,7 @@ public class puzzleRotation : MonoBehaviour
                     piece[i].piece.transform.position = Vector2.Lerp(piece[i].piece.transform.position, targetEnd[i].transform.position, lerp);
             }
             else
-                EventSystem.Manager.EndGame(false);
+                StartCoroutine(EventSystem.Manager.EndGame(false));
         }
 
     }

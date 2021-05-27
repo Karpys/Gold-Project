@@ -299,7 +299,7 @@ public class Puzzle8Piece : MonoBehaviour
             if(timeEnd > 1)
                 lastPiece.SetActive(true);
             if (timeEnd > 2)
-                EventSystem.Manager.EndGame(true);
+                StartCoroutine(EventSystem.Manager.EndGame(true));
         }
     }
 

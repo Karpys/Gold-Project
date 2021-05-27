@@ -49,7 +49,7 @@ public class EventSystem : MonoBehaviour
 		{
 			if (current.minigame != "") // Check if Mini-Jeu !!!
 			{
-				LoadGame(current.minigame);
+				StartCoroutine(LoadGame(current.minigame));
 				return;
 			}
 			else
@@ -78,8 +78,10 @@ public class EventSystem : MonoBehaviour
 
 /// Scene Manager - Minigames
 /// 
-	public void LoadGame(string sceneName)
+	public IEnumerator LoadGame(string sceneName)
     {
+		FadeController.Fade.Anim.Play("FadeScreenAnim");
+		yield return new WaitForSeconds(1.0f);
 		Dialog.Manager.Box.SetActive(false);
 
 		if (Application.CanStreamedLevelBeLoaded(sceneName))
@@ -91,8 +93,11 @@ public class EventSystem : MonoBehaviour
 		else Debug.LogError(" No scene \"" + sceneName + "\" could be found.");
     }
 
-	public void EndGame(bool win)
+
+	public IEnumerator EndGame(bool win)
 	{
+		FadeController.Fade.Anim.Play("FadeScreenAnim");
+		yield return new WaitForSeconds(1.0f);
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
 		SceneManager.UnloadSceneAsync(loadedGameScene);
@@ -101,8 +106,10 @@ public class EventSystem : MonoBehaviour
 		ApplyImpact(impact);
     }
 
-	public void EndGame(bool win, Event.Impact newImpact) // use when additional resources impact in minigame
+	public IEnumerator EndGame(bool win, Event.Impact newImpact) // use when additional resources impact in minigame
 	{
+		FadeController.Fade.Anim.Play("FadeScreenAnim");
+		yield return new WaitForSeconds(1.0f);
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
 		SceneManager.UnloadSceneAsync(loadedGameScene);

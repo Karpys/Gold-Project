@@ -86,7 +86,7 @@ public class PlagueManager : MonoBehaviour
         Event.Impact imp = new Event.Impact();
         imp.herbs = -Herbe;
         imp.people = -Dead;
-        EventSystem.Manager.EndGame(true, imp);
+        StartCoroutine(EventSystem.Manager.EndGame(true, imp));
     }
 
     IEnumerator Spawn(bool safe,float time)

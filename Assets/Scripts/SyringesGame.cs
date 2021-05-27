@@ -172,9 +172,9 @@ public class SyringesGame : MonoBehaviour
                 tige.transform.position = tige.transform.position - ((dir * Time.deltaTime * speedRemplissageSeringue) /12.5f);
             }
             else if (firstResult == firstMedocInt && secondResult == secondMedocInt)
-                EventSystem.Manager.EndGame(true);
+                StartCoroutine(EventSystem.Manager.EndGame(true));
             else
-                EventSystem.Manager.EndGame(false);
+                StartCoroutine(EventSystem.Manager.EndGame(false));
 
         }
     }

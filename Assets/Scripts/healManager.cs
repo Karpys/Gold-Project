@@ -61,9 +61,9 @@ public class healManager : MonoBehaviour
         if(itemUsedCompt == 3)
         {
             if (itemUsed[0] == commande[0] && itemUsed[1] == commande[1] && itemUsed[2] == commande[2])
-                EventSystem.Manager.EndGame(true);
+                StartCoroutine(EventSystem.Manager.EndGame(true));
             else
-                EventSystem.Manager.EndGame(false); 
+                StartCoroutine(EventSystem.Manager.EndGame(false)); 
         }
     }
 
