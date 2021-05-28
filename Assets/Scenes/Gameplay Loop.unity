@@ -412,7 +412,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 0}
-  eventPool: []
+  eventPool:
+  - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+  - {fileID: 11400000, guid: fd03442581809cf49a1af128959f6c5e, type: 2}
+  - {fileID: 11400000, guid: e58267abf88f9f145aef3a540e360f3f, type: 2}
   pauseUI: {fileID: 971654653}
 --- !u!4 &133307467
 Transform:
@@ -752,6 +755,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621993257298, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
@@ -1541,6 +1548,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621993257298, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
@@ -2539,7 +2550,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 2043005965}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
