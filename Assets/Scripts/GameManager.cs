@@ -9,8 +9,14 @@ public class GameManager : MonoBehaviour
     private static GameManager inst;
     public static GameManager Get { get => inst; }
 
+///
+
     private List<GameObject> gameplayElements;
     public string menuScene;
+    public GameObject winScreen;
+    public GameObject defeatScreen;
+
+///
 
     private void Awake()
     {
@@ -32,17 +38,29 @@ public class GameManager : MonoBehaviour
             element.SetActive(false);
         }
 
-        GameManager.Get.LoadScene(menuScene, true);
+        LoadScene(menuScene, true);
     }
 
     public void PlayGame()
     {
-        GameManager.Get.UnloadScene(menuScene);
+        UnloadScene(menuScene);
         foreach (GameObject element in gameplayElements)
         {
             element.SetActive(true);
         }
     }
+
+    public void Win()
+    {
+
+    }
+
+    public void Defeat()
+    {
+
+    }
+
+///
 
     public void LoadScene(string sceneName, bool loadInAdditive)
     {

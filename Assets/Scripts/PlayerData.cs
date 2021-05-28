@@ -24,13 +24,26 @@ public class PlayerData : MonoBehaviour
 
 		DontDestroyOnLoad(this);
 	}
-
+   
     public void ImpactResources(int hrb, int ppl, int spi)
 	{
 		Herbs += hrb;
 		People += ppl;
 		Spirit += spi;
 	}
+
+	public void NextSeason()
+    {
+		if(season==Season.Winter)
+        {
+			season = Season.Spring;
+			//CALL END GAME ?//
+        }else
+        {
+			season += 1;
+        }
+    }
+
 
 	public bool NoPeopleLeft() { return People <= 0; }
 }

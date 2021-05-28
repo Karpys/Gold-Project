@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//
 using UnityEngine.SceneManagement;
 
 public class EventSystem : MonoBehaviour
@@ -11,8 +12,11 @@ public class EventSystem : MonoBehaviour
 	 public Event current; // current Event being played
 
 	public List<Event> eventPool;
-
 	private string loadedGameScene;
+
+	[Header("	UI Object")]
+	public GameObject pauseUI;
+
 
     private void Awake()
     {
@@ -82,13 +86,15 @@ public class EventSystem : MonoBehaviour
     {
 		FadeController.Fade.Anim.Play("FadeScreenAnim");
 		yield return new WaitForSeconds(1.0f);
-		Dialog.Manager.Box.SetActive(false);
 
 		if (Application.CanStreamedLevelBeLoaded(sceneName))
 		{
 			loadedGameScene = sceneName;
 			SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+			//
+			Dialog.Manager.Box.SetActive(false);
 			RessourceUI.UIRessource.gameObject.SetActive(false);
+			pauseUI.SetActive(false);
 		}
 		else Debug.LogError(" No scene \"" + sceneName + "\" could be found.");
     }
@@ -98,8 +104,11 @@ public class EventSystem : MonoBehaviour
 	{
 		FadeController.Fade.Anim.Play("FadeScreenAnim");
 		yield return new WaitForSeconds(1.0f);
+		//
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
+		pauseUI.SetActive(true);
+		//
 		SceneManager.UnloadSceneAsync(loadedGameScene);
 
 		Event.Impact impact = (win) ? current.yes : current.no;
@@ -110,8 +119,11 @@ public class EventSystem : MonoBehaviour
 	{
 		FadeController.Fade.Anim.Play("FadeScreenAnim");
 		yield return new WaitForSeconds(1.0f);
+		//
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
+		pauseUI.SetActive(true);
+		//
 		SceneManager.UnloadSceneAsync(loadedGameScene);
 
 		newImpact += (win) ? current.yes : current.no;

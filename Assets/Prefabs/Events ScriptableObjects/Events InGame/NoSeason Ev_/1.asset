@@ -12,24 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  CharacterSpawn: {fileID: 0}
-  dialog: []
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - Sir, I suggest that me and some villagers go into the forest to get some resources
+      even if the forest is dangerous.
   isButtonEvent: 1
   yes:
-    herbs: 0
-    people: 0
+    herbs: 10
+    people: -5
     spirit: 0
-    answer: 
+    answer: Some of our men died but we brought back some booty...
   no:
     herbs: 0
     people: 0
     spirit: 0
-    answer: 
+    answer: All right, we're pulling out
   first:
-    good: 0
-    answer: 
+    good: 1
+    answer: Yes, go ahead.
   second:
     good: 0
-    answer: 
+    answer: No, it is too dangerous
   minigame: 
   endedDialog: 0

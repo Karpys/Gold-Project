@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: 5
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - Master the son of one of the villagers sick and has a fever, i examine him 
+      and I think he catch a cold what should we do?
+  isButtonEvent: 1
+  yes:
+    herbs: -15
+    people: 0
+    spirit: -10
+    answer: Yes my lord, the kids seems to be good it was nothing
+  no:
+    herbs: 0
+    people: 0
+    spirit: 0
+    answer: apparently
+  first:
+    good: 0
+    answer: It should be fine just tell him to rest.
+  second:
+    good: 1
+    answer: Tell him to take this 3 time a day it should be fine.
+  minigame: 
+  endedDialog: 0

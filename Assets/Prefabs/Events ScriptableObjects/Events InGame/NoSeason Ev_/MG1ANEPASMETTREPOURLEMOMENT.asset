@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: MG1ANEPASMETTREPOURLEMOMENT
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - 'Oh lord of the village, the plague is spreading among the poor, without your
+      help we will have a heavy loss of life. '
+  isButtonEvent: 1
+  yes:
+    herbs: 10
+    people: 5
+    spirit: 0
+    answer: ' thank you very much, we are so grateful to you '
+  no:
+    herbs: -5
+    people: -10
+    spirit: 0
+    answer: The plague spreads, many people died and many resources had to be used
+      to stop it
+  first:
+    good: 1
+    answer: Separating sick people to care for them
+  second:
+    good: 0
+    answer: Letting the plague win over the population
+  minigame: 
+  endedDialog: 0

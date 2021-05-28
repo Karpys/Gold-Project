@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     [Header("Mask")]
-    public GameObject pauseMask;
+    public GameObject pausePanel;
     public GameObject[] target;
 
     [Header("Bouton")]
@@ -30,17 +30,17 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pauseMask.transform.position.x < targetBouton[0].transform.position.x)
+        if (pausePanel.transform.position.x < targetBouton[0].transform.position.x)
             bouton[0].SetActive(true);
         else
             bouton[0].SetActive(false);
 
-        if (pauseMask.transform.position.x < targetBouton[1].transform.position.x)
+        if (pausePanel.transform.position.x < targetBouton[1].transform.position.x)
             bouton[1].SetActive(true);
         else
             bouton[1].SetActive(false);
 
-        if (pauseMask.transform.position.x < target[1].transform.position.x + 0.5)
+        if (pausePanel.transform.position.x < target[1].transform.position.x + 0.5)
             bouton[2].SetActive(true);
         else
             bouton[2].SetActive(false);
@@ -50,7 +50,7 @@ public class PauseManager : MonoBehaviour
             lerp += Time.deltaTime * speed;
 
             if(lerp<1)
-                pauseMask.transform.position = Vector3.Lerp(pauseMask.transform.position, target[1].transform.position, lerp);
+                pausePanel.transform.position = Vector3.Lerp(pausePanel.transform.position, target[1].transform.position, lerp);
             else
                 lerp = 0;
 
@@ -60,8 +60,8 @@ public class PauseManager : MonoBehaviour
         {
             lerp += Time.deltaTime * speed;
 
-            if (pauseMask.transform.position.x!= target[0].transform.position.x)
-                pauseMask.transform.position = Vector3.Lerp(pauseMask.transform.position, target[0].transform.position, lerp);
+            if (pausePanel.transform.position.x!= target[0].transform.position.x)
+                pausePanel.transform.position = Vector3.Lerp(pausePanel.transform.position, target[0].transform.position, lerp);
             else
                 lerp = 0;
 
@@ -87,7 +87,7 @@ public class PauseManager : MonoBehaviour
 
     public void BackMenu()
     {
-        SceneManager.LoadScene(nameSceneMenu);
+        SceneManager.LoadScene(nameSceneMenu); // -> Link to gameloop
     }
 
     public void Sound(bool onOff)

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: 9
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - The patient is an elderly person, a very devout man, with breathing problems.
+      Should we give him respiratory care?
+  isButtonEvent: 1
+  yes:
+    herbs: 0
+    people: -2
+    spirit: -10
+    answer: Good sir, may the spirits bless you for taking care of the elderly.
+  no:
+    herbs: 0
+    people: -2
+    spirit: 10
+    answer: Good sir, but its dangerous to let old people with this type of problem.
+  first:
+    good: 1
+    answer: "Give her this infusion that should relieve her for a time \u2026."
+  second:
+    good: 0
+    answer: No, tell him to take a rest and make up his mind.
+  minigame: 
+  endedDialog: 0
