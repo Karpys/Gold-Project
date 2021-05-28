@@ -412,8 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 0}
-  eventPool:
-  - {fileID: 11400000, guid: 11e4872e61efde04f93a78229cbeead0, type: 2}
+  eventPool: []
   pauseUI: {fileID: 971654653}
 --- !u!4 &133307467
 Transform:
