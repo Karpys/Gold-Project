@@ -87,7 +87,7 @@ public class PauseManager : MonoBehaviour
 
     public void BackMenu()
     {
-        SceneManager.LoadScene(nameSceneMenu);
+        SceneManager.LoadScene(nameSceneMenu); // -> Link to gameloop
     }
 
     public void Sound(bool onOff)
