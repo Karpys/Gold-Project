@@ -84,8 +84,9 @@ public class EventSystem : MonoBehaviour
 /// 
 	public IEnumerator LoadGame(string sceneName)
     {
-		FadeController.Fade.Anim.Play("FadeScreenAnim");
-		yield return new WaitForSeconds(1.0f);
+		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
+		PixeliseScreen.PixelScreen.Pixelise();
+		yield return new WaitForSeconds(1);
 
 		if (Application.CanStreamedLevelBeLoaded(sceneName))
 		{
@@ -102,8 +103,9 @@ public class EventSystem : MonoBehaviour
 
 	public IEnumerator EndGame(bool win)
 	{
-		FadeController.Fade.Anim.Play("FadeScreenAnim");
-		yield return new WaitForSeconds(1.0f);
+		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
+		PixeliseScreen.PixelScreen.Pixelise();
+		yield return new WaitForSeconds(1);
 		//
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
