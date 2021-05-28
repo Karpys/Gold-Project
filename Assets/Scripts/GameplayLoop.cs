@@ -76,6 +76,7 @@ public class GameplayLoop : MonoBehaviour
         if (IdPool > EventSystem.Manager.eventPool.Count - 1)
         {
             FadeController.Fade.Anim.Play("FadeScreenAnim");
+            PlayerData.Stat.NextSeason();
             //Reset Sun//
             PlayerData.Stat.Score += 1;
         }
