@@ -77,11 +77,16 @@ public class GameplayLoop : MonoBehaviour
         {
             FadeController.Fade.Anim.Play("FadeScreenAnim");
             PlayerData.Stat.NextSeason();
+            StartCoroutine(ChangeSeasonAmbiance());
             //Reset Sun//
             PlayerData.Stat.Score += 1;
         }
     }
-
+    public IEnumerator ChangeSeasonAmbiance()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SeasonManager.Season.ChangeSeason();
+    }
     public void ResetPool()
     {
         IdPool = 0;
