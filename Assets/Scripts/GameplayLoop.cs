@@ -66,7 +66,8 @@ public class GameplayLoop : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         //condition Defeat
-        
+        if (PlayerData.Stat.NoPeopleLeft())
+            StartCoroutine(GameManager.Get.Defeat());
 
         IdPool += 1;
         Destroy(CharacterSpawned);
