@@ -14,15 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Minigame:
     Day:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
+    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
+    - {fileID: 11400000, guid: 7f9583e58ca01354d9be760ee5ef13e4, type: 2}
+    - {fileID: 11400000, guid: d7677dc8f667c1346bf8b5dd85441744, type: 2}
+    - {fileID: 11400000, guid: a796208080bdacb4a815d39e2ca8c243, type: 2}
+    - {fileID: 11400000, guid: f65c36db210e1644181f99577467051f, type: 2}
+    - {fileID: 11400000, guid: 77042b61ad4b68d4e8b783e850558f10, type: 2}
+    - {fileID: 11400000, guid: 17c40e6e2fc4c6d4293ad16425d1e06a, type: 2}
     Night:
     - {fileID: 0}
     Spirit:
     - {fileID: 0}
   Text:
     Day:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 01a6fe30aaf4cf946ba8aade46b8aa12, type: 2}
+    - {fileID: 11400000, guid: 25ec6d098490309458fbab13efea8fe7, type: 2}
+    - {fileID: 11400000, guid: ceea6d1a719b9bb4697f0ba33558657f, type: 2}
+    - {fileID: 11400000, guid: a25acf83eff4cc849aecda36223d9206, type: 2}
+    - {fileID: 11400000, guid: 5f0685dd6587e0e49bd294f1da2f5153, type: 2}
+    - {fileID: 11400000, guid: 4be2d52f0e780e24a998da8266a49514, type: 2}
+    - {fileID: 11400000, guid: e10c5044483f93f4285da9c0ea2d7f97, type: 2}
+    - {fileID: 11400000, guid: db664be328caa5f48accfd4fcd428a67, type: 2}
     Night:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
     Spirit:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}

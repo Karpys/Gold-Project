@@ -10,29 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
-  m_Name: 1
+  m_Name: 3.1hiver
   m_EditorClassIdentifier: 
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Sir, I suggest that me and some villagers go into the forest to get some resources
-      even if the forest is dangerous.
+    - 'Sir, someone is imploring to have a good harvest  : please, the spirits need
+      an offering'
   isButtonEvent: 1
   yes:
-    herbs: 10
-    people: -5
-    spirit: 0
-    answer: Some of our men died but we brought back some booty...
+    herbs: 0
+    people: 2
+    spirit: -10
+    answer: thank you i hope the spirit help me
   no:
     herbs: 0
-    people: 0
-    spirit: 0
-    answer: All right, we're pulling out
+    people: -5
+    spirit: -10
+    answer: thank you i hope the spirit help me
   first:
     good: 1
-    answer: Yes, go ahead.
+    answer: I will contact the spirits for him the harvest will be good (tell the
+      truth)
   second:
     good: 0
-    answer: No, it is too dangerous
+    answer: 'I will contact the spirits for him the harvest will be good (lie) '
   minigame: 
   endedDialog: 0

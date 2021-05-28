@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
-  m_Name: 1
+  m_Name: 9
   m_EditorClassIdentifier: 
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Sir, I suggest that me and some villagers go into the forest to get some resources
-      even if the forest is dangerous.
+    - The patient is an elderly person, a very devout man, with breathing problems.
+      Should we give him respiratory care?
   isButtonEvent: 1
   yes:
-    herbs: 10
-    people: -5
-    spirit: 0
-    answer: Some of our men died but we brought back some booty...
+    herbs: 0
+    people: -2
+    spirit: -10
+    answer: Good sir, may the spirits bless you for taking care of the elderly.
   no:
     herbs: 0
-    people: 0
-    spirit: 0
-    answer: All right, we're pulling out
+    people: -2
+    spirit: 10
+    answer: Good sir, but its dangerous to let old people with this type of problem.
   first:
     good: 1
-    answer: Yes, go ahead.
+    answer: "Give her this infusion that should relieve her for a time \u2026."
   second:
     good: 0
-    answer: No, it is too dangerous
+    answer: No, tell him to take a rest and make up his mind.
   minigame: 
   endedDialog: 0
