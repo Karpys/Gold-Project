@@ -15,8 +15,8 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Master, our resource reserves are empty, we must implore the spirits for better
-      future harvests.
+    - Master, our resource reserves are empty.
+    - We must implore the spirits for better future harvests.
   isButtonEvent: 1
   yes:
     herbs: 10
