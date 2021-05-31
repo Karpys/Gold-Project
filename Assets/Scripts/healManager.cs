@@ -10,8 +10,9 @@ public class healManager : MonoBehaviour
 
     private string[] commande = new string[3];
     private bool[] freeItem = new bool[3];
-    public string[] itemUsed = new string[3];
-    public int itemUsedCompt = 0;
+    private string[] itemUsed = new string[3];
+    private int itemUsedCompt = 0;
+    private float time = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,17 @@ public class healManager : MonoBehaviour
                             itemUsed[itemUsedCompt] = item[i].name;
                             //if (itemUsedCompt < 2)
                                 itemUsedCompt++;
+
+                            if (item[i].name == "pansement")
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.pansement, new Vector3(0, 0, 0));
+
+
+                            if (item[i].name == "desinfectant")
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.desinfectant, new Vector3(0, 0, 0));
+
+
+                            if (item[i].name == "creme")
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.creme, new Vector3(0, 0, 0));
                         }
                     }
                 }
@@ -60,10 +72,15 @@ public class healManager : MonoBehaviour
     {
         if(itemUsedCompt == 3)
         {
-            if (itemUsed[0] == commande[0] && itemUsed[1] == commande[1] && itemUsed[2] == commande[2])
-                StartCoroutine(EventSystem.Manager.EndGame(true));
-            else
-                StartCoroutine(EventSystem.Manager.EndGame(false)); 
+            time += Time.deltaTime;
+            if (time>1)
+            {
+                if (itemUsed[0] == commande[0] && itemUsed[1] == commande[1] && itemUsed[2] == commande[2])
+                    StartCoroutine(EventSystem.Manager.EndGame(true));
+                else
+                    StartCoroutine(EventSystem.Manager.EndGame(false)); 
+            }
+
         }
     }
 
