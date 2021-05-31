@@ -33,7 +33,7 @@ public class EventPoolDraw : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
 

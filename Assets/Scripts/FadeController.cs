@@ -13,7 +13,7 @@ public class FadeController : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
 }

@@ -23,7 +23,7 @@ public class EventSystem : MonoBehaviour
 		if (inst == null)
 			inst = this;
 
-		DontDestroyOnLoad(this);
+		//DontDestroyOnLoad(this);
     }
 
     public void NextEvent(Event next)

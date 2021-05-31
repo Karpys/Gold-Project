@@ -9,9 +9,12 @@ public class PlayerData : MonoBehaviour
 
 	public string playerName = "Shaman";
 
-	public int Herbs = 10;
-	public int People = 20;
-	public int Spirit = 10;
+	public int startingHerbs = 10;
+	public int startingPeople = 20;
+	public int startingSpirit = 10;
+	public int Herbs;
+	public int People;
+	public int Spirit;
 
 	public int Score;
 
@@ -22,8 +25,19 @@ public class PlayerData : MonoBehaviour
 		if (inst == null)
 			inst = this;
 
-		DontDestroyOnLoad(this);
+		//DontDestroyOnLoad(this);
+
+		Init();
 	}
+
+	public void Init()
+    {
+		season = Season.Spring;
+		Herbs = startingHerbs;
+		People = startingPeople;
+		Spirit = startingSpirit;
+		RessourceUI.UIRessource.UpdateUIRessource();
+    }
    
     public void ImpactResources(int hrb, int ppl, int spi)
 	{
@@ -36,8 +50,9 @@ public class PlayerData : MonoBehaviour
     {
 		if(season==Season.Winter)
         {
-			season = Season.Spring;
-			//CALL END GAME ?//
+			// End Game
+			StartCoroutine(GameManager.Get.Win());
+			//season = Season.Spring;
         }else
         {
 			season += 1;

@@ -16,9 +16,13 @@ public class RessourceUI : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
+    private void Start()
+    {
+        UpdateUIRessource();
+    }
 
     public void UpdateUIRessource()
     {
