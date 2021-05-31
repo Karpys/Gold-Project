@@ -79,6 +79,7 @@ public class PlagueManager : MonoBehaviour
         if(numberok==Village.Count)
         {
             Debug.Log("Sauvé");
+            AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQCw");
         }else
         {
             Debug.Log("Moooort");

@@ -68,8 +68,11 @@ public class GameplayLoop : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         //condition Defeat
-        if (PlayerData.Stat.NoPeopleLeft())
+        if (PlayerData.Stat.NoRessource())
+        {
             StartCoroutine(GameManager.Get.Defeat());
+            PlayerData.Stat.CalculateScore();
+        }
 
         IdPool += 1;
         Destroy(CharacterSpawned);

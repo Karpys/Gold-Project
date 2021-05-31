@@ -44,6 +44,51 @@ public class PlayerData : MonoBehaviour
 		Herbs += hrb;
 		People += ppl;
 		Spirit += spi;
+		ClampValue();
+	}
+
+	public int CalculateScore()
+    {
+		int Score = 0;
+		Score += Herbs * 10;
+		Score += People * 30;
+		Score += Spirit * 20;
+		//(AchievementScore>Vector3)//
+		/*if(Score>=AchievementScore.x)
+        {
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBg");
+			if(Score >= AchievementScore.y)
+            {
+				AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBA");
+				if (Score >= AchievementScore.z)
+				{ 
+					AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBQ");
+				}
+			}
+        }*/
+		return Score;
+    }
+
+	public void ClampValue()
+    {
+		/*if(Herbs>=HerbsMax)
+        {
+			Herbs = Mathf.Clamp(Herbs, 0, HerbsMax);
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAQ");
+		}
+
+		if (People >= PeopleMax)
+		{
+			People = Mathf.Clamp(People, 0, People);
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAw");
+		}
+
+		if (Spirit >= SpiritMax)
+		{
+			Spirit = Mathf.Clamp(Spirit, 0, Spirit);
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAg");
+			
+		}*/
 	}
 
 	public void NextSeason()
@@ -51,6 +96,7 @@ public class PlayerData : MonoBehaviour
 		if(season==Season.Winter)
         {
 			// End Game
+			CalculateScore();
 			StartCoroutine(GameManager.Get.Win());
 			//season = Season.Spring;
         }else
@@ -60,5 +106,14 @@ public class PlayerData : MonoBehaviour
     }
 
 
-	public bool NoPeopleLeft() { return People <= 0; }
+	public bool NoRessource() 
+	{ 
+		if(People<=0 || Herbs<=0 || Spirit<=0)
+        {
+			return true;
+        }else
+        {
+			return false;
+        }
+	}
 }
