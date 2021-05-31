@@ -15,8 +15,8 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - 'Sir, someone is imploring to have a good harvest  : please, the spirits need
-      an offering'
+    - 'Sir, someone is imploring to have a good harvest. '
+    - Please, the spirits need an offering !
   isButtonEvent: 1
   yes:
     herbs: 0

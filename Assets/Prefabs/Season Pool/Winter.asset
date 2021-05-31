@@ -23,9 +23,15 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 77042b61ad4b68d4e8b783e850558f10, type: 2}
     - {fileID: 11400000, guid: 17c40e6e2fc4c6d4293ad16425d1e06a, type: 2}
     Night:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
+    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
+    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
+    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
     Spirit:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
+    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
+    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
+    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
   Text:
     Day:
     - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
