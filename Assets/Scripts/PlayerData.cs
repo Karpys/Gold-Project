@@ -9,12 +9,18 @@ public class PlayerData : MonoBehaviour
 
 	public string playerName = "Shaman";
 
+//base value
 	public int startingHerbs = 10;
 	public int startingPeople = 20;
 	public int startingSpirit = 10;
+//value
 	public int Herbs;
 	public int People;
 	public int Spirit;
+// max value
+	public int HerbsMax;
+	public int PeopleMax;
+	public int SpiritMax;
 
 	public int Score;
 
@@ -71,7 +77,7 @@ public class PlayerData : MonoBehaviour
 
 	public void ClampValue()
     {
-		/*if(Herbs>=HerbsMax)
+		if(Herbs>=HerbsMax)
         {
 			Herbs = Mathf.Clamp(Herbs, 0, HerbsMax);
 			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAQ");
@@ -79,16 +85,16 @@ public class PlayerData : MonoBehaviour
 
 		if (People >= PeopleMax)
 		{
-			People = Mathf.Clamp(People, 0, People);
+			People = Mathf.Clamp(People, 0, PeopleMax);
 			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAw");
 		}
 
 		if (Spirit >= SpiritMax)
 		{
-			Spirit = Mathf.Clamp(Spirit, 0, Spirit);
+			Spirit = Mathf.Clamp(Spirit, 0, SpiritMax);
 			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAg");
 			
-		}*/
+		}
 	}
 
 	public void NextSeason()
