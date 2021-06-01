@@ -9,19 +9,20 @@ public class PlayerData : MonoBehaviour
 
 	public string playerName = "Shaman";
 
-//base value
+	[Header("	Base Value")]
 	public int startingHerbs = 10;
 	public int startingPeople = 20;
 	public int startingSpirit = 10;
-//value
+	[Header("	Resource")]
 	public int Herbs;
 	public int People;
 	public int Spirit;
-// max value
+	[Header("	Max Value")]
 	public int HerbsMax;
 	public int PeopleMax;
 	public int SpiritMax;
 
+	[Header("")]
 	public int Score;
 
 	public Season season = Season.Spring;
@@ -51,6 +52,8 @@ public class PlayerData : MonoBehaviour
 		People += ppl;
 		Spirit += spi;
 		ClampValue();
+
+		RessourceUI.UIRessource.AnimateUI(hrb, ppl, spi);
 	}
 
 	public int CalculateScore()

@@ -9,6 +9,14 @@ public class RessourceUI : MonoBehaviour
     public Text Leaf;
     public Text Soul;
 
+    [Header("   Colors")]
+    public Color baseColor;
+    public Color maxColor;
+
+    private Animator peopleAnim;
+    private Animator herbsAnim;
+    private Animator spiritAnim;
+
     private static RessourceUI inst;
     public static RessourceUI UIRessource { get => inst; }
     private void Awake()
@@ -21,6 +29,10 @@ public class RessourceUI : MonoBehaviour
 
     private void Start()
     {
+        peopleAnim = Village.GetComponentInParent<Animator>();
+        herbsAnim = Leaf.GetComponentInParent<Animator>();
+        spiritAnim = Soul.GetComponentInParent<Animator>();
+
         UpdateUIRessource();
     }
 
@@ -29,5 +41,35 @@ public class RessourceUI : MonoBehaviour
         Village.text = PlayerData.Stat.People.ToString();
         Leaf.text = PlayerData.Stat.Herbs.ToString();
         Soul.text = PlayerData.Stat.Spirit.ToString();
+
+        ChangeColor();
+    }
+
+    private void ChangeColor()
+    {
+        if (PlayerData.Stat.People >= PlayerData.Stat.PeopleMax)
+            Village.color = maxColor;
+        else
+            Village.color = baseColor;
+
+        if (PlayerData.Stat.Herbs >= PlayerData.Stat.HerbsMax)
+            Leaf.color = maxColor;
+        else
+            Leaf.color = baseColor;
+
+        if (PlayerData.Stat.Spirit >= PlayerData.Stat.SpiritMax)
+            Soul.color = maxColor;
+        else
+            Soul.color = baseColor;
+    }
+
+    public void AnimateUI(int herbsImpactValue, int peopleImpactValue, int spiritImpactValue)
+    {
+        herbsAnim.SetInteger("Value", herbsImpactValue);
+        if (herbsImpactValue != 0) herbsAnim.SetTrigger("TriggerAnim");
+        peopleAnim.SetInteger("Value", peopleImpactValue);
+        if(peopleImpactValue != 0) peopleAnim.SetTrigger("TriggerAnim");
+        spiritAnim.SetInteger("Value", spiritImpactValue);
+        if (spiritImpactValue != 0) spiritAnim.SetTrigger("TriggerAnim");
     }
 }
