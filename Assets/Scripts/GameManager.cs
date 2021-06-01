@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -30,6 +31,11 @@ public class GameManager : MonoBehaviour
     public GameObject dfEndTarget;
     public float defeatScrollSpeed;
 
+    [Header("Score")]
+    [Range(300, 600)] public float increaseSpeed;
+    private Text scoreText;
+
+    [Header("")]
     public static bool loadMenu = true;
 
 ///
@@ -104,6 +110,9 @@ public class GameManager : MonoBehaviour
         }
 
         winHandle.transform.position = winEndTarget.transform.position;
+
+        scoreText = winScroll.transform.Find("ScorePanel").Find("ScoreText").GetComponent<Text>();
+        StartCoroutine(ShowScore());
     }
 
     public IEnumerator Defeat()
@@ -127,6 +136,26 @@ public class GameManager : MonoBehaviour
         }
 
         dfHandle.transform.position = dfEndTarget.transform.position;
+
+        scoreText = dfScroll.transform.Find("ScorePanel").Find("ScoreText").GetComponent<Text>();
+        StartCoroutine(ShowScore());
+    }
+
+    private IEnumerator ShowScore()
+    {
+        scoreText.text = "0";
+        float scoreShowing = 0;
+        int scoreGoal = PlayerData.Stat.CalculateScore();
+
+        while(scoreShowing < scoreGoal)
+        {
+            scoreShowing += Time.deltaTime * increaseSpeed;
+            scoreShowing = Mathf.Min(scoreShowing, scoreGoal);  //Clamp
+            scoreText.text = Mathf.RoundToInt(scoreShowing).ToString();
+
+            yield return new WaitForSeconds(Time.deltaTime);
+            Debug.Log("Going Up ^ ...");
+        }
     }
 
 ///
