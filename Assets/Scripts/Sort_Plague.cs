@@ -15,6 +15,7 @@ public class Sort_Plague : MonoBehaviour
     public PlagueZone.PlagueCamp Camp;
     public Transform UpPoint;
     public Transform DownPoint;
+    
 
     void Start()
     {

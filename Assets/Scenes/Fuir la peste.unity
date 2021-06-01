@@ -571,6 +571,7 @@ MonoBehaviour:
   Draging: 0
   Manage: {fileID: 1451065284}
   Position: {x: 0, y: 0}
+  AnimPick: {fileID: 6989921339565916678, guid: f46ebff74537d8045ae9a0bcd21479be, type: 3}
 --- !u!4 &1254112022
 Transform:
   m_ObjectHideFlags: 0
