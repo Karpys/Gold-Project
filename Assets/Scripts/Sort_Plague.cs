@@ -6,7 +6,7 @@ public class Sort_Plague : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool sick;
-    public Color ColorSick;
+    public Sprite ColorSick;
     public int Speed;
     public Vector3 PointToGo;
     public float TimeIdle;
@@ -20,7 +20,7 @@ public class Sort_Plague : MonoBehaviour
     {
         if(sick)
         {
-            GetComponent<SpriteRenderer>().color = ColorSick;
+            GetComponent<SpriteRenderer>().sprite = ColorSick;
         }
         PointToGo = SelectPoint(UpPoint.position, DownPoint.position);
         transform.position = PointToGo;

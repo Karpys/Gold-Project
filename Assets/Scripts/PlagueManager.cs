@@ -20,11 +20,18 @@ public class PlagueManager : MonoBehaviour
     public float DelaySpawn;
     public bool MiniGameGo;
     public bool DependOnVillage;
+    public List<Sprite> ListBackgroundSeason;
+    public Image Background;
+    private void Awake()
+    {
+        
+    }
 
     void Start()
     {
         if(DependOnVillage)
         {
+            Background.sprite = ListBackgroundSeason[(int)PlayerData.Stat.season];
             NbrSick = Mathf.Clamp(PlayerData.Stat.People / 2, 10,50);
         }
         RatioSickSet = RatioSick;
