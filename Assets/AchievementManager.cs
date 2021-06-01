@@ -12,8 +12,6 @@ public class AchievementManager : MonoBehaviour
     {
         if (inst == null)
             inst = this;
-
-        DontDestroyOnLoad(this);
     }
     // Update is called once per frame
 
@@ -28,4 +26,13 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
+    public void SetHighScore(int Score)
+    {
+        if (GooglePlayService.Instance.HighScore < Score && GooglePlayService.Instance.isConnectedToGooglePlayServices)
+        {
+            Social.ReportScore((long)Score, "CgkIidW02PodEAIQDw", sucess => { });
+            GooglePlayService.Instance.LoadScore();
+        }
+        
+    }
 }

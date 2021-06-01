@@ -70,8 +70,9 @@ public class GameplayLoop : MonoBehaviour
         //condition Defeat
         if (PlayerData.Stat.NoRessource())
         {
-            StartCoroutine(GameManager.Get.Defeat());
             PlayerData.Stat.CalculateScore();
+            StartCoroutine(GameManager.Get.Defeat());
+            
         }
 
         IdPool += 1;
