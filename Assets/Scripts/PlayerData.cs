@@ -72,6 +72,7 @@ public class PlayerData : MonoBehaviour
 				}
 			}
         }*/
+		AchievementManager.Achieve.SetHighScore(Score);
 		return Score;
     }
 

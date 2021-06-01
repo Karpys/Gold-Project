@@ -16,6 +16,8 @@ public class GooglePlayService : MonoBehaviour
         get => _instance;
     }
 
+    public long HighScore;
+
     private void Awake()
     {
         _instance = this;
@@ -26,9 +28,8 @@ public class GooglePlayService : MonoBehaviour
         {
             Destroy(this.gameObject);
         }*/
-      /*  DontDestroyOnLoad(this.gameObject);*/
+
         PlayGamesPlatform.InitializeInstance(config);
-     /*   PlayGamesPlatform.DebugLogEnabled = true;*/
         PlayGamesPlatform.Activate();
     }
 
@@ -50,6 +51,34 @@ public class GooglePlayService : MonoBehaviour
                     break;
             }
         });
+        
     }
 
+    public void LoadScore()
+    {
+        if (isConnectedToGooglePlayServices)
+        {
+           
+            PlayGamesPlatform.Instance.LoadScores(
+                 "CgkIidW02PodEAIQDw",
+                 LeaderboardStart.PlayerCentered,
+                 1,
+                 LeaderboardCollection.Public,
+                 LeaderboardTimeSpan.AllTime,
+             (LeaderboardScoreData data) => {
+                 HighScore = data.PlayerScore.value;
+             });
+            /*ILeaderboard lb = Social.CreateLeaderboard();
+                 lb.id = "CgkIidW02PodEAIQDw";
+                 lb.LoadScores(ok =>
+                     {
+                         if(ok)
+                         {
+                             HighScore = (int)lb.localUserScore.value;
+                         }
+                     }
+
+                     );*/
+        }
+    }
 }
