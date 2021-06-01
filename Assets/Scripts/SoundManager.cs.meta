@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 8f460d556df2cc54d8b82efbf6c69f1d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - aiguille: {fileID: 8300000, guid: cdc72077ad5b53c4f859410486bda0a1, type: 3}
+  - remplicageSeringue: {fileID: 8300000, guid: f29609bc5daed0d4a82d800af39e2c4f, type: 3}
+  - feuCrepitant: {fileID: 8300000, guid: 4ffb84c4a1a1b1541a7550c4f1d125b3, type: 3}
+  - desinfectant: {fileID: 8300000, guid: 5dd3cfc93d4c45146bd2de9c00ab761c, type: 3}
+  - creme: {fileID: 8300000, guid: 530a3b7443912024b9c598d72f9c8007, type: 3}
+  - pansement: {fileID: 8300000, guid: ed08c1430702e7c4e8275cd730d4b9a6, type: 3}
+  - remousDEau: {fileID: 8300000, guid: ccf83fa347aab9e42988fa31fa4c2224, type: 3}
+  - mouvementPiece: {fileID: 8300000, guid: f5a153cc1d6af1f478e28f0c6fd87553, type: 3}
+  - deplacementPiece: {fileID: 8300000, guid: 408d2a4383345d5439583c20829e0005, type: 3}
+  - mixCard: {fileID: 8300000, guid: 39bcd8aca93c12d448c2f44a9eeed4e9, type: 3}
+  - turnCard: {fileID: 8300000, guid: 12a60b84750cc0941828f543efdf79b5, type: 3}
+  - takePeople_01: {fileID: 8300000, guid: c900229e850b4ae4ba7eeb210dd43afe, type: 3}
+  - takePeople_02: {fileID: 8300000, guid: a7d45900add8d50449bf83ce639054ff, type: 3}
+  - dropePeople_01: {fileID: 8300000, guid: 949c43046f72b4d4baaef17e17eea848, type: 3}
+  - dropePeople_02: {fileID: 8300000, guid: 8cc2416dd0c4ca149b783e3f062e5ee7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

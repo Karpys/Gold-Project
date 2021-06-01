@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SyringesGame : MonoBehaviour
 {
+    public AudioSource remplissage;
     public GameObject syringe;
     public GameObject tige;
     public GameObject targetTige;
@@ -34,6 +35,7 @@ public class SyringesGame : MonoBehaviour
     private bool start = false;
     private bool startAction = false;
     private bool end = false;
+    private bool soundAiguille = true;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +57,7 @@ public class SyringesGame : MonoBehaviour
         Verification();
         foreach (Touch touch in Input.touches)
         {
+
             if(startAction)
             {
                 if (touch.phase == TouchPhase.Began)
@@ -79,6 +82,13 @@ public class SyringesGame : MonoBehaviour
     {
         if(start && tige.transform.position.y < targetTigeEnd.transform.position.y)
         {
+            if (!remplissage.isPlaying)
+            {
+                remplissage.volume = 1;
+                remplissage.clip = SoundManager.Get.remplicageSeringue;
+                remplissage.Play();
+            }
+
             totalInt += Time.deltaTime * speedRemplissage;
             tige.transform.position = new Vector3(tige.transform.position.x, tige.transform.position.y + ((speedRemplissageSeringue * Time.deltaTime)/25), tige.transform.position.z);
             total = (int) totalInt;
@@ -86,6 +96,7 @@ public class SyringesGame : MonoBehaviour
         }
         else
         {
+            remplissage.volume = 0;
             if (firstResult == 0)
                 firstResult = total;
             else
@@ -158,6 +169,12 @@ public class SyringesGame : MonoBehaviour
                 }
                 else
                     end = true;
+                
+                if(soundAiguille && syringe.transform.position.x < -5)
+                {
+                    AudioSource.PlayClipAtPoint(SoundManager.Get.aiguille, new Vector3(0, 0, 0));
+                    soundAiguille = false;
+                }
             }
         }
     }
@@ -167,7 +184,14 @@ public class SyringesGame : MonoBehaviour
         if(end)
         {
             if(tige.transform.position.x>targetTige.transform.position.x)
-            {
+            {    
+                remplissage.volume = 1;
+                if (!remplissage.isPlaying)
+                {
+                    remplissage.clip = SoundManager.Get.remplicageSeringue;
+                    remplissage.Play();
+                }
+
                 Vector3 dir = (tige.transform.position - targetTige.transform.position).normalized;
                 tige.transform.position = tige.transform.position - ((dir * Time.deltaTime * speedRemplissageSeringue) /12.5f);
             }

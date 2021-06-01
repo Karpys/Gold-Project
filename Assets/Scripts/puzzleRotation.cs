@@ -14,6 +14,7 @@ public class puzzleRotation : MonoBehaviour
 
     private bool win;
     private bool lose;
+    private bool soundEnd = true;
     private List<int> pieceTurn = new List<int>() ;
     private float timeEnd = 0;
     private float lerp = 0;
@@ -61,13 +62,25 @@ public class puzzleRotation : MonoBehaviour
                     for (int i = 0; i < piece.Length; i++)
                     {
                         if ((zoneTouch.y < piece[i].targetTopLeft.transform.position.y && zoneTouch.y > piece[i].targetBotRight.transform.position.y) && (zoneTouch.x > piece[i].targetTopLeft.transform.position.x && zoneTouch.x < piece[i].targetBotRight.transform.position.x))
+                        {
                             pieceTurn.Add(i);
+                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                        }
                         if ((zoneTouch.y > piece[i].targetTopLeft.transform.position.y && zoneTouch.y < piece[i].targetBotRight.transform.position.y) && (zoneTouch.x > piece[i].targetTopLeft.transform.position.x && zoneTouch.x < piece[i].targetBotRight.transform.position.x))
+                        {
                             pieceTurn.Add(i);
+                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                        }
                         if ((zoneTouch.y > piece[i].targetTopLeft.transform.position.y && zoneTouch.y < piece[i].targetBotRight.transform.position.y) && (zoneTouch.x < piece[i].targetTopLeft.transform.position.x && zoneTouch.x > piece[i].targetBotRight.transform.position.x))
+                        {
                             pieceTurn.Add(i);
+                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                        }
                         if ((zoneTouch.y < piece[i].targetTopLeft.transform.position.y && zoneTouch.y > piece[i].targetBotRight.transform.position.y) && (zoneTouch.x < piece[i].targetTopLeft.transform.position.x && zoneTouch.x > piece[i].targetBotRight.transform.position.x))
+                        {
                             pieceTurn.Add(i);
+                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                        }
 
                     }
                 }
@@ -163,6 +176,11 @@ public class puzzleRotation : MonoBehaviour
 
         if (isOkay)
         {
+            if(soundEnd)
+            {
+                soundEnd = false;
+                AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+            }
             win = true;
             timeEnd += Time.deltaTime;
             if(timeEnd<1)
@@ -194,6 +212,11 @@ public class puzzleRotation : MonoBehaviour
 
         if(pieceTurn.Count == 0 && lose)
         {
+            if (soundEnd)
+            {
+                soundEnd = false;
+                AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+            }
             Debug.Log("je suis bien la");
             timeEnd += Time.deltaTime;
             if (timeEnd < 1)

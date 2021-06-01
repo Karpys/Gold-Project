@@ -21,10 +21,17 @@ public class Memorie : MonoBehaviour
     private bool rotationCardN1 = false;
     private bool rotationCardN2 = false;
     private bool endCheck = false;
+    private bool playSound = true;
+    private bool playSoundCard1 = true;
+    private bool playSoundCard2 = true;
+    private bool playSoundCardEnd = true;
+
     private float time = 0;
     private float lerp = 0;
+
     private int saveCardN1 = -1;
     private int saveCardN2 = -1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +116,12 @@ public class Memorie : MonoBehaviour
         {
             if(distribution)
             {
+                if(card[0].phaseCacher.transform.position == Target[0].transform.position && playSound)
+                {
+                    playSound = false;
+                    AudioSource.PlayClipAtPoint(SoundManager.Get.turnCard, new Vector3(0,0,0));
+                }
+
                 //Debug.Log(card[0].phaseCacher.transform.eulerAngles.y);
                 for (int i = 0; i < card.Length; i++)
                 {
@@ -131,7 +144,13 @@ public class Memorie : MonoBehaviour
                     for (int i = 0; i < card.Length; i++)    
                         card[i].phaseCacher.transform.position = Vector2.Lerp(card[i].phaseCacher.transform.position, new Vector3(0, 0, 0), lerp/10);
 
-                    if(lerp > 2)
+                    if(!playSound && lerp > 1)
+                    {
+                        playSound = true;
+                        AudioSource.PlayClipAtPoint(SoundManager.Get.mixCard, new Vector3(0, 0, 0));
+                    }
+
+                    if (lerp > 2)
                     {
                         if (card[7].zone == -1)
                         {
@@ -187,6 +206,8 @@ public class Memorie : MonoBehaviour
                     saveCardN2 = -1;
                     rotationCardN1 = false;
                     rotationCardN2 = false;
+                    playSoundCard1 = true;
+                    playSoundCard2 = true;
                     //endCheck = false;
                     Win();
                 }
@@ -202,6 +223,7 @@ public class Memorie : MonoBehaviour
                 firstCard = false;
                 check = false;
 
+
             }
         }
     }
@@ -210,6 +232,12 @@ public class Memorie : MonoBehaviour
     {
         if(saveCardN1 != -1)
         {
+            if(playSoundCard1)
+            {
+                playSoundCard1 = false;
+                AudioSource.PlayClipAtPoint(SoundManager.Get.turnCard, new Vector3(0, 0, 0));
+            }
+
             if (card[saveCardN1].phaseCacher.transform.eulerAngles.y < 90)
                 card[saveCardN1].phaseItem.SetActive(true);
 
@@ -228,6 +256,12 @@ public class Memorie : MonoBehaviour
 
         if (saveCardN2 != -1)
         {
+            if (playSoundCard2)
+            {
+                playSoundCard2 = false;
+                AudioSource.PlayClipAtPoint(SoundManager.Get.turnCard, new Vector3(0, 0, 0));
+            }
+
             if (card[saveCardN2].phaseCacher.transform.eulerAngles.y < 90)
                 card[saveCardN2].phaseItem.SetActive(true);
 
@@ -246,9 +280,13 @@ public class Memorie : MonoBehaviour
 
     public void RotationCardEnd()
     {
-        if(endCheck)
+        if (endCheck)
         {
-
+            if (playSoundCardEnd)
+            {
+                playSoundCardEnd = false;
+                AudioSource.PlayClipAtPoint(SoundManager.Get.turnCard, new Vector3(0, 0, 0));
+            }
 
             //Debug.Log((speedRotation * Time.deltaTime));
             //Debug.Log("rota " + card[saveCardN1].phaseCacher.transform.eulerAngles.y);
@@ -261,7 +299,7 @@ public class Memorie : MonoBehaviour
                 card[saveCardN1].phaseCacher.transform.eulerAngles = new Vector3(0, 180, 0);
 
             }
-                
+
             else
                 card[saveCardN1].phaseCacher.transform.eulerAngles = new Vector3(0, card[saveCardN1].phaseCacher.transform.eulerAngles.y + (speedRotation * Time.deltaTime), 0);
 
@@ -275,14 +313,17 @@ public class Memorie : MonoBehaviour
                 endCheck = false;
                 saveCardN1 = -1;
                 saveCardN2 = -1;
+                playSoundCard1 = true;
+                playSoundCard2 = true;
                 rotationCardN1 = false;
                 rotationCardN2 = false;
+
             }
             else
                 card[saveCardN2].phaseCacher.transform.eulerAngles = new Vector3(0, card[saveCardN2].phaseCacher.transform.eulerAngles.y + (speedRotation * Time.deltaTime), 0);
-
-
         }
+        else
+            playSoundCardEnd = true;
     }
 
     [System.Serializable]

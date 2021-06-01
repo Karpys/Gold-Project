@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay Loop.unity
     guid: bf6fab87777f1bf43845648858b53078
-  - enabled: 1
-    path: Assets/Scenes/Lucas_Scene.unity
-    guid: cea75af5ffc48d24db66501492d9c5f5
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/TestGame.unity
     guid: 6da24c46c5c9ee54a8755bfbd5610447
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Acupon.unity
     guid: 0335e312a97369a439c8dd49e7759b1f
   - enabled: 1
-    path: Assets/Scenes/HealPepole.unity
+    path: Assets/Scenes/HealPeople.unity
     guid: 736a121e225076c499e8a820febf1307
   - enabled: 1
     path: Assets/Scenes/LabirinteSpirit.unity

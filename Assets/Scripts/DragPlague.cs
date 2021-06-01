@@ -9,6 +9,7 @@ public class DragPlague : MonoBehaviour
     public bool Draging;
     public PlagueManager Manage;
     public Vector2 Position;
+    private bool sound = true;
     void Start()
     {
         
@@ -61,6 +62,15 @@ public class DragPlague : MonoBehaviour
     {
         Drag.GetComponent<Sort_Plague>().State = Sort_Plague.PlagueState.FINGER;
         Draging = true;
+        if(sound)
+        {
+            if(Random.Range(0,2)==0)
+                AudioSource.PlayClipAtPoint(SoundManager.Get.takePeople_01, new Vector3(0, 0, 0));
+            else
+                AudioSource.PlayClipAtPoint(SoundManager.Get.takePeople_02, new Vector3(0, 0, 0));
+            sound = false;
+        }
+
     }
 
     public void Release(GameObject Drag)
@@ -79,6 +89,11 @@ public class DragPlague : MonoBehaviour
             Destroy(Drag);
             Manage.Village.Remove(Drag);
         }
+        if (Random.Range(0, 2) == 0)
+            AudioSource.PlayClipAtPoint(SoundManager.Get.dropePeople_01, new Vector3(0, 0, 0));
+        else
+            AudioSource.PlayClipAtPoint(SoundManager.Get.dropePeople_02, new Vector3(0, 0, 0));
+        sound = true;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

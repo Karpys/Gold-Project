@@ -67,6 +67,7 @@ public class AcuController : MonoBehaviour
 
     IEnumerator DisplayPointSelect(int id)
     {
+        AudioSource.PlayClipAtPoint(SoundManager.Get.aiguille, new Vector3(0, 0, 0));
         yield return new WaitForSeconds(0);
         Color col = ListPoint[0].GetComponent<SpriteRenderer>().color;
         GameObject Aig = Instantiate(Aiguille, new Vector3(ListPoint[id].transform.position.x, ListPoint[id].transform.position.y + 1.5f, ListPoint[id].transform.position.z), Aiguille.transform.rotation);
