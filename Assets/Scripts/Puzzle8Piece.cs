@@ -10,6 +10,7 @@ public class Puzzle8Piece : MonoBehaviour
     public GameObject[] target;
     public int nCoupMin;
     public int nCoupMax;
+    public AudioSource soundDeplacement;
 
     private bool[] targetFree = new bool[9];
     private bool isOkay;
@@ -21,6 +22,11 @@ public class Puzzle8Piece : MonoBehaviour
 
     private void Awake()
     {
+        soundDeplacement.clip = SoundManager.Get.deplacementPiece;
+        soundDeplacement.Play();
+        soundDeplacement.mute = true;
+        soundDeplacement.loop = true;
+
         for(int i = 0;i<8;i++)
         {
             targetFree[i] = false;
@@ -87,12 +93,20 @@ public class Puzzle8Piece : MonoBehaviour
                 for(int i = 0;i<puzzle.Length;i++)
                 {
                     if ((zoneTouch.y < puzzle[i].targetTopLeft.transform.position.y && zoneTouch.y > puzzle[i].targetBotRight.transform.position.y) && (zoneTouch.x > puzzle[i].targetTopLeft.transform.position.x && zoneTouch.x < puzzle[i].targetBotRight.transform.position.x))
+                    {
                         pieceInHand = i;
+                        soundDeplacement.mute = false;
+                    }
+
                 }
             }
 
             if(touch.phase == TouchPhase.Ended)
+            {
                 pieceInHand = -1;
+                soundDeplacement.mute = true;
+            }
+
 
             MovePiece(touch);
         }

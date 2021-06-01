@@ -103,6 +103,10 @@ public class EventSystem : MonoBehaviour
 
 	public IEnumerator EndGame(bool win)
 	{
+		if (win)
+			AudioSource.PlayClipAtPoint(SoundManager.Get.win, new Vector3(0, 0, 0));
+		else
+			AudioSource.PlayClipAtPoint(SoundManager.Get.lose, new Vector3(0, 0, 0));
 		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
 		PixeliseScreen.PixelScreen.Pixelise();
 		yield return new WaitForSeconds(1);
@@ -119,6 +123,11 @@ public class EventSystem : MonoBehaviour
 
 	public IEnumerator EndGame(bool win, Event.Impact newImpact) // use when additional resources impact in minigame
 	{
+		if (win)
+			AudioSource.PlayClipAtPoint(SoundManager.Get.win, new Vector3(0, 0, 0));
+		else
+			AudioSource.PlayClipAtPoint(SoundManager.Get.lose, new Vector3(0, 0, 0));
+
 		FadeController.Fade.Anim.Play("FadeScreenAnim");
 		yield return new WaitForSeconds(1.0f);
 		//

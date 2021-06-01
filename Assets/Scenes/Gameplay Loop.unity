@@ -548,7 +548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3, y: 0.15}
   m_AnchorMax: {x: 0.6, y: 0.75}
-  m_AnchoredPosition: {x: -22.9, y: 17.3}
+  m_AnchoredPosition: {x: -22.90001, y: 17.3}
   m_SizeDelta: {x: 0, y: -42.829998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164380481
@@ -1280,7 +1280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3, y: 0.1}
   m_AnchorMax: {x: 0.6, y: 0.5}
-  m_AnchoredPosition: {x: 20.399994, y: -0.000015258789}
+  m_AnchoredPosition: {x: 20.399979, y: -0.000015258789}
   m_SizeDelta: {x: -50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &347850324
@@ -1538,6 +1538,66 @@ MonoBehaviour:
   Village: {fileID: 164380481}
   Leaf: {fileID: 51392228}
   Soul: {fileID: 1949376833}
+--- !u!1 &475612237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475612239}
+  - component: {fileID: 475612238}
+  m_Layer: 0
+  m_Name: soundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &475612238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475612237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f460d556df2cc54d8b82efbf6c69f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiguille: {fileID: 8300000, guid: cdc72077ad5b53c4f859410486bda0a1, type: 3}
+  remplicageSeringue: {fileID: 8300000, guid: f29609bc5daed0d4a82d800af39e2c4f, type: 3}
+  feuCrepitant: {fileID: 8300000, guid: 4ffb84c4a1a1b1541a7550c4f1d125b3, type: 3}
+  desinfectant: {fileID: 8300000, guid: 5dd3cfc93d4c45146bd2de9c00ab761c, type: 3}
+  creme: {fileID: 8300000, guid: 530a3b7443912024b9c598d72f9c8007, type: 3}
+  pansement: {fileID: 8300000, guid: ed08c1430702e7c4e8275cd730d4b9a6, type: 3}
+  remousDEau: {fileID: 8300000, guid: ccf83fa347aab9e42988fa31fa4c2224, type: 3}
+  mouvementPiece: {fileID: 8300000, guid: f5a153cc1d6af1f478e28f0c6fd87553, type: 3}
+  deplacementPiece: {fileID: 8300000, guid: 408d2a4383345d5439583c20829e0005, type: 3}
+  mixCard: {fileID: 8300000, guid: 39bcd8aca93c12d448c2f44a9eeed4e9, type: 3}
+  turnCard: {fileID: 8300000, guid: 12a60b84750cc0941828f543efdf79b5, type: 3}
+  takePeople_01: {fileID: 8300000, guid: c900229e850b4ae4ba7eeb210dd43afe, type: 3}
+  takePeople_02: {fileID: 8300000, guid: a7d45900add8d50449bf83ce639054ff, type: 3}
+  dropePeople_01: {fileID: 8300000, guid: 949c43046f72b4d4baaef17e17eea848, type: 3}
+  dropePeople_02: {fileID: 8300000, guid: 8cc2416dd0c4ca149b783e3f062e5ee7, type: 3}
+  win: {fileID: 8300000, guid: cab98bc4539a8114cb921eb87f95b4bb, type: 3}
+  lose: {fileID: 8300000, guid: 0563cd7c3279abd4292997c512044f8e, type: 3}
+--- !u!4 &475612239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475612237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 574.87604, y: 600.58185, z: -79.06687}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476146753
 GameObject:
   m_ObjectHideFlags: 0

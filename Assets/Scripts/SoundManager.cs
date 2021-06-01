@@ -16,8 +16,15 @@ public class SoundManager : MonoBehaviour
     public AudioClip pansement;
     public AudioClip remousDEau;
     public AudioClip mouvementPiece;
+    public AudioClip deplacementPiece;
     public AudioClip mixCard;
     public AudioClip turnCard;
+    public AudioClip takePeople_01;
+    public AudioClip takePeople_02;
+    public AudioClip dropePeople_01;
+    public AudioClip dropePeople_02;
+    public AudioClip win;
+    public AudioClip lose;
 
     private void Awake()
     {
