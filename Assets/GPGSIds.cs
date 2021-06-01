@@ -34,6 +34,7 @@ public static class GPGSIds
         public const string achievement_shaman_imprudent = "CgkIidW02PodEAIQCQ"; // <GPGSID>
         public const string achievement_ne_pas_se_fier_aux_apparences = "CgkIidW02PodEAIQCg"; // <GPGSID>
         public const string achievement_le_courroux_des_esprits = "CgkIidW02PodEAIQCA"; // <GPGSID>
+        public const string leaderboard_high_score = "CgkIidW02PodEAIQDw"; // <GPGSID>
         public const string achievement_un_village_en_bonne_sant = "CgkIidW02PodEAIQAw"; // <GPGSID>
 
 }
