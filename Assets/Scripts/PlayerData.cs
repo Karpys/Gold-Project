@@ -9,9 +9,18 @@ public class PlayerData : MonoBehaviour
 
 	public string playerName = "Shaman";
 
-	public int Herbs = 10;
-	public int People = 20;
-	public int Spirit = 10;
+//base value
+	public int startingHerbs = 10;
+	public int startingPeople = 20;
+	public int startingSpirit = 10;
+//value
+	public int Herbs;
+	public int People;
+	public int Spirit;
+// max value
+	public int HerbsMax;
+	public int PeopleMax;
+	public int SpiritMax;
 
 	public int Score;
 
@@ -22,22 +31,80 @@ public class PlayerData : MonoBehaviour
 		if (inst == null)
 			inst = this;
 
-		DontDestroyOnLoad(this);
+		//DontDestroyOnLoad(this);
+
+		Init();
 	}
+
+	public void Init()
+    {
+		season = Season.Spring;
+		Herbs = startingHerbs;
+		People = startingPeople;
+		Spirit = startingSpirit;
+		RessourceUI.UIRessource.UpdateUIRessource();
+    }
    
     public void ImpactResources(int hrb, int ppl, int spi)
 	{
 		Herbs += hrb;
 		People += ppl;
 		Spirit += spi;
+		ClampValue();
+	}
+
+	public int CalculateScore()
+    {
+		int Score = 0;
+		Score += Herbs * 10;
+		Score += People * 30;
+		Score += Spirit * 20;
+		//(AchievementScore>Vector3)//
+		/*if(Score>=AchievementScore.x)
+        {
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBg");
+			if(Score >= AchievementScore.y)
+            {
+				AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBA");
+				if (Score >= AchievementScore.z)
+				{ 
+					AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBQ");
+				}
+			}
+        }*/
+		return Score;
+    }
+
+	public void ClampValue()
+    {
+		if(Herbs>=HerbsMax)
+        {
+			Herbs = Mathf.Clamp(Herbs, 0, HerbsMax);
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAQ");
+		}
+
+		if (People >= PeopleMax)
+		{
+			People = Mathf.Clamp(People, 0, PeopleMax);
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAw");
+		}
+
+		if (Spirit >= SpiritMax)
+		{
+			Spirit = Mathf.Clamp(Spirit, 0, SpiritMax);
+			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAg");
+			
+		}
 	}
 
 	public void NextSeason()
     {
 		if(season==Season.Winter)
         {
-			season = Season.Spring;
-			//CALL END GAME ?//
+			// End Game
+			CalculateScore();
+			StartCoroutine(GameManager.Get.Win());
+			//season = Season.Spring;
         }else
         {
 			season += 1;
@@ -45,5 +112,14 @@ public class PlayerData : MonoBehaviour
     }
 
 
-	public bool NoPeopleLeft() { return People <= 0; }
+	public bool NoRessource() 
+	{ 
+		if(People<=0 || Herbs<=0 || Spirit<=0)
+        {
+			return true;
+        }else
+        {
+			return false;
+        }
+	}
 }

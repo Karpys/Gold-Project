@@ -13,6 +13,8 @@ public class GameplayLoop : MonoBehaviour
     public GameObject CharacterSpawned;
     public int IdPool;
 
+    [HideInInspector] public bool lockTouch = false;
+
 
     // Update is called once per frame
 
@@ -21,14 +23,14 @@ public class GameplayLoop : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     void Update()
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && !lockTouch)
             {
                 if (State==GameState.IDLE)
                 {
@@ -66,8 +68,11 @@ public class GameplayLoop : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         //condition Defeat
-        if (PlayerData.Stat.NoPeopleLeft())
+        if (PlayerData.Stat.NoRessource())
+        {
             StartCoroutine(GameManager.Get.Defeat());
+            PlayerData.Stat.CalculateScore();
+        }
 
         IdPool += 1;
         Destroy(CharacterSpawned);

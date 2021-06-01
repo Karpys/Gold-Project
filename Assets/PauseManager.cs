@@ -18,7 +18,6 @@ public class PauseManager : MonoBehaviour
 
     [Header("Name Scene")]
     public string nameSceneRetry;
-    public string nameSceneMenu;
 
     [Header("")]
     public float speed;
@@ -87,7 +86,8 @@ public class PauseManager : MonoBehaviour
 
     public void BackMenu()
     {
-        SceneManager.LoadScene(nameSceneMenu); // -> Link to gameloop
+        GameManager.loadMenu = true;
+        GameManager.Get.LoadScene(nameSceneRetry, false);
     }
 
     public void Sound(bool onOff)
@@ -98,8 +98,9 @@ public class PauseManager : MonoBehaviour
             sound.volume = 1;
     }
 
-    public void ReloadScene()
+    public void Retry()
     {
-        SceneManager.LoadScene(nameSceneRetry);
+        GameManager.loadMenu = false;
+        GameManager.Get.LoadScene(nameSceneRetry, false);
     }
 }

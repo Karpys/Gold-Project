@@ -17,7 +17,7 @@ public class SeasonManager : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
     public void ChangeSeason()
     {
