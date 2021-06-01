@@ -406,7 +406,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034412385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -712,6 +712,17 @@ MonoBehaviour:
   RatioApply: 0
   Width: 0
   Height: 0
+--- !u!114 &1357666118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+  m_PrefabInstance: {fileID: 1539633154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1451065283
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +765,13 @@ MonoBehaviour:
   Herbe: 0
   DelaySpawn: 0
   MiniGameGo: 0
-  DependOnVillage: 1
+  DependOnVillage: 0
+  ListBackgroundSeason:
+  - {fileID: 21300000, guid: 10d63c33ad1cf6c439a1417c84ba927c, type: 3}
+  - {fileID: 21300000, guid: 10d63c33ad1cf6c439a1417c84ba927c, type: 3}
+  - {fileID: 21300000, guid: b55f281c87c47af438fdc60aa61c05e2, type: 3}
+  - {fileID: 21300000, guid: 207706446462a87458d9a6b5aedbdc6f, type: 3}
+  Background: {fileID: 1357666118}
 --- !u!4 &1451065285
 Transform:
   m_ObjectHideFlags: 0
@@ -776,21 +793,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1274493473}
     m_Modifications:
+    - target: {fileID: 729852987, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: b55f281c87c47af438fdc60aa61c05e2, type: 3}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -801,6 +822,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909606621813303835, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -808,6 +833,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1274493472}
+    - target: {fileID: 3909606621993257298, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3909606621993257302, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Name
       value: Background
@@ -1027,7 +1056,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665279856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1212,7 +1241,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114139790}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
