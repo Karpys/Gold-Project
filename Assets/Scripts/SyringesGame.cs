@@ -12,6 +12,7 @@ public class SyringesGame : MonoBehaviour
     public GameObject targetTigeEnd;
     public GameObject firstMedoc;
     public GameObject secondMedoc;
+    public GameObject endPosition;
 
     public Text textFirstMedoc;
     public Text textSecondMedoc;
@@ -165,14 +166,14 @@ public class SyringesGame : MonoBehaviour
                 {
                     syringe.transform.eulerAngles = new Vector3(syringe.transform.eulerAngles.x, syringe.transform.eulerAngles.y, syringe.transform.eulerAngles.z-(speed * Time.deltaTime*50));
                 }
-                else if (syringe.transform.position.x > -5.5)
+                else if (syringe.transform.position.x > endPosition.transform.position.x)
                 {
                     syringe.transform.position = new Vector3(syringe.transform.position.x - (speed * Time.deltaTime), syringe.transform.position.y - ((speed / 2 * Time.deltaTime)));
                 }
                 else
                     end = true;
                 
-                if(soundAiguille && syringe.transform.position.x < -5)
+                if(soundAiguille && syringe.transform.position.x < endPosition.transform.position.x+1)
                 {
                     AudioSource.PlayClipAtPoint(SoundManager.Get.aiguille, new Vector3(0, 0, 0));
                     soundAiguille = false;
