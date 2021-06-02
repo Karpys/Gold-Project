@@ -128,7 +128,8 @@ public class EventSystem : MonoBehaviour
 		else
 			AudioSource.PlayClipAtPoint(SoundManager.Get.lose, new Vector3(0, 0, 0));
 
-		FadeController.Fade.Anim.Play("FadeScreenAnim");
+		//FadeController.Fade.Anim.Play("FadeScreenAnim");
+		PixeliseScreen.PixelScreen.Pixelise();
 		yield return new WaitForSeconds(1.0f);
 		//
 		Dialog.Manager.Box.SetActive(true);
