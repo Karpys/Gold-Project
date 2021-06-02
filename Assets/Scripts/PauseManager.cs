@@ -11,7 +11,6 @@ public class PauseManager : MonoBehaviour
 
     [Header("Bouton")]
     public GameObject[] bouton;
-    public GameObject[] targetBouton;
 
    [Header("AudioListener")]
     public AudioSource sound;
@@ -29,21 +28,6 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pausePanel.transform.position.x < targetBouton[0].transform.position.x)
-            bouton[0].SetActive(true);
-        else
-            bouton[0].SetActive(false);
-
-        if (pausePanel.transform.position.x < targetBouton[1].transform.position.x)
-            bouton[1].SetActive(true);
-        else
-            bouton[1].SetActive(false);
-
-        if (pausePanel.transform.position.x < target[1].transform.position.x + 0.5)
-            bouton[2].SetActive(true);
-        else
-            bouton[2].SetActive(false);
-
         if (open)
         {
             lerp += Time.deltaTime * speed;
@@ -52,7 +36,6 @@ public class PauseManager : MonoBehaviour
                 pausePanel.transform.position = Vector3.Lerp(pausePanel.transform.position, target[1].transform.position, lerp);
             else
                 lerp = 0;
-
         }
 
         if (close)
@@ -63,7 +46,6 @@ public class PauseManager : MonoBehaviour
                 pausePanel.transform.position = Vector3.Lerp(pausePanel.transform.position, target[0].transform.position, lerp);
             else
                 lerp = 0;
-
         }
     }
 
@@ -91,16 +73,19 @@ public class PauseManager : MonoBehaviour
     }
 
     public void Sound(bool onOff)
-    {
+    {/*
         if(!onOff)
             sound.volume = 0;
         else
-            sound.volume = 1;
-    }
+            sound.volume = 1;*/
 
+        bouton[1].SetActive(!onOff);
+        bouton[2].SetActive(onOff);
+    }
+    /*
     public void Retry()
     {
         GameManager.loadMenu = false;
         GameManager.Get.LoadScene(nameSceneRetry, false);
-    }
+    }*/
 }
