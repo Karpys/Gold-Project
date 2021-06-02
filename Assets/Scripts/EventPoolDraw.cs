@@ -8,7 +8,7 @@ public class EventPoolDraw : MonoBehaviour
     public Event tri;
     [Header("   Season Template, Day/Night Events")]
     public List<SeasonTemplate> templatePool;
-    private SeasonTemplate currentTemplate;
+    public SeasonTemplate currentTemplate;
 
 // Singleton
     private static EventPoolDraw inst;
