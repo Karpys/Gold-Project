@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: 24printemps
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - Doctor, a patient is allergic to pollen this season
+  isButtonEvent: 1
+  yes:
+    herbs: 0
+    people: -1
+    spirit: 0
+    answer: The poor man died.
+  no:
+    herbs: -15
+    people: 0
+    spirit: 0
+    answer: You managed to cure hime, but with a certain cost
+  first:
+    good: 1
+    answer: I can't do anything about that allergy
+  second:
+    good: 0
+    answer: I could give him some new remedie
+  minigame: 
+  endedDialog: 0

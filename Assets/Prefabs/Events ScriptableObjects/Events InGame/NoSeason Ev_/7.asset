@@ -15,24 +15,23 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - We need to organize our party to honor our spirits
+    - We need to organize our party to honour our spirits
   isButtonEvent: 1
   yes:
     herbs: 0
-    people: 0
-    spirit: -5
-    answer: The spirits are listening to you.
-  no:
-    herbs: 0
     people: 5
     spirit: 5
-    answer: Of course, and the free food at this party will be used to save the most
-      poor
+    answer: Of course, and the feast should be used to save the poorest.
+  no:
+    herbs: 0
+    people: 0
+    spirit: -10
+    answer: The spirits are listening to you.
   first:
-    good: 0
+    good: 1
     answer: Yes, it can only be good
   second:
-    good: 1
-    answer: No, they are not so kind and do not deserve it
+    good: 0
+    answer: No, they do not deserve it.
   minigame: 
   endedDialog: 0

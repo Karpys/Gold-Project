@@ -15,13 +15,15 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - 'Dear doctor, many people have health problems in the village and need care. '
+    - 'We have found a person who is likely to carry a virus, '
+    - Should we not vaccinate them so that they are no longer contagious ?
+    - 'But it might cost a lot of medicine... '
   isButtonEvent: 1
   yes:
-    herbs: -5
+    herbs: -20
     people: 10
     spirit: 0
-    answer: 'You are so kind to have used your medicinal plants to heal us '
+    answer: You are too kind.
   no:
     herbs: 0
     people: -10
@@ -29,9 +31,9 @@ MonoBehaviour:
     answer: 'People''s health worsened and some died but medicinal plants were saved '
   first:
     good: 1
-    answer: Healing the people
+    answer: Heal the people
   second:
     good: 0
-    answer: Not listening to the needs of residents
+    answer: Don't listen to the needs of residents
   minigame: HealPeople
   endedDialog: 0

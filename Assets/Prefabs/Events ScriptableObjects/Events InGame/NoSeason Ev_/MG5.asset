@@ -15,12 +15,12 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Excuse me for this request, we were asking for one of your miracle preparations
-      for the villagers.
+    - 'Excuse me for this request, '
+    - The village is asking for one of your miracle preparations.
   isButtonEvent: 1
   yes:
-    herbs: -10
-    people: 20
+    herbs: -12
+    people: 12
     spirit: 0
     answer: 'The preparation of the cauldron saved us, but many plants were used '
   no:
@@ -31,9 +31,9 @@ MonoBehaviour:
       has dropped.. '
   first:
     good: 0
-    answer: do not prepare the cauldron
+    answer: Refuse to do it
   second:
     good: 1
-    answer: prepare the cauldron
+    answer: Prepare the cauldron
   minigame: Chaudron
   endedDialog: 0

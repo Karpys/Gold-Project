@@ -14,23 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Minigame:
     Day:
-    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
-    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
-    - {fileID: 11400000, guid: 7f9583e58ca01354d9be760ee5ef13e4, type: 2}
-    - {fileID: 11400000, guid: d7677dc8f667c1346bf8b5dd85441744, type: 2}
     - {fileID: 11400000, guid: a796208080bdacb4a815d39e2ca8c243, type: 2}
-    - {fileID: 11400000, guid: f65c36db210e1644181f99577467051f, type: 2}
     - {fileID: 11400000, guid: 77042b61ad4b68d4e8b783e850558f10, type: 2}
     - {fileID: 11400000, guid: 17c40e6e2fc4c6d4293ad16425d1e06a, type: 2}
     Night:
-    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
-    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
-    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
-    - {fileID: 11400000, guid: 7b6abac4b34a8984986b450e17a0fd47, type: 2}
+    - {fileID: 11400000, guid: a796208080bdacb4a815d39e2ca8c243, type: 2}
+    - {fileID: 11400000, guid: f65c36db210e1644181f99577467051f, type: 2}
     Spirit:
-    - {fileID: 11400000, guid: 7f9583e58ca01354d9be760ee5ef13e4, type: 2}
-    - {fileID: 11400000, guid: 7f9583e58ca01354d9be760ee5ef13e4, type: 2}
-    - {fileID: 11400000, guid: 7f9583e58ca01354d9be760ee5ef13e4, type: 2}
+    - {fileID: 11400000, guid: a7ff9583c49b7c84fada38dbe8123b81, type: 2}
     - {fileID: 11400000, guid: 7f9583e58ca01354d9be760ee5ef13e4, type: 2}
   Text:
     Day:
@@ -39,17 +30,20 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 109128ced9a10a841a1c118eacec6cbc, type: 2}
     - {fileID: 11400000, guid: ceea6d1a719b9bb4697f0ba33558657f, type: 2}
     - {fileID: 11400000, guid: a25acf83eff4cc849aecda36223d9206, type: 2}
-    - {fileID: 11400000, guid: 5f0685dd6587e0e49bd294f1da2f5153, type: 2}
-    - {fileID: 11400000, guid: 4be2d52f0e780e24a998da8266a49514, type: 2}
-    - {fileID: 11400000, guid: e10c5044483f93f4285da9c0ea2d7f97, type: 2}
     - {fileID: 11400000, guid: db664be328caa5f48accfd4fcd428a67, type: 2}
+    - {fileID: 11400000, guid: 3e247071f7de0224f8824534f56c9036, type: 2}
+    - {fileID: 11400000, guid: 7ac8227e1ed798a48b1a349d2d0ca9a5, type: 2}
+    - {fileID: 11400000, guid: 48277f1e871e4c8468582ac81f421bc9, type: 2}
+    - {fileID: 11400000, guid: cb2631e8abee1d544b1caf82b5573376, type: 2}
+    - {fileID: 11400000, guid: d03b17f3ae970b04f944e995a731beac, type: 2}
     Night:
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 71a698c24e10e05469bc6fa6b6eb7aed, type: 2}
+    - {fileID: 11400000, guid: 4be2d52f0e780e24a998da8266a49514, type: 2}
+    - {fileID: 11400000, guid: 0cf9607a18ab0b9448a1d53f1f12f38a, type: 2}
+    - {fileID: 11400000, guid: e10c5044483f93f4285da9c0ea2d7f97, type: 2}
     Spirit:
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
-    - {fileID: 11400000, guid: 1ffc0678fe50f884f90051bc438d1739, type: 2}
+    - {fileID: 11400000, guid: 8f2ebf7f71ab64e41bbf26caf6184ad7, type: 2}
+    - {fileID: 11400000, guid: 8d2fdbadee4d056498dd1fcf5a069c4f, type: 2}
+    - {fileID: 11400000, guid: d17e9d929238a0e4ebf7d764736e4ffe, type: 2}
+    - {fileID: 11400000, guid: 8a84103b9386aa942a9f9c31eb8e0f3a, type: 2}
+    - {fileID: 11400000, guid: ba4520f66df894945a60745824c486d0, type: 2}

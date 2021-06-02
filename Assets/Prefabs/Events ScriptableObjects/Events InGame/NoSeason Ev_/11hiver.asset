@@ -10,30 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
-  m_Name: MG1ANEPASMETTREPOURLEMOMENT
+  m_Name: 11hiver
   m_EditorClassIdentifier: 
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - 'Oh lord of the village, the plague is spreading among the poor, without your
-      help we will have a heavy loss of life. '
+    - In this cold winter, we lack animal skins to warm us and cover us
   isButtonEvent: 1
   yes:
-    herbs: 10
-    people: 5
+    herbs: 15
+    people: 0
     spirit: 0
-    answer: ' thank you very much, we are so grateful to you '
+    answer: We found  a whole spared place of medicinal herbs in the snow !
   no:
-    herbs: -5
-    people: -10
+    herbs: 0
+    people: 0
     spirit: 0
-    answer: The plague spreads, many people died and many resources had to be used
-      to stop it
+    answer: As you wish.
   first:
     good: 1
-    answer: Separating sick people to care for them
+    answer: You can go hunting at this location
   second:
     good: 0
-    answer: Letting the plague win over the population
+    answer: No you're only catching a cold out there
   minigame: 
   endedDialog: 0

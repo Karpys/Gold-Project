@@ -15,24 +15,24 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - The patient is an elderly person, a very devout man, with breathing problems.
-      Should we give him respiratory care?
+    - 'The patient is an elderly monk, a very devout man, with breathing problems. '
+    - Should we give him respiratory care?
   isButtonEvent: 1
   yes:
-    herbs: 0
-    people: -2
-    spirit: -10
+    herbs: -2
+    people: 2
+    spirit: 10
     answer: Good sir, may the spirits bless you for taking care of the elderly.
   no:
     herbs: 0
     people: -2
-    spirit: 10
+    spirit: -10
     answer: Good sir, but its dangerous to let old people with this type of problem.
   first:
     good: 1
-    answer: "Give her this infusion that should relieve her for a time \u2026."
+    answer: Give them this, it should relieve her for a time
   second:
     good: 0
-    answer: No, tell him to take a rest and make up his mind.
+    answer: No, they need to take make up his mind.
   minigame: 
   endedDialog: 0

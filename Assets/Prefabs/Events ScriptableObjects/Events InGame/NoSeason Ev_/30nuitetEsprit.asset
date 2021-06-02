@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: 30nuitetEsprit
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - Hello human I am in a good mood tonight, so I am gonna let you choose a sacrifice
+      or an offering ?
+  isButtonEvent: 1
+  yes:
+    herbs: 0
+    people: -10
+    spirit: 4
+    answer: Fine choice, my friends love those small ones.
+  no:
+    herbs: 0
+    people: 0
+    spirit: -13
+    answer: Tsk, it should be fine, but don't think you can get away with it again.
+  first:
+    good: 1
+    answer: Sacrifice
+  second:
+    good: 0
+    answer: Offerings
+  minigame: 
+  endedDialog: 0

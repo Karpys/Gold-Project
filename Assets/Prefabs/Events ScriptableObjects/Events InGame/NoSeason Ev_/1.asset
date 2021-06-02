@@ -15,14 +15,14 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Sir, I suggest that me and some villagers go into the forest to get some resources.
-    - Even if the forest is dangerous.
+    - Sir, I suggest that me and some villagers go into the forest to get some resources
+    - ...even though the forest is dangerous.
   isButtonEvent: 1
   yes:
     herbs: 10
     people: -5
     spirit: 0
-    answer: Some of our men died but we brought back some booty...
+    answer: Some of our men died but they brought back some booty...
   no:
     herbs: 0
     people: 0

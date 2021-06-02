@@ -27,12 +27,12 @@ MonoBehaviour:
     herbs: 0
     people: -5
     spirit: 0
-    answer: Some people who are already sick could be hurt
+    answer: Some people who are already sick could get hurt
   first:
     good: 1
     answer: Let them do it.
   second:
     good: 0
-    answer: Stop it!
+    answer: Stop them !
   minigame: 
   endedDialog: 0

@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
-  m_Name: MG2
+  m_Name: 16automne
   m_EditorClassIdentifier: 
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - ' Help us human, fulfill my request and you will be rewarded '
+    - Sir, I suggest you go out and collect leaves during this autumn season
   isButtonEvent: 1
   yes:
-    herbs: 0
+    herbs: 10
     people: 0
-    spirit: 10
-    answer: take our generosity, I give you this
+    spirit: 0
+    answer: The collect was bountiful, we even found some useful plants.
   no:
     herbs: 0
     people: 0
-    spirit: -15
-    answer: The spirits have turned against you
+    spirit: 0
+    answer: Sure, though they might pile up.
   first:
-    good: 0
-    answer: Let the spirits take care of themselves
-  second:
     good: 1
-    answer: Helping the village spirits
-  minigame: LabirinteSpirit
+    answer: Well, some could be useful
+  second:
+    good: 0
+    answer: I don't want to
+  minigame: 
   endedDialog: 0

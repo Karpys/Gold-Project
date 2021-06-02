@@ -10,30 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
-  m_Name: 6
+  m_Name: 17printemps
   m_EditorClassIdentifier: 
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Doctor, I am the village chief and i am asking you if we should go  to war
-      against the neighboring village..
+    - One of the merchants complained about having symptoms of cytomegalovirus ?
+    - 'I dont really know what it is... but the name sounds serious ? '
+    - What should we do ?
   isButtonEvent: 1
   yes:
-    herbs: 0
+    herbs: -30
     people: 0
     spirit: 0
-    answer: I will not go to war without your blessing
+    answer: You succeed to cure her but it was not without big effort
   no:
-    herbs: 20
-    people: -20
+    herbs: 0
+    people: -10
     spirit: 0
-    answer: The chief of the village has triumphed, the forest brings us much more,
-      but the losses are considerable.
+    answer: "She\u2019s a merchant, she doesn't follow your advice, infecting many
+      villagers."
   first:
     good: 1
-    answer: No, a war leads to many casualties
+    answer: Wow this sounds serious
   second:
     good: 0
-    answer: Yes, if we win, the forest we shared will be ours alone
+    answer: Its just complicated word
   minigame: 
   endedDialog: 0

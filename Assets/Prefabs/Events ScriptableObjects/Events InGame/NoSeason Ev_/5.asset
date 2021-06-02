@@ -15,24 +15,25 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Master the son of one of the villagers sick and has a fever, i examine him 
-      and I think he catch a cold what should we do?
+    - Master, one of the villagers' son is sick and has a fever.
+    - I examined him and I think he has a cold.
+    - What should we do ?
   isButtonEvent: 1
   yes:
-    herbs: -15
+    herbs: -11
     people: 0
-    spirit: -10
+    spirit: 0
     answer: Yes my lord, the kids seems to be good it was nothing
   no:
     herbs: 0
-    people: 0
+    people: 2
     spirit: 0
-    answer: apparently
+    answer: Apparently it was nothing, normal during this time of the year
   first:
     good: 0
-    answer: It should be fine just tell him to rest.
+    answer: Just tell him to rest.
   second:
     good: 1
-    answer: Tell him to take this 3 time a day it should be fine.
+    answer: Take this 3 time a day it should be fine.
   minigame: 
   endedDialog: 0

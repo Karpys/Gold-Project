@@ -15,23 +15,25 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - 'The people are afraid of the spirits and beg you to help them '
+    - I've come to warn you of a trickster spirit hiding in your village.
+    - I will help you find him out.
+    - And be wary, he may try to corrupt some of your people.
   isButtonEvent: 1
   yes:
-    herbs: 0
+    herbs: 10
     people: 5
     spirit: 6
-    answer: 'The spirits are grateful to you for not derailing them '
+    answer: We were able to find him, let me take care of it from now on.
   no:
-    herbs: 0
-    people: 0
-    spirit: 0
-    answer: The spirits are grateful to you for not derailing them
+    herbs: -5
+    people: -2
+    spirit: -8
+    answer: Very well. But I warned you.
   first:
     good: 1
-    answer: Helping the population despite the spirits
+    answer: Trust them and look for the trickster
   second:
     good: 0
-    answer: Leave the spirits alone
+    answer: Maybe You are the trickster !
   minigame: Puzzle8Piece
   endedDialog: 0

@@ -15,25 +15,24 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - 'Sir, someone is imploring to have a good harvest. '
-    - Please, the spirits need an offering !
+    - Sir, someone is imploring to have a good harvest
+    - Please, the spirits are in need of an offering
   isButtonEvent: 1
   yes:
     herbs: 0
     people: 2
     spirit: -10
-    answer: thank you i hope the spirit help me
+    answer: Thank you, i hope the spirit help them
   no:
     herbs: 0
     people: -5
     spirit: -10
-    answer: thank you i hope the spirit help me
+    answer: Thank you, i hope the spirit help them
   first:
     good: 0
-    answer: "\xABI will contact the spirits for him the harvest will be good (lie)"
+    answer: 'Lie : I shall contact the spirits'
   second:
     good: 1
-    answer: I will contact the spirits for him the harvest will be good (tell the
-      truth)
+    answer: 'Tell the truth : I shall contact the spirits'
   minigame: 
   endedDialog: 0

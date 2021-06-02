@@ -154,7 +154,6 @@ public class GameManager : MonoBehaviour
             scoreText.text = Mathf.RoundToInt(scoreShowing).ToString();
 
             yield return new WaitForSeconds(Time.deltaTime);
-            Debug.Log("Going Up ^ ...");
         }
     }
 

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
+  m_Name: 35nuit
+  m_EditorClassIdentifier: 
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  dialog:
+  - line:
+    - Master an unknown man says he was injured while exploring a cave and was attacked
+      by a red demon.
+    - What should we do?
+  isButtonEvent: 1
+  yes:
+    herbs: 15
+    people: 2
+    spirit: 10
+    answer: The stranger thanks you for believing and taking care of him has. He
+      has decided to stay in the village and help with the crops.
+  no:
+    herbs: 0
+    people: 0
+    spirit: -10
+    answer: He died during the night as a result of these wounds, the spirits won't
+      let it go.
+  first:
+    good: 1
+    answer: Let's look after him
+  second:
+    good: 0
+    answer: Its none of our business
+  minigame: 
+  endedDialog: 0
