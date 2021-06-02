@@ -9,23 +9,14 @@ public class BaseResolution : MonoBehaviour
     public static BaseResolution Resolution { get => inst; }
 
     public float RatioApplied;
+    public float Width;
+    public float Height;
     private void Awake()
     {
         if (inst == null)
             inst = this;
-        float Width = Screen.width;
-        float Height = Screen.height;
+        Width = Screen.width;
+        Height = Screen.height;
         RatioApplied = Width / Height;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
