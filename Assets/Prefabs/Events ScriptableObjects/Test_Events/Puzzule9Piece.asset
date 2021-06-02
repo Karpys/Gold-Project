@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: Puzzule9Piece
   m_EditorClassIdentifier: 
-  CharacterSpawn: {fileID: 0}
+  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
     - je vois le monde a l'envers

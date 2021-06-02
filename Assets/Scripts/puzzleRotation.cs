@@ -15,6 +15,7 @@ public class puzzleRotation : MonoBehaviour
     private bool win;
     private bool lose;
     private bool soundEnd = true;
+    private bool end;
     private List<int> pieceTurn = new List<int>() ;
     private float timeEnd = 0;
     private float lerp = 0;
@@ -189,8 +190,12 @@ public class puzzleRotation : MonoBehaviour
                 for (int i = 0; i < piece.Length; i++)
                     piece[i].piece.transform.position = Vector2.Lerp(piece[i].piece.transform.position, targetEnd[i].transform.position, lerp);
             }
-            else
+            else if (!end)
+            {
                 StartCoroutine(EventSystem.Manager.EndGame(true));
+                end = true;
+            }
+
         }
             
 
@@ -225,8 +230,12 @@ public class puzzleRotation : MonoBehaviour
                 for (int i = 0; i < piece.Length; i++)
                     piece[i].piece.transform.position = Vector2.Lerp(piece[i].piece.transform.position, targetEnd[i].transform.position, lerp);
             }
-            else
+            else if(!end)
+            {
                 StartCoroutine(EventSystem.Manager.EndGame(false));
+                end = true;
+            }
+
         }
 
     }

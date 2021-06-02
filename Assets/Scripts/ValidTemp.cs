@@ -9,6 +9,7 @@ public class ValidTemp : MonoBehaviour
     public Vector3 LocalScale;
     public float TimeGoal;
     public float TimeValid;
+    private bool end;
     void Start()
     {
         LocalScale = transform.localScale;
@@ -21,9 +22,10 @@ public class ValidTemp : MonoBehaviour
         TimeValid = Mathf.Clamp(TimeValid, 0,TimeGoal);
         LocalScale.x = TimeValid / Divi;
         transform.localScale = LocalScale;
-        if(TimeValid>=TimeGoal)
+        if(TimeValid>=TimeGoal&&!end)
         {
             StartCoroutine(EventSystem.Manager.EndGame(true));
+            end = true;
         }
     }
 }

@@ -13,6 +13,7 @@ public class healManager : MonoBehaviour
     private string[] itemUsed = new string[3];
     private int itemUsedCompt = 0;
     private float time = 0;
+    private bool end;
 
     // Start is called before the first frame update
     void Start()
@@ -73,12 +74,14 @@ public class healManager : MonoBehaviour
         if(itemUsedCompt == 3)
         {
             time += Time.deltaTime;
-            if (time>1)
+            if (time>1&&!end)
             {
                 if (itemUsed[0] == commande[0] && itemUsed[1] == commande[1] && itemUsed[2] == commande[2])
                     StartCoroutine(EventSystem.Manager.EndGame(true));
                 else
-                    StartCoroutine(EventSystem.Manager.EndGame(false)); 
+                    StartCoroutine(EventSystem.Manager.EndGame(false));
+
+                end = true;
             }
 
         }

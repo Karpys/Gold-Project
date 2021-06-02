@@ -14,6 +14,7 @@ public class Puzzle8Piece : MonoBehaviour
 
     private bool[] targetFree = new bool[9];
     private bool isOkay;
+    private bool end;
     private int ramdom;
     private int pieceInHand;
     private int pieceDrop;
@@ -313,7 +314,12 @@ public class Puzzle8Piece : MonoBehaviour
             if(timeEnd > 1)
                 lastPiece.SetActive(true);
             if (timeEnd > 2)
-                StartCoroutine(EventSystem.Manager.EndGame(true));
+            {
+                if(!end)
+                    StartCoroutine(EventSystem.Manager.EndGame(true));
+                end = true;
+            }
+ 
         }
     }
 

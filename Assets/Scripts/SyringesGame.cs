@@ -36,6 +36,7 @@ public class SyringesGame : MonoBehaviour
     private bool startAction = false;
     private bool end = false;
     private bool soundAiguille = true;
+    private bool endSound;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +79,7 @@ public class SyringesGame : MonoBehaviour
             }
         }
     }
+
     public void Remplissage()
     {
         if(start && tige.transform.position.y < targetTigeEnd.transform.position.y)
@@ -195,10 +197,19 @@ public class SyringesGame : MonoBehaviour
                 Vector3 dir = (tige.transform.position - targetTige.transform.position).normalized;
                 tige.transform.position = tige.transform.position - ((dir * Time.deltaTime * speedRemplissageSeringue) /12.5f);
             }
-            else if (firstResult == firstMedocInt && secondResult == secondMedocInt)
-                StartCoroutine(EventSystem.Manager.EndGame(true));
+            else if (firstResult == firstMedocInt && secondResult == secondMedocInt )
+            {
+                if(!endSound)
+                    StartCoroutine(EventSystem.Manager.EndGame(true));
+                endSound = true;
+            }
             else
-                StartCoroutine(EventSystem.Manager.EndGame(false));
+            {
+                if (!endSound)
+                    StartCoroutine(EventSystem.Manager.EndGame(false));
+                endSound = true;
+            }
+
 
         }
     }
