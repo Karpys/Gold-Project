@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using GooglePlayGames;
 using UnityEngine.SocialPlatforms;
@@ -17,6 +18,7 @@ public class GooglePlayService : MonoBehaviour
     }
 
     public long HighScore;
+    public Text text;
 
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class GooglePlayService : MonoBehaviour
             {
                 case SignInStatus.Success:
                     isConnectedToGooglePlayServices = true;
+                    LoadScore();
                     break;
                 default:
                     isConnectedToGooglePlayServices = false;
@@ -67,6 +70,7 @@ public class GooglePlayService : MonoBehaviour
                  LeaderboardTimeSpan.AllTime,
              (LeaderboardScoreData data) => {
                  HighScore = data.PlayerScore.value;
+                 text.text = HighScore.ToString();
              });
             /*ILeaderboard lb = Social.CreateLeaderboard();
                  lb.id = "CgkIidW02PodEAIQDw";
