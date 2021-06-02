@@ -30,7 +30,7 @@ public class Cauldron : MonoBehaviour
         
         if(Input.GetMouseButtonDown(0))
         {
-            Tempvaria += TempUp;
+            Tempvaria += TempUp*Time.deltaTime;
         }
 
         if(Tempvaria>-0.6f)
@@ -42,7 +42,7 @@ public class Cauldron : MonoBehaviour
         {
             Jauge.TimeValid += Time.deltaTime;
         }
-
+        Tempvaria = Mathf.Clamp(Tempvaria, -0.6f, 1.0f);
         Temperature += Tempvaria;
         Temperature = Mathf.Clamp(Temperature, 0, TempMax);
         LocalScale.y = Temperature / DivideJauge;
