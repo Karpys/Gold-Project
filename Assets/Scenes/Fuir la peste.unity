@@ -1066,7 +1066,7 @@ MonoBehaviour:
   Herbe: 0
   DelaySpawn: 0
   MiniGameGo: 0
-  DependOnVillage: 0
+  DependOnVillage: 1
   ListBackgroundSeason:
   - {fileID: 21300000, guid: 10d63c33ad1cf6c439a1417c84ba927c, type: 3}
   - {fileID: 21300000, guid: 10d63c33ad1cf6c439a1417c84ba927c, type: 3}

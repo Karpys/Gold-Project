@@ -47,6 +47,12 @@ public class LightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameplayLoop.Loop.IdPool >= 6)
+        {
+            SetDay();
+        }else
+        {
+
         if (backUp != GameplayLoop.Loop.IdPool)
         {
             lerp = 0;
@@ -58,27 +64,39 @@ public class LightManager : MonoBehaviour
         }
 
 
-        if(GameplayLoop.Loop.IdPool>=6 ||( EventPoolDraw.Pool.currentTemplate.templateList[GameplayLoop.Loop.IdPool].state == EventPoolDraw.DayNight.Day && !switchSun))
+        if( EventPoolDraw.Pool.currentTemplate.templateList[GameplayLoop.Loop.IdPool].state == EventPoolDraw.DayNight.Day && !switchSun)
         {
-            for (int i = 0; i < nightRoom.Length; i++)
-                nightRoom[i].SetActive(false);
-
-            nightCharacter.SetActive(false);
-            dayCharacter.SetActive(true);
-            lerp += Time.deltaTime*speedLerp;
-            if (sun.color != Color.white)
-                sun.color = Color.Lerp(sunColor, Color.white,  lerp);
+            SetDay();
         }
         else if (switchSun )
         {
-            for (int i = 0; i < nightRoom.Length; i++)
-                nightRoom[i].SetActive(true);
-
-            nightCharacter.SetActive(true);
-            dayCharacter.SetActive(false);
-            lerp += Time.deltaTime * speedLerp;
-            if (sun.color != sunColor)
-                sun.color = Color.Lerp(Color.white, sunColor, lerp);
+            SetNight();
         }
+        }
+    }
+
+
+    void SetNight()
+    {
+        for (int i = 0; i < nightRoom.Length; i++)
+            nightRoom[i].SetActive(true);
+
+        nightCharacter.SetActive(true);
+        dayCharacter.SetActive(false);
+        lerp += Time.deltaTime * speedLerp;
+        if (sun.color != sunColor)
+            sun.color = Color.Lerp(Color.white, sunColor, lerp);
+    }
+
+    void SetDay()
+    {
+        for (int i = 0; i < nightRoom.Length; i++)
+            nightRoom[i].SetActive(false);
+
+        nightCharacter.SetActive(false);
+        dayCharacter.SetActive(true);
+        lerp += Time.deltaTime * speedLerp;
+        if (sun.color != Color.white)
+            sun.color = Color.Lerp(sunColor, Color.white, lerp);
     }
 }
