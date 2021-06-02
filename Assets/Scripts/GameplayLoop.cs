@@ -79,10 +79,9 @@ public class GameplayLoop : MonoBehaviour
         Destroy(CharacterSpawned);
         CharacterSpawned = null;
         State = GameState.IDLE;
-        //Call Mouvement Sun//
         if (IdPool > EventSystem.Manager.eventPool.Count - 1)
         {
-            FadeController.Fade.Anim.Play("FadeScreenAnim");
+            /*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
             PlayerData.Stat.NextSeason();
             StartCoroutine(ChangeSeasonAmbiance());
             //Reset Sun//
@@ -91,8 +90,8 @@ public class GameplayLoop : MonoBehaviour
     }
     public IEnumerator ChangeSeasonAmbiance()
     {
-        yield return new WaitForSeconds(1.0f);
-        SeasonManager.Season.ChangeSeason();
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(SeasonManager.Season.ChangeSeason());
     }
     public void ResetPool()
     {
