@@ -85,7 +85,8 @@ public class EventSystem : MonoBehaviour
 	public IEnumerator LoadGame(string sceneName)
     {
 		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
-		PixeliseScreen.PixelScreen.Pixelise();
+		/*PixeliseScreen.PixelScreen.Pixelise();*/
+		DoorTransition.Transition.DoorTransi(false);
 		yield return new WaitForSeconds(1);
 
 		if (Application.CanStreamedLevelBeLoaded(sceneName))
@@ -108,7 +109,8 @@ public class EventSystem : MonoBehaviour
 		else
 			AudioSource.PlayClipAtPoint(SoundManager.Get.lose, new Vector3(0, 0, 0));
 		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
-		PixeliseScreen.PixelScreen.Pixelise();
+		/*PixeliseScreen.PixelScreen.Pixelise();*/
+		DoorTransition.Transition.DoorTransi(false);
 		yield return new WaitForSeconds(1);
 		//
 		Dialog.Manager.Box.SetActive(true);
@@ -129,7 +131,8 @@ public class EventSystem : MonoBehaviour
 			AudioSource.PlayClipAtPoint(SoundManager.Get.lose, new Vector3(0, 0, 0));
 
 		//FadeController.Fade.Anim.Play("FadeScreenAnim");
-		PixeliseScreen.PixelScreen.Pixelise();
+		/*PixeliseScreen.PixelScreen.Pixelise();*/
+		DoorTransition.Transition.DoorTransi(false);
 		yield return new WaitForSeconds(1.0f);
 		//
 		Dialog.Manager.Box.SetActive(true);

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class DoorTransition : MonoBehaviour
 {
     // Start is called before the first frame update
+    private static DoorTransition inst;
+    public static DoorTransition Transition { get => inst; }
     public RectTransform DoorLeft;
     public RectTransform DoorRight;
     public DoorState State;
@@ -19,20 +21,29 @@ public class DoorTransition : MonoBehaviour
     public float ScreenWidth;
     private float timeSound = 0.05f;
     private bool menuOff;
+    public bool MenuManip;
+
+    private void Awake()
+    {
+        if (inst == null)
+            inst = this;
+
+    }
     public void Start()
     {
         ScreenWidth = BaseResolution.Resolution.Width;
-        sound.clip = SoundManager.Get.musicMenu;
-        sound.Play();
+        /*sound.clip = SoundManager.Get.musicMenu;
+        sound.Play();*/
     }
-    public void DoorTransi()
+    public void DoorTransi(bool Menu)
     {
         if(State == DoorState.IDLE)
         { 
-        State = DoorState.CLOSING;
-        TimeSet = 0;
-        DoorLeft.gameObject.SetActive(true);
-        DoorRight.gameObject.SetActive(true);
+            State = DoorState.CLOSING;
+            TimeSet = 0;
+            DoorLeft.gameObject.SetActive(true);
+            DoorRight.gameObject.SetActive(true);
+            MenuManip = Menu;
         }
     }
 
@@ -53,7 +64,7 @@ public class DoorTransition : MonoBehaviour
 
             if(Menu.activeSelf)
             {
-                timeSound -= Time.deltaTime*0.05f;
+                /*timeSound -= Time.deltaTime*0.05f;
                 if(timeSound>=0)
                 {
                     sound.volume = timeSound;
@@ -63,7 +74,7 @@ public class DoorTransition : MonoBehaviour
                     sound.clip = SoundManager.Get.musicGame;
                     sound.Play();
                     menuOff = true;
-                }
+                }*/
             }
 
 
@@ -109,13 +120,21 @@ public class DoorTransition : MonoBehaviour
 
     public IEnumerator ChangeScene()
     {
-        State = DoorState.CHANGESCENE;
-        Light.enabled = true;
-        GameManager.Get.PlayGame();
-        /*SceneManager.LoadScene(SceneName);*/
-        Menu.SetActive(!Menu.activeSelf);
-        yield return new WaitForSeconds(0.5f);
-        State = DoorState.OPENING;
+        if(MenuManip)
+        {
+            State = DoorState.CHANGESCENE;
+            Light.enabled = true;
+            GameManager.Get.PlayGame();
+            /*SceneManager.LoadScene(SceneName);*/
+            Menu.SetActive(!Menu.activeSelf);
+            yield return new WaitForSeconds(0.5f);
+            State = DoorState.OPENING;
+        }else
+        {
+            State = DoorState.CHANGESCENE;
+            yield return new WaitForSeconds(0.5f);
+            State = DoorState.OPENING;
+        }
 
     }
 
