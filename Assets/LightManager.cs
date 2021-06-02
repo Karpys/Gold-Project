@@ -5,6 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class LightManager : MonoBehaviour
 {
     public Light2D sun;
+    public Color sunColor;
     public GameObject[] nightRoom;
     public GameObject nightCharacter;
     public GameObject dayCharacter;
@@ -66,7 +67,7 @@ public class LightManager : MonoBehaviour
             dayCharacter.SetActive(true);
             lerp += Time.deltaTime*speedLerp;
             if (sun.color != Color.white)
-                sun.color = Color.Lerp(Color.blue, Color.white,  lerp);
+                sun.color = Color.Lerp(sunColor, Color.white,  lerp);
         }
         else if (switchSun )
         {
@@ -76,8 +77,8 @@ public class LightManager : MonoBehaviour
             nightCharacter.SetActive(true);
             dayCharacter.SetActive(false);
             lerp += Time.deltaTime * speedLerp;
-            if (sun.color != Color.blue)
-                sun.color = Color.Lerp(Color.white, Color.blue, lerp);
+            if (sun.color != sunColor)
+                sun.color = Color.Lerp(Color.white, sunColor, lerp);
         }
     }
 }

@@ -4140,6 +4140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 607165936}
+  sunColor: {r: 0.2845183, g: 0, b: 0.8679245, a: 0}
   nightRoom:
   - {fileID: 1261085238}
   - {fileID: 270378302}
