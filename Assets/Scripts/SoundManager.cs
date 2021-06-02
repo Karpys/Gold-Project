@@ -7,6 +7,10 @@ public class SoundManager : MonoBehaviour
     private static SoundManager inst;
     public static SoundManager Get { get => inst; }
 
+    [Header("Musique")]
+    public AudioClip musicMenu;
+    public AudioClip musicGame;
+
     [Header("Sound")]
     public AudioClip aiguille;
     public AudioClip remplicageSeringue;
@@ -31,7 +35,7 @@ public class SoundManager : MonoBehaviour
         if (inst == null)
             inst = this;
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
     // Start is called before the first frame update
     void Start()

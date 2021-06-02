@@ -14,12 +14,16 @@ public class DoorTransition : MonoBehaviour
     public string SceneName;
     public GameObject Menu;
     public LightManager Light;
+    public AudioSource sound;
 
     public float ScreenWidth;
-
+    private float timeSound = 0.05f;
+    private bool menuOff;
     public void Start()
     {
         ScreenWidth = BaseResolution.Resolution.Width;
+        sound.clip = SoundManager.Get.musicMenu;
+        sound.Play();
     }
     public void DoorTransi()
     {
@@ -47,6 +51,22 @@ public class DoorTransition : MonoBehaviour
                 State = DoorState.CLOSE;
             }
 
+            if(Menu.activeSelf)
+            {
+                timeSound -= Time.deltaTime*0.05f;
+                if(timeSound>=0)
+                {
+                    sound.volume = timeSound;
+                }
+                else
+                {
+                    sound.clip = SoundManager.Get.musicGame;
+                    sound.Play();
+                    menuOff = true;
+                }
+            }
+
+
         }else if(State == DoorState.CLOSE)
         {
             StartCoroutine(ChangeScene());
@@ -63,7 +83,21 @@ public class DoorTransition : MonoBehaviour
             {
                 State = DoorState.OPEN;
             }
-        }else if(State == DoorState.OPEN)
+
+            if(menuOff)
+            {
+                timeSound += Time.deltaTime*0.05f;
+                if (timeSound <= 0.05f)
+                {
+                    sound.volume = timeSound;
+                }
+                else
+                    menuOff = false;
+            }
+
+
+        }
+        else if(State == DoorState.OPEN)
         {
             TimeSet = 0;
             DoorLeft.gameObject.SetActive(false);
