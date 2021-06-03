@@ -19,29 +19,9 @@ public class LightManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         backUp = GameplayLoop.Loop.IdPool;
-        /*if (EventPoolDraw.Pool.currentTemplate.templateList.Count != null && EventPoolDraw.Pool.currentTemplate.templateList[GameplayLoop.Loop.IdPool].state == EventPoolDraw.DayNight.Night)
-        {
-            for (int i = 0; i < nightRoom.Length; i++)
-                nightRoom[i].SetActive(true);
-
-            nightCharacter.SetActive(true);
-            dayCharacter.SetActive(false);
-            sun.color = Color.blue;
-            switchSun = true;
-            
-        }
-        else
-        {
-            for (int i = 0; i < nightRoom.Length; i++)
-                nightRoom[i].SetActive(false);
-
-            nightCharacter.SetActive(false);
-            dayCharacter.SetActive(true);
-            sun.color = Color.white;
-            switchSun = false;
-        }*/
+        dayCharacter.SetActive(false);
+        dayCharacter.SetActive(true);
     }
 
     // Update is called once per frame
