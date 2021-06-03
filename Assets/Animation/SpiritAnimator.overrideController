@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpiritAnimator
+  m_Controller: {fileID: 9100000, guid: 1882bcba98fe4c94f982f06ebc5a4ac0, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: dc1d16af4ad42114c89da641ea491b20, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dc1d16af4ad42114c89da641ea491b20, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 236721120f807954a9c83e3a89e80040, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 236721120f807954a9c83e3a89e80040, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bde152d692e590941bc0449a94c272ab, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8d8aa9a5604b82b469fc97815a85fd12, type: 2}

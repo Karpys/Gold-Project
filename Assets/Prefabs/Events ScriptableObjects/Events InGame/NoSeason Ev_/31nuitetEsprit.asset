@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: 31nuitetEsprit
   m_EditorClassIdentifier: 
-  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  CharacterSpawn: {fileID: 975783545331009692, guid: 8bc2ceda7245c1b4cadc0eb86d280d6c, type: 3}
   dialog:
   - line:
     - 'Hello human answer my question and i will reward you,  '
