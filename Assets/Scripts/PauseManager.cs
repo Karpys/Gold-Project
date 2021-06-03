@@ -78,7 +78,7 @@ public class PauseManager : MonoBehaviour
             sound.volume = 0;
         else
             sound.volume = 1;*/
-
+        sound.mute = !onOff;
         bouton[1].SetActive(!onOff);
         bouton[2].SetActive(onOff);
     }
