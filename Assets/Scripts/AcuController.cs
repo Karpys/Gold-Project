@@ -12,26 +12,28 @@ public class AcuController : MonoBehaviour
     public int counter;
     public SimonState State;
     public GameObject Aiguille;
+    public GameObject Consigne;
     void Start()
     {
         State = SimonState.IDLE;
-        StartCoroutine(AffichePoint(2));
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-      
+        foreach (Touch touch in Input.touches)
+        {
+            if(Consigne.activeSelf)
+            {
+                Consigne.SetActive(false);
+                StartCoroutine(AffichePoint(0.1f));
+            }
+        }
     }
 
 
-    /*public void AffichePoint()
-    {
-        Color col = ListPoint[0].GetComponent<SpriteRenderer>().color;
-        col.a = 1;
-        ListPoint[Random.Range(0, ListPoint.Count)].GetComponent<SpriteRenderer>().color = col;
-    }*/
+    
 
 
     IEnumerator AffichePoint(float pause)
