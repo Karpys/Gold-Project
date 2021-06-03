@@ -49,13 +49,14 @@ public class LightManager : MonoBehaviour
     {
         if(GameplayLoop.Loop.IdPool >= 6)
         {
+
             SetDay();
         }else
         {
 
         if (backUp != GameplayLoop.Loop.IdPool)
         {
-            lerp = 0;
+            //lerp = 0;
             backUp = GameplayLoop.Loop.IdPool;
             if (EventPoolDraw.Pool.currentTemplate.templateList[GameplayLoop.Loop.IdPool].state == EventPoolDraw.DayNight.Night)
                 switchSun = true;
@@ -86,6 +87,8 @@ public class LightManager : MonoBehaviour
         lerp += Time.deltaTime * speedLerp;
         if (sun.color != sunColor)
             sun.color = Color.Lerp(Color.white, sunColor, lerp);
+        else
+            lerp = 0;
     }
 
     void SetDay()
@@ -98,5 +101,7 @@ public class LightManager : MonoBehaviour
         lerp += Time.deltaTime * speedLerp;
         if (sun.color != Color.white)
             sun.color = Color.Lerp(sunColor, Color.white, lerp);
+        else 
+            lerp = 0;
     }
 }

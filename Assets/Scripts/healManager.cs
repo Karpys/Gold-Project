@@ -63,13 +63,9 @@ public class healManager : MonoBehaviour
 
                                 if (item[i].name == "pad")
                                     AudioSource.PlayClipAtPoint(SoundManager.Get.pansement, new Vector3(0, 0, 0));
-
-
-                                if (item[i].name == "disinfectant")
+                                else if (item[i].name == "disinfectant")
                                     AudioSource.PlayClipAtPoint(SoundManager.Get.desinfectant, new Vector3(0, 0, 0));
-
-
-                                if (item[i].name == "cream")
+                                else if (item[i].name == "cream")
                                     AudioSource.PlayClipAtPoint(SoundManager.Get.creme, new Vector3(0, 0, 0));
                             }
                         }
