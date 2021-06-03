@@ -20,8 +20,8 @@ MonoBehaviour:
     - What should we do ?
   isButtonEvent: 1
   yes:
-    herbs: -30
-    people: 0
+    herbs: -15
+    people: 10
     spirit: 0
     answer: You succeed to cure her but it was not without big effort
   no:
