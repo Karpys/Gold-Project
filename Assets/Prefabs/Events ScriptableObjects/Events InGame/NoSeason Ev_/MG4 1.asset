@@ -20,7 +20,7 @@ MonoBehaviour:
     - 'But it might cost a lot of medicine... '
   isButtonEvent: 1
   yes:
-    herbs: -20
+    herbs: -5
     people: 10
     spirit: 0
     answer: You are too kind.
