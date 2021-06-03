@@ -2033,6 +2033,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1982262722}
     m_Modifications:
+    - target: {fileID: 1864830789493349806, guid: 4029aee423eb78a47bb6e39d7174d7a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1864830789543838060, guid: 4029aee423eb78a47bb6e39d7174d7a8, type: 3}
       propertyPath: m_Name
       value: PauseUi_pixel
@@ -2496,20 +2500,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e2c7a88dd9523f245b463108d59822ef, type: 3}
-    - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
-      propertyPath: m_Color.b
+      propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc67d807c3009d843ac45495476bb633, type: 3}
+    - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Color.g
-      value: 0.18970537
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Color.r
-      value: 0.38679248
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3909606621813303832, guid: 350ade0db6a9b85499cd68f795a4327a, type: 3}
       propertyPath: m_Material
