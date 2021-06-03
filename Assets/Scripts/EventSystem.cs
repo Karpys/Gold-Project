@@ -87,7 +87,7 @@ public class EventSystem : MonoBehaviour
 		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
 		/*PixeliseScreen.PixelScreen.Pixelise();*/
 		DoorTransition.Transition.DoorTransi(false);
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(1.3f);
 
 		if (Application.CanStreamedLevelBeLoaded(sceneName))
 		{
@@ -111,7 +111,7 @@ public class EventSystem : MonoBehaviour
 		/*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
 		/*PixeliseScreen.PixelScreen.Pixelise();*/
 		DoorTransition.Transition.DoorTransi(false);
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(1.3f);
 		//
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
@@ -133,7 +133,7 @@ public class EventSystem : MonoBehaviour
 		//FadeController.Fade.Anim.Play("FadeScreenAnim");
 		/*PixeliseScreen.PixelScreen.Pixelise();*/
 		DoorTransition.Transition.DoorTransi(false);
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(1.3f);
 		//
 		Dialog.Manager.Box.SetActive(true);
 		RessourceUI.UIRessource.gameObject.SetActive(true);
