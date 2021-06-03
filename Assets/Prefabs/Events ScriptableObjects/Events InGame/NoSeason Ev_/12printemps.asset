@@ -21,7 +21,7 @@ MonoBehaviour:
     herbs: 0
     people: 0
     spirit: 0
-    answer: Understood master, i will tell them that they should not put themself
+    answer: Understood master, i will tell them that they should not put themselves
       in danger.
   no:
     herbs: 10

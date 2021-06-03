@@ -27,10 +27,11 @@ MonoBehaviour:
     herbs: 0
     people: -2
     spirit: -10
-    answer: Good sir, but its dangerous to let old people with this type of problem.
+    answer: Very well sir, but its dangerous to let old people with this type of
+      problem.
   first:
     good: 1
-    answer: Give them this, it should relieve her for a time
+    answer: Give them this, it should relieve them for a time
   second:
     good: 0
     answer: No, they need to take make up his mind.

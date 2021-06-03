@@ -24,10 +24,10 @@ MonoBehaviour:
     answer: It will be difficult to heal from this catastrophe. Even the temples
       got damaged
   no:
-    herbs: -35
+    herbs: -28
     people: 10
     spirit: 0
-    answer: 
+    answer: Well done master, it was a lot of work, but you saved the village
   first:
     good: 1
     answer: I can't take them all...

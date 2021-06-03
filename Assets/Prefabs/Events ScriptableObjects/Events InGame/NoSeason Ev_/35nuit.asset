@@ -23,8 +23,8 @@ MonoBehaviour:
     herbs: 15
     people: 2
     spirit: 10
-    answer: The stranger thanks you for believing and taking care of him has. He
-      has decided to stay in the village and help with the crops.
+    answer: The stranger thanks you for believing and taking care of him. He has
+      decided to stay in the village and help with the crops.
   no:
     herbs: 0
     people: 0

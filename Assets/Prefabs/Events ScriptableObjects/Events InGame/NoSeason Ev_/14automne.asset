@@ -27,7 +27,7 @@ MonoBehaviour:
     herbs: 0
     people: 0
     spirit: 0
-    answer: 
+    answer: Very well.
   first:
     good: 1
     answer: Yes, there are a few more than last year
