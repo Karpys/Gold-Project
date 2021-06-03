@@ -16,7 +16,6 @@ MonoBehaviour:
     Day:
     - {fileID: 11400000, guid: a796208080bdacb4a815d39e2ca8c243, type: 2}
     - {fileID: 11400000, guid: 77042b61ad4b68d4e8b783e850558f10, type: 2}
-    - {fileID: 11400000, guid: 17c40e6e2fc4c6d4293ad16425d1e06a, type: 2}
     Night:
     - {fileID: 11400000, guid: a796208080bdacb4a815d39e2ca8c243, type: 2}
     - {fileID: 11400000, guid: f65c36db210e1644181f99577467051f, type: 2}
