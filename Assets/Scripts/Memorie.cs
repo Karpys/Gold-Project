@@ -55,7 +55,7 @@ public class Memorie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(start)
+        if(start&&!canvaTuto.activeSelf)
             RamdomCardStart();
         else
         {

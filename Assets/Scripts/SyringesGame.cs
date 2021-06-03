@@ -60,13 +60,21 @@ public class SyringesGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ItemMovement();
-        Remplissage();
-        Verification();
+        if(!canvaTuto.activeSelf)
+        {
+            ItemMovement();
+            Remplissage();
+            Verification();
+        }
         foreach (Touch touch in Input.touches)
         {
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (canvaTuto.activeSelf)
+                    canvaTuto.SetActive(false);
+            }
 
-            if(startAction)
+            if (startAction)
             {
                 if (touch.phase == TouchPhase.Began)
                 {

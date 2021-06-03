@@ -106,7 +106,7 @@ public class puzzleRotation : MonoBehaviour
 
         Rotation();
 
-        if(!win)
+        if(!win&&!canvaTuto.activeSelf)
             Timer();
     }
 
