@@ -32,8 +32,8 @@ public class DoorTransition : MonoBehaviour
     public void Start()
     {
         ScreenWidth = BaseResolution.Resolution.Width;
-        /*sound.clip = SoundManager.Get.musicMenu;
-        sound.Play();*/
+        sound.clip = SoundManager.Get.musicMenu;
+        sound.Play();
     }
     public void DoorTransi(bool Menu)
     {
@@ -64,8 +64,8 @@ public class DoorTransition : MonoBehaviour
 
             if(Menu.activeSelf)
             {
-                /*timeSound -= Time.deltaTime*0.05f;
-                if(timeSound>=0)
+                timeSound -= Time.deltaTime * 0.05f;
+                if (timeSound >= 0)
                 {
                     sound.volume = timeSound;
                 }
@@ -74,7 +74,7 @@ public class DoorTransition : MonoBehaviour
                     sound.clip = SoundManager.Get.musicGame;
                     sound.Play();
                     menuOff = true;
-                }*/
+                }
             }
 
 
