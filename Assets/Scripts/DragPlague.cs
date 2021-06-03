@@ -11,6 +11,7 @@ public class DragPlague : MonoBehaviour
     public Vector2 Position;
     private bool sound = true;
     public GameObject AnimPick;
+    public GameObject Consigne;
     void Start()
     {
         
@@ -24,6 +25,7 @@ public class DragPlague : MonoBehaviour
         foreach (Touch touch in Input.touches)
         {
             Manage.MiniGameGo = true;
+            Consigne.SetActive(false);
             Position = Camera.main.ScreenToWorldPoint(touch.position);
             if (touch.phase == TouchPhase.Moved)
             {
