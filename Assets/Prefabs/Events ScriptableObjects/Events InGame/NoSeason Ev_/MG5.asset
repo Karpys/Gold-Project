@@ -12,28 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d998e94b1c7b24e9940e1d356ac36e, type: 3}
   m_Name: MG5
   m_EditorClassIdentifier: 
-  CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
+  CharacterSpawn: {fileID: 975783545331009692, guid: 8bc2ceda7245c1b4cadc0eb86d280d6c, type: 3}
   dialog:
   - line:
-    - 'Excuse me for this request, '
-    - The village is asking for one of your miracle preparations.
+    - Good evening human. Are you up for a challenge ?
+    - Be quick to beat me and you shall be rewarded.
   isButtonEvent: 1
   yes:
-    herbs: -12
-    people: 12
-    spirit: 0
-    answer: 'The preparation of the cauldron saved us, but many plants were used '
+    herbs: 0
+    people: 0
+    spirit: 8
+    answer: How did you- ... Fine, a deal is a deal. But I won't lose next time !
   no:
-    herbs: 5
-    people: -5
-    spirit: 0
-    answer: 'You gain plants that should be used for the cauldron but the population
-      has dropped.. '
+    herbs: 0
+    people: 0
+    spirit: -8
+    answer: You disappoint me human, I was hoping for some competition.
   first:
     good: 0
-    answer: Refuse to do it
+    answer: It's a bit late for a puzzle.
   second:
     good: 1
-    answer: Prepare the cauldron
-  minigame: Chaudron
+    answer: Bring it.
+  minigame: PuzzlePieceRotate
   endedDialog: 0

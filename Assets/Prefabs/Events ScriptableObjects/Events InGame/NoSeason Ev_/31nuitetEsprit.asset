@@ -30,9 +30,9 @@ MonoBehaviour:
     answer: Wrong. Think shaman, THINK !
   first:
     good: 1
-    answer: a chair
+    answer: A chair
   second:
     good: 0
-    answer: a bed
+    answer: A bed
   minigame: 
   endedDialog: 0

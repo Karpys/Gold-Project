@@ -85,22 +85,22 @@ public class PlayerData : MonoBehaviour
     {
 		if(Herbs>=HerbsMax)
         {
-			Herbs = Mathf.Clamp(Herbs, 0, HerbsMax);
 			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAQ");
 		}
 
 		if (People >= PeopleMax)
 		{
-			People = Mathf.Clamp(People, 0, PeopleMax);
 			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAw");
 		}
 
 		if (Spirit >= SpiritMax)
 		{
-			Spirit = Mathf.Clamp(Spirit, 0, SpiritMax);
 			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQAg");
-			
 		}
+
+		Herbs = Mathf.Clamp(Herbs, 0, HerbsMax);
+		People = Mathf.Clamp(People, 0, PeopleMax);
+		Spirit = Mathf.Clamp(Spirit, 0, SpiritMax);
 	}
 
 	public void NextSeason()

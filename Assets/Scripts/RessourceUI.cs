@@ -49,16 +49,22 @@ public class RessourceUI : MonoBehaviour
     {
         if (PlayerData.Stat.People >= PlayerData.Stat.PeopleMax)
             Village.color = maxColor;
+        else if(PlayerData.Stat.People <= 0)
+            Village.color = Color.red;
         else
             Village.color = baseColor;
 
         if (PlayerData.Stat.Herbs >= PlayerData.Stat.HerbsMax)
             Leaf.color = maxColor;
+        else if (PlayerData.Stat.Herbs <= 0)
+            Leaf.color = Color.red;
         else
             Leaf.color = baseColor;
 
         if (PlayerData.Stat.Spirit >= PlayerData.Stat.SpiritMax)
             Soul.color = maxColor;
+        else if (PlayerData.Stat.Spirit <= 0)
+            Soul.color = Color.red;
         else
             Soul.color = baseColor;
     }

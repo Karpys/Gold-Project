@@ -19,20 +19,20 @@ public class GameManager : MonoBehaviour
     [Header("Win")]
     public GameObject winScreen;
     [SerializeField] private GameObject winScroll;
-    [SerializeField] private GameObject winHandle;
-    public GameObject winStartTarget;
-    public GameObject winEndTarget;
     public float winScrollSpeed;
     [Header("Defeat")]
     public GameObject defeatScreen;
     [SerializeField] private GameObject dfScroll;
-    [SerializeField] private GameObject dfHandle;
-    public GameObject dfStartTarget;
-    public GameObject dfEndTarget;
     public float defeatScrollSpeed;
+    [Header("")]
+    public GameObject startTarget;
+    public GameObject endTarget;
+    public AnimationCurve anim;
 
     [Header("Score")]
     [Range(300, 600)] public float increaseSpeed;
+    private GameObject scorePanel;
+    private GameObject menuButton;
     private Text scoreText;
 
     [Header("")]
@@ -93,25 +93,27 @@ public class GameManager : MonoBehaviour
     {
         GameplayLoop.Loop.lockTouch = true;
         winScreen.SetActive(true);
-        winHandle.transform.position = winStartTarget.transform.position;
-        bool closed = true;
-        float lerpValue = 0;
-        Vector3 lockPos = winScroll.transform.position;
+        menuButton = winScroll.transform.Find("MainMenu").gameObject;
+        scorePanel = winScroll.transform.Find("ScorePanel").gameObject;
+        scoreText = scorePanel.transform.Find("ScoreText").GetComponent<Text>();
+        menuButton.SetActive(false);
+        scorePanel.SetActive(false);
 
-        while (closed)
+        winScroll.transform.position = startTarget.transform.position;
+
+        float timer = 1.5f;
+        float animTime = 0;
+
+        while (timer > 0)
         {
-            winHandle.transform.position = Vector3.LerpUnclamped(winStartTarget.transform.position, winEndTarget.transform.position, lerpValue);
-            winScroll.transform.position = lockPos;
-            lerpValue += winScrollSpeed * Time.deltaTime;
+            winScroll.transform.position = Vector3.Lerp(startTarget.transform.position, endTarget.transform.position, anim.Evaluate(animTime));
+            animTime += Time.deltaTime;
 
-            if (lerpValue >= 1) closed = false;
+            timer -= Time.deltaTime;
 
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        winHandle.transform.position = winEndTarget.transform.position;
-
-        scoreText = winScroll.transform.Find("ScorePanel").Find("ScoreText").GetComponent<Text>();
         StartCoroutine(ShowScore());
     }
 
@@ -119,31 +121,36 @@ public class GameManager : MonoBehaviour
     {
         GameplayLoop.Loop.lockTouch = true;
         defeatScreen.SetActive(true);
-        dfHandle.transform.position = dfStartTarget.transform.position;
-        bool closed = true;
-        float lerpValue = 0;
-        Vector3 lockPos = dfScroll.transform.position;
+        menuButton = dfScroll.transform.Find("MainMenu").gameObject;
+        scorePanel = dfScroll.transform.Find("ScorePanel").gameObject;
+        scoreText = scorePanel.transform.Find("ScoreText").GetComponent<Text>();
+        menuButton.SetActive(false);
+        scorePanel.SetActive(false);
 
-        while(closed)
+        dfScroll.transform.position = startTarget.transform.position;
+
+        float timer = 1.5f;
+        float animTime = 0;
+
+        while (timer > 0)
         {
-            dfHandle.transform.position = Vector3.LerpUnclamped(dfStartTarget.transform.position, dfEndTarget.transform.position, lerpValue);
-            dfScroll.transform.position = lockPos;
-            lerpValue += defeatScrollSpeed * Time.deltaTime;
+            dfScroll.transform.position = Vector3.Lerp(startTarget.transform.position, endTarget.transform.position, anim.Evaluate(animTime));
+            animTime += Time.deltaTime;
 
-            if (lerpValue >= 1) closed = false;
+            timer -= Time.deltaTime;
 
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        dfHandle.transform.position = dfEndTarget.transform.position;
-
-        scoreText = dfScroll.transform.Find("ScorePanel").Find("ScoreText").GetComponent<Text>();
         StartCoroutine(ShowScore());
     }
 
     private IEnumerator ShowScore()
     {
+        scorePanel.SetActive(true);
+        menuButton.SetActive(true);
         scoreText.text = "0";
+        
         float scoreShowing = 0;
         int scoreGoal = PlayerData.Stat.CalculateScore();
 

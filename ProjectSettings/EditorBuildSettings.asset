@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HealPeople.unity
     guid: 736a121e225076c499e8a820febf1307
-  - enabled: 1
-    path: Assets/Scenes/LabirinteSpirit.unity
-    guid: 16756b05bf8997a4d87c970c89ff2628
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Memorie.unity
     guid: d0fefe12d80b54f43893c3684e8ab3b0
@@ -42,8 +42,8 @@ EditorBuildSettings:
     path: Assets/Scenes/PuzzlePieceRotate.unity
     guid: ea84a03e362f77b40a3dfdb59e79a928
   - enabled: 1
-    path: Assets/Scenes/SleepingDemon.unity
-    guid: 8debb4c4a1438104e8f7388ce58ef12c
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 3bd2cf4a8b706ea4ab056564aeaca2fe
