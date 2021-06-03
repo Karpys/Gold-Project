@@ -1031,6 +1031,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 104159286251469853, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 109893576252791844, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
       propertyPath: Light
       value: 
@@ -3581,8 +3585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f460d556df2cc54d8b82efbf6c69f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicMenu: {fileID: 8300000, guid: cdc72077ad5b53c4f859410486bda0a1, type: 3}
-  musicGame: {fileID: 8300000, guid: 12a60b84750cc0941828f543efdf79b5, type: 3}
+  musicMenu: {fileID: 8300000, guid: 113c9cc2194385a44ae10f4351e825a8, type: 3}
+  musicGame: {fileID: 8300000, guid: 78d284cce6b52b14c9aa23d7a8b1b401, type: 3}
   aiguille: {fileID: 8300000, guid: cdc72077ad5b53c4f859410486bda0a1, type: 3}
   remplicageSeringue: {fileID: 8300000, guid: f29609bc5daed0d4a82d800af39e2c4f, type: 3}
   feuCrepitant: {fileID: 8300000, guid: 4ffb84c4a1a1b1541a7550c4f1d125b3, type: 3}
