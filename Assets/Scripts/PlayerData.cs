@@ -62,6 +62,7 @@ public class PlayerData : MonoBehaviour
 		Score += Herbs * 10;
 		Score += People * 30;
 		Score += Spirit * 20;
+		Score *= Mathf.Clamp((int)season,1,4);
 		//(AchievementScore>Vector3)//
 		/*if(Score>=AchievementScore.x)
         {
