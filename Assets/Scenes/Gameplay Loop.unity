@@ -4171,6 +4171,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 559632157}
     m_Modifications:
+    - target: {fileID: 1864830789543838056, guid: 608d6a6c5dac8d34c992a86e6415c8c0, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 1416373055}
     - target: {fileID: 1864830789543838060, guid: 608d6a6c5dac8d34c992a86e6415c8c0, type: 3}
       propertyPath: m_Name
       value: PauseUi
