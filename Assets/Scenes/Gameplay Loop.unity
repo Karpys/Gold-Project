@@ -2458,6 +2458,7 @@ MonoBehaviour:
   HerbsMax: 50
   PeopleMax: 30
   SpiritMax: 30
+  AchievementScore: {x: 1000, y: 3000, z: 5000}
   Score: 0
   season: 0
 --- !u!4 &856268218

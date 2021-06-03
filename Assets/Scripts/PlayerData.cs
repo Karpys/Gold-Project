@@ -21,6 +21,7 @@ public class PlayerData : MonoBehaviour
 	public int HerbsMax;
 	public int PeopleMax;
 	public int SpiritMax;
+	public Vector3 AchievementScore;
 
 	[Header("")]
 	public int Score;
@@ -63,20 +64,20 @@ public class PlayerData : MonoBehaviour
 		Score += People * 30;
 		Score += Spirit * 20;
 		Score *= Mathf.Clamp((int)season,1,4);
-		//(AchievementScore>Vector3)//
-		/*if(Score>=AchievementScore.x)
+        //(AchievementScore>Vector3)//
+        if (Score >= AchievementScore.x)
         {
-			AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBg");
-			if(Score >= AchievementScore.y)
+            AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBg");
+            if (Score >= AchievementScore.y)
             {
-				AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBA");
-				if (Score >= AchievementScore.z)
-				{ 
-					AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBQ");
-				}
-			}
-        }*/
-		AchievementManager.Achieve.SetHighScore(Score);
+                AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBA");
+                if (Score >= AchievementScore.z)
+                {
+                    AchievementManager.Achieve.UnlockAchievement("CgkIidW02PodEAIQBQ");
+                }
+            }
+        }
+        AchievementManager.Achieve.SetHighScore(Score);
 		return Score;
     }
 
