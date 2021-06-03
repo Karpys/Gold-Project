@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class SyringesGame : MonoBehaviour
 {
+    [Header("AudioSource")]
     public AudioSource remplissage;
+    
+    [Header("GameObject")]
     public GameObject syringe;
     public GameObject tige;
     public GameObject targetTige;
@@ -13,11 +16,14 @@ public class SyringesGame : MonoBehaviour
     public GameObject firstMedoc;
     public GameObject secondMedoc;
     public GameObject endPosition;
+    public GameObject canvaTuto;
 
+    [Header("Text")]
     public Text textFirstMedoc;
     public Text textSecondMedoc;
     public Text textTotal;
 
+    [Header("float")]
     public float speed;
     public float speedRemplissage;
     public float speedRemplissageSeringue;
@@ -63,7 +69,13 @@ public class SyringesGame : MonoBehaviour
             if(startAction)
             {
                 if (touch.phase == TouchPhase.Began)
-                    start = true;
+                {
+                    if(canvaTuto.activeSelf)
+                        canvaTuto.SetActive(false);
+                    else
+                        start = true;
+                }
+                    
             
                 if (touch.phase == TouchPhase.Ended)
                 {

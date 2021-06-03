@@ -5,11 +5,19 @@ using UnityEngine.UI;
 
 public class Memorie : MonoBehaviour
 {
+    [Header("Card")]
     public Card[] card;
+
+    [Header("GameObject")]
     public GameObject[] Target;
     public GameObject[] lifeCard;
+    public GameObject canvaTuto;
+
+    [Header("float")]
     public float speed;
     public float speedRotation;
+
+    [Header("int")]
     public int life;
 
     private bool start = true;
@@ -56,28 +64,33 @@ public class Memorie : MonoBehaviour
                 Vector3 zoneTouch = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
                 if (touch.phase == TouchPhase.Began)
                 {
-                    Debug.Log(endCheck);
-                    if(!endCheck && !check)
+                    //Debug.Log(endCheck);
+                    if (canvaTuto.activeSelf)
+                        canvaTuto.SetActive(false);
+                    else
                     {
-                        for (int i = 0; i < card.Length; i++)
+                        if(!endCheck && !check)
                         {
-                            if((zoneTouch.y < card[i].targetTopLeft.transform.position.y && zoneTouch.y > card[i].targetBotRight.transform.position.y) && (zoneTouch.x > card[i].targetTopLeft.transform.position.x && zoneTouch.x < card[i].targetBotRight.transform.position.x))
+                            for (int i = 0; i < card.Length; i++)
                             {
-                                //card[i].phaseItem.SetActive(true);
-                                if (!firstCard)
+                                if((zoneTouch.y < card[i].targetTopLeft.transform.position.y && zoneTouch.y > card[i].targetBotRight.transform.position.y) && (zoneTouch.x > card[i].targetTopLeft.transform.position.x && zoneTouch.x < card[i].targetBotRight.transform.position.x))
                                 {
-                                    firstCard = true;
-                                    saveCardN1 = i;                                
-                                }
-                                else
-                                {
-                                    time = 0;
-                                    saveCardN2 = i;
-                                    check = true;
+                                    //card[i].phaseItem.SetActive(true);
+                                    if (!firstCard)
+                                    {
+                                        firstCard = true;
+                                        saveCardN1 = i;                                
+                                    }
+                                    else
+                                    {
+                                        time = 0;
+                                        saveCardN2 = i;
+                                        check = true;
+                                    }
                                 }
                             }
-
                         }
+                    
                     }    
                 }
             }

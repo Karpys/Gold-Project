@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class healManager : MonoBehaviour
 {
+    [Header("Item")]
     public Item[] item = new Item[3];
+
+    [Header("Text")]
     public Text commandeText;
+
+    [Header("GameObject")]
+    public GameObject canvaTuto;
 
     private string[] commande = new string[3];
     private bool[] freeItem = new bool[3];
@@ -43,26 +49,32 @@ public class healManager : MonoBehaviour
                 Vector3 zoneTouch = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
                 if (touch.phase == TouchPhase.Began)
                 {
-                    for(int i = 0;i<item.Length;i++)
+                    if (canvaTuto.activeSelf)
+                        canvaTuto.SetActive(false);
+                    else
                     {
-                        if ((zoneTouch.y < item[i].targetTopLeft.transform.position.y && zoneTouch.y > item[i].targetBotRight.transform.position.y) && (zoneTouch.x > item[i].targetTopLeft.transform.position.x && zoneTouch.x < item[i].targetBotRight.transform.position.x))
+                        for(int i = 0;i<item.Length;i++)
                         {
-                            itemUsed[itemUsedCompt] = item[i].name;
-                            //if (itemUsedCompt < 2)
-                                itemUsedCompt++;
+                            if ((zoneTouch.y < item[i].targetTopLeft.transform.position.y && zoneTouch.y > item[i].targetBotRight.transform.position.y) && (zoneTouch.x > item[i].targetTopLeft.transform.position.x && zoneTouch.x < item[i].targetBotRight.transform.position.x))
+                            {
+                                itemUsed[itemUsedCompt] = item[i].name;
+                                //if (itemUsedCompt < 2)
+                                    itemUsedCompt++;
 
-                            if (item[i].name == "pansement")
-                                AudioSource.PlayClipAtPoint(SoundManager.Get.pansement, new Vector3(0, 0, 0));
-
-
-                            if (item[i].name == "desinfectant")
-                                AudioSource.PlayClipAtPoint(SoundManager.Get.desinfectant, new Vector3(0, 0, 0));
+                                if (item[i].name == "pad")
+                                    AudioSource.PlayClipAtPoint(SoundManager.Get.pansement, new Vector3(0, 0, 0));
 
 
-                            if (item[i].name == "creme")
-                                AudioSource.PlayClipAtPoint(SoundManager.Get.creme, new Vector3(0, 0, 0));
+                                if (item[i].name == "disinfectant")
+                                    AudioSource.PlayClipAtPoint(SoundManager.Get.desinfectant, new Vector3(0, 0, 0));
+
+
+                                if (item[i].name == "cream")
+                                    AudioSource.PlayClipAtPoint(SoundManager.Get.creme, new Vector3(0, 0, 0));
+                            }
                         }
                     }
+
                 }
             }
         }

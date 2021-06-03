@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Puzzle8Piece : MonoBehaviour
 {
-
+    [Header("Puzzle Piece")]
     public piece[] puzzle;
+
+    [Header("GameObject")]
     public GameObject lastPiece;
     public GameObject[] target;
+    public GameObject canvaTuto;
+
+    [Header("int")]
     public int nCoupMin;
     public int nCoupMax;
+
+    [Header("AudioSource")]
     public AudioSource soundDeplacement;
 
     private bool[] targetFree = new bool[9];
@@ -91,15 +98,21 @@ public class Puzzle8Piece : MonoBehaviour
             Vector3 zoneTouch = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
             if (touch.phase == TouchPhase.Began)
             {
-                for(int i = 0;i<puzzle.Length;i++)
+                if (canvaTuto.activeSelf)
+                    canvaTuto.SetActive(false);
+                else
                 {
-                    if ((zoneTouch.y < puzzle[i].targetTopLeft.transform.position.y && zoneTouch.y > puzzle[i].targetBotRight.transform.position.y) && (zoneTouch.x > puzzle[i].targetTopLeft.transform.position.x && zoneTouch.x < puzzle[i].targetBotRight.transform.position.x))
+                    for(int i = 0;i<puzzle.Length;i++)
                     {
-                        pieceInHand = i;
-                        soundDeplacement.mute = false;
-                    }
+                        if ((zoneTouch.y < puzzle[i].targetTopLeft.transform.position.y && zoneTouch.y > puzzle[i].targetBotRight.transform.position.y) && (zoneTouch.x > puzzle[i].targetTopLeft.transform.position.x && zoneTouch.x < puzzle[i].targetBotRight.transform.position.x))
+                        {
+                            pieceInHand = i;
+                            soundDeplacement.mute = false;
+                        }
 
+                    }
                 }
+
             }
 
             if(touch.phase == TouchPhase.Ended)

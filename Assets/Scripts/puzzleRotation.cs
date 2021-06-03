@@ -5,9 +5,17 @@ using UnityEngine.UI;
 
 public class puzzleRotation : MonoBehaviour
 {
+    [Header("Puzzle Piece")]
     public puzzle[] piece;
+
+    [Header("GameObject")]
     public GameObject[] targetEnd;
+    public GameObject canvaTuto;
+
+    [Header("Text")]
     public Text timerText;
+
+    [Header("Float")]
     public float time;
     public float speed;
     public float speedRotation;
@@ -57,34 +65,42 @@ public class puzzleRotation : MonoBehaviour
         {
             foreach (Touch touch in Input.touches)
             {
-                Vector3 zoneTouch = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
-                if (touch.phase == TouchPhase.Began)
+                if(canvaTuto.activeSelf)
                 {
-                    for (int i = 0; i < piece.Length; i++)
+                    canvaTuto.SetActive(false);
+                }
+                else
+                {
+                    Vector3 zoneTouch = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, -Camera.main.transform.position.z));
+                    if (touch.phase == TouchPhase.Began)
                     {
-                        if ((zoneTouch.y < piece[i].targetTopLeft.transform.position.y && zoneTouch.y > piece[i].targetBotRight.transform.position.y) && (zoneTouch.x > piece[i].targetTopLeft.transform.position.x && zoneTouch.x < piece[i].targetBotRight.transform.position.x))
+                        for (int i = 0; i < piece.Length; i++)
                         {
-                            pieceTurn.Add(i);
-                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
-                        }
-                        if ((zoneTouch.y > piece[i].targetTopLeft.transform.position.y && zoneTouch.y < piece[i].targetBotRight.transform.position.y) && (zoneTouch.x > piece[i].targetTopLeft.transform.position.x && zoneTouch.x < piece[i].targetBotRight.transform.position.x))
-                        {
-                            pieceTurn.Add(i);
-                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
-                        }
-                        if ((zoneTouch.y > piece[i].targetTopLeft.transform.position.y && zoneTouch.y < piece[i].targetBotRight.transform.position.y) && (zoneTouch.x < piece[i].targetTopLeft.transform.position.x && zoneTouch.x > piece[i].targetBotRight.transform.position.x))
-                        {
-                            pieceTurn.Add(i);
-                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
-                        }
-                        if ((zoneTouch.y < piece[i].targetTopLeft.transform.position.y && zoneTouch.y > piece[i].targetBotRight.transform.position.y) && (zoneTouch.x < piece[i].targetTopLeft.transform.position.x && zoneTouch.x > piece[i].targetBotRight.transform.position.x))
-                        {
-                            pieceTurn.Add(i);
-                            AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
-                        }
+                            if ((zoneTouch.y < piece[i].targetTopLeft.transform.position.y && zoneTouch.y > piece[i].targetBotRight.transform.position.y) && (zoneTouch.x > piece[i].targetTopLeft.transform.position.x && zoneTouch.x < piece[i].targetBotRight.transform.position.x))
+                            {
+                                pieceTurn.Add(i);
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                            }
+                            if ((zoneTouch.y > piece[i].targetTopLeft.transform.position.y && zoneTouch.y < piece[i].targetBotRight.transform.position.y) && (zoneTouch.x > piece[i].targetTopLeft.transform.position.x && zoneTouch.x < piece[i].targetBotRight.transform.position.x))
+                            {
+                                pieceTurn.Add(i);
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                            }
+                            if ((zoneTouch.y > piece[i].targetTopLeft.transform.position.y && zoneTouch.y < piece[i].targetBotRight.transform.position.y) && (zoneTouch.x < piece[i].targetTopLeft.transform.position.x && zoneTouch.x > piece[i].targetBotRight.transform.position.x))
+                            {
+                                pieceTurn.Add(i);
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                            }
+                            if ((zoneTouch.y < piece[i].targetTopLeft.transform.position.y && zoneTouch.y > piece[i].targetBotRight.transform.position.y) && (zoneTouch.x < piece[i].targetTopLeft.transform.position.x && zoneTouch.x > piece[i].targetBotRight.transform.position.x))
+                            {
+                                pieceTurn.Add(i);
+                                AudioSource.PlayClipAtPoint(SoundManager.Get.mouvementPiece, new Vector3(0, 0, 0));
+                            }
 
+                        }
                     }
                 }
+                
             }            
         }
 

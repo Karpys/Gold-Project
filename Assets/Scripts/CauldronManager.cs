@@ -17,6 +17,9 @@ public class CauldronManager : MonoBehaviour
     public float TempRange;
     public ValidTemp Jauge;
 
+    [Header("GameObject")]
+    public GameObject canvaTuto;
+
     [Header("Audio Source")]
     public AudioSource liquide;
     public AudioSource feu;
@@ -45,7 +48,10 @@ public class CauldronManager : MonoBehaviour
         {
             if (touch.phase == TouchPhase.Began)
             {
-                Tempvaria += TempUp * Time.deltaTime;
+                if (canvaTuto.activeSelf)
+                    canvaTuto.SetActive(false);
+                else
+                    Tempvaria += TempUp * Time.deltaTime;
             }
         }
 
