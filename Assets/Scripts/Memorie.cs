@@ -110,7 +110,7 @@ public class Memorie : MonoBehaviour
         }
 
         if (win)
-            StartCoroutine(EventSystem.Manager.EndGame(false));
+            StartCoroutine(EventSystem.Manager.EndGame(true));
     }
 
     public void Lose()
