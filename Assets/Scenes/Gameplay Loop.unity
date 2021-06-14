@@ -1227,6 +1227,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5273266714879099179, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9338779
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273266714879099179, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9338779
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273266714879099179, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9338779
+      objectReference: {fileID: 0}
     - target: {fileID: 7941551804645201353, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
       propertyPath: m_Name
       value: MenuTest
@@ -5466,6 +5478,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1682057965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2961390564399210174, guid: ade02f873c0ccdd4ebe678d148b4fa09, type: 3}
+  m_PrefabInstance: {fileID: 242168717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1682057966
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682057965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d075e2e8d9e5e2e4789097875be54374, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1702352519
 GameObject:
   m_ObjectHideFlags: 0
@@ -6933,7 +6969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329072530b9b72f47b24c1516a22bd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testEvent: {fileID: 11400000, guid: 1389c951e2e1c9d47b234df4e10269db, type: 2}
+  testEvent: {fileID: 0}
   waitingInput: 0
 --- !u!4 &1972728089
 Transform:

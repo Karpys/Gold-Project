@@ -67,25 +67,31 @@ public class GameplayLoop : MonoBehaviour
         CharacterSpawned.GetComponent<CharacterEvent>().Anim.SetBool("Destroy", true);
         yield return new WaitForSeconds(1.0f);
 
+        Destroy(CharacterSpawned);
+        CharacterSpawned = null;
+        //State = GameState.IDLE;
+
         //condition Defeat
         if (PlayerData.Stat.NoRessource())
         {
             PlayerData.Stat.CalculateScore();
             StartCoroutine(GameManager.Get.Defeat());
-            
-        }
 
-        IdPool += 1;
-        Destroy(CharacterSpawned);
-        CharacterSpawned = null;
-        State = GameState.IDLE;
-        if (IdPool > EventSystem.Manager.eventPool.Count - 1)
+        }
+        else
         {
-            /*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
-            PlayerData.Stat.NextSeason();
-            StartCoroutine(ChangeSeasonAmbiance());
-            //Reset Sun//
-            PlayerData.Stat.Score += 1;
+            IdPool += 1;
+            if (IdPool > EventSystem.Manager.eventPool.Count - 1)
+            {
+                /*FadeController.Fade.Anim.Play("FadeScreenAnim");*/
+                PlayerData.Stat.NextSeason();
+                StartCoroutine(ChangeSeasonAmbiance());
+                //Reset Sun//
+                PlayerData.Stat.Score += 1;
+            }
+
+            yield return new WaitForSeconds(.6f);
+            LaunchEvent();
         }
     }
     public IEnumerator ChangeSeasonAmbiance()
