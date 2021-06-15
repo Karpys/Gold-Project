@@ -32,7 +32,7 @@ public class PlagueManager : MonoBehaviour
         if(DependOnVillage)
         {
             Background.sprite = ListBackgroundSeason[(int)PlayerData.Stat.season];
-            NbrSick = Mathf.Clamp(PlayerData.Stat.People / 2, 10,50);
+            NbrSick = Mathf.Clamp(PlayerData.Stat.People / 2, 10,35);
         }
         RatioSickSet = RatioSick;
         InstPlague();
@@ -48,6 +48,7 @@ public class PlagueManager : MonoBehaviour
             Timer -= Time.deltaTime;
             if(Timer<=0)
             {
+                Timer = 0;
                 CheckNumber();
             }
         }
