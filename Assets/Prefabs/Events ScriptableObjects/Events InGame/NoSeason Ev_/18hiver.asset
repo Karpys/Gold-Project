@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - 'Doctor, A woman will soon give birth but she fears the pain, '
+    - 'Doctor, a woman will soon give birth but she fears the pain, '
     - What do you recommend ?
   isButtonEvent: 1
   yes:

@@ -15,8 +15,8 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 975783545331009692, guid: 8bc2ceda7245c1b4cadc0eb86d280d6c, type: 3}
   dialog:
   - line:
-    - Hello human I am in a good mood tonight, so I am gonna let you choose a sacrifice
-      or an offering ?
+    - 'Hello human I am in a good mood tonight, so I am gonna let you choose : a
+      sacrifice or an offering ?'
   isButtonEvent: 1
   yes:
     herbs: 0

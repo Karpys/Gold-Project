@@ -16,7 +16,8 @@ MonoBehaviour:
   dialog:
   - line:
     - ROOOOOAAAAAR
-    - If you don't offer me right now, you're gonna be in trouble human !
+    - If you don't make me an offering right now, you're gonna be in trouble human
+      !
   isButtonEvent: 1
   yes:
     herbs: 0

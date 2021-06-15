@@ -15,7 +15,7 @@ MonoBehaviour:
   CharacterSpawn: {fileID: 8602552228151984447, guid: 7f61c94b7d43fed4fb8f70a93e84c73c, type: 3}
   dialog:
   - line:
-    - Master the son of one of the villagers sick and has a fever.
+    - Master the son of one of the villagers is sick and has a fever.
     - Because of the cold weather I examined him, I think he has a cold
     - What should we do ?
   isButtonEvent: 1

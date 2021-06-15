@@ -16,7 +16,7 @@ MonoBehaviour:
   dialog:
   - line:
     - 'Sir, for this summer, I propose an invention: '
-    - a mixture of plants that would protect you from sunburns !
+    - A mixture of plants that would protect you from sunburns !
   isButtonEvent: 1
   yes:
     herbs: -5
